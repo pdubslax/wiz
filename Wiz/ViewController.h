@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController
+- (IBAction)login:(id)sender;
+- (IBAction)signup:(id)sender;
 
 
 @end

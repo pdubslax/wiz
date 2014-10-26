@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>2467BA1C-BFCF-45BD-997A-A6081164E5C9</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Wiz</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>1578F773DC6C6E20FF88AF274DFD65A26D93A67E</key>
+		<string>github.com:pdubslax/wiz.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Wiz.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>1578F773DC6C6E20FF88AF274DFD65A26D93A67E</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>github.com:pdubslax/wiz.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>1578F773DC6C6E20FF88AF274DFD65A26D93A67E</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>1578F773DC6C6E20FF88AF274DFD65A26D93A67E</string>
+			<key>IDESourceControlWCCName</key>
+			<string>wiz</string>
+		</dict>
+	</array>
+</dict>
+</plist>
