@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import <Firebase/Firebase.h>
+#import "WIZMapViewController.h"
 
 @interface ViewController ()
 
@@ -50,13 +51,30 @@
     }];
 }
 
-- (IBAction)login:(id)sender {
-    [self firebaseLoginWithName:@"pdubslax@umich.edu" andPassword:@"swag"];
-    
-    
+- (IBAction)user1:(id)sender {
+    [self firebaseSignUpWithName:@"user1@wiz.com" andPassword:@"password1"];
+    [self firebaseLoginWithName:@"user1@wiz.com" andPassword:@"password1"];
+    WIZMapViewController *vc = (WIZMapViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"map"];
+    [self presentViewController:vc animated:YES completion:^{
+        //
+    }];
 }
 
-- (IBAction)signup:(id)sender {
-    [self firebaseSignUpWithName:@"pdubslax@umich.edu" andPassword:@"swag"];
+- (IBAction)user2:(id)sender {
+    [self firebaseSignUpWithName:@"user2@wiz.com" andPassword:@"password2"];
+    [self firebaseLoginWithName:@"user2@wiz.com" andPassword:@"password2"];
+    WIZMapViewController *vc = (WIZMapViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"map"];
+    [self presentViewController:vc animated:YES completion:^{
+        //
+    }];
+}
+
+- (IBAction)user3:(id)sender {
+    [self firebaseSignUpWithName:@"user3@wiz.com" andPassword:@"password3"];
+    [self firebaseLoginWithName:@"user3@wiz.com" andPassword:@"password3"];
+    WIZMapViewController *vc = (WIZMapViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"map"];
+    [self presentViewController:vc animated:YES completion:^{
+        //
+    }];
 }
 @end

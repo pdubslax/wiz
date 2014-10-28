@@ -16,30 +16,91 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XYR-1e-2do">
-                                <rect key="frame" x="277" y="141" width="38" height="30"/>
-                                <state key="normal" title="Login">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bcd-zy-5i9">
+                                <rect key="frame" x="241" y="159" width="119" height="45"/>
+                                <state key="normal" title="Login User 2">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="149" y="328" width="88" height="30"/>
+                                </variation>
                                 <connections>
-                                    <action selector="login:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ede-O2-Pgn"/>
+                                    <action selector="user2:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="XtU-Q0-H8n"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hDt-Gn-UZg">
-                                <rect key="frame" x="273" y="310" width="55" height="30"/>
-                                <state key="normal" title="Sign Up">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pxP-K5-Jzg">
+                                <rect key="frame" x="248" y="212" width="104" height="45"/>
+                                <state key="normal" title="Login User 3">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="149" y="380" width="88" height="30"/>
+                                </variation>
                                 <connections>
-                                    <action selector="signup:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Rlx-zm-nN8"/>
+                                    <action selector="user3:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="xeD-eY-VHi"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wiz" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V9D-H2-VxB">
+                                <rect key="frame" x="207" y="62" width="186" height="56"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="54"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="97" y="91" width="176" height="89"/>
+                                </variation>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cDG-Zm-x3z">
+                                <rect key="frame" x="238" y="108" width="124" height="55"/>
+                                <state key="normal" title="Login User 1">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="149" y="277" width="88" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="user1:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="kj6-k0-vSs"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="Bcd-zy-5i9"/>
+                                <exclude reference="pxP-K5-Jzg"/>
+                                <exclude reference="V9D-H2-VxB"/>
+                                <exclude reference="cDG-Zm-x3z"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="Bcd-zy-5i9"/>
+                                <include reference="pxP-K5-Jzg"/>
+                                <include reference="V9D-H2-VxB"/>
+                                <include reference="cDG-Zm-x3z"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="564" y="468"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="cRR-Ro-EMj">
+            <objects>
+                <viewController storyboardIdentifier="map" id="B26-L4-xPi" customClass="WIZMapViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="TIl-KN-r58"/>
+                        <viewControllerLayoutGuide type="bottom" id="Cr9-Tp-GAz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="M5L-zN-PhD">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Kc-pK-jBq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1296" y="468"/>
         </scene>
     </scenes>
 </document>
