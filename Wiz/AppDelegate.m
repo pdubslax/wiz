@@ -36,6 +36,10 @@
     NSString *urlString = [NSString stringWithFormat:@"https://fiery-torch-962.firebaseio.com/users/%@/statusFlag",sharedManager.uid];
     Firebase *myRootRef = [[Firebase alloc] initWithUrl:urlString];
     [myRootRef setValue:@"0"];
+    
+    NSString *urlString2 = [NSString stringWithFormat:@"https://fiery-torch-962.firebaseio.com/wizzes/%@/online",sharedManager.uid];
+    Firebase *myRootRef2 = [[Firebase alloc] initWithUrl:urlString2];
+    [myRootRef2 setValue:@"0"];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
@@ -52,6 +56,10 @@
     NSString *urlString = [NSString stringWithFormat:@"https://fiery-torch-962.firebaseio.com/users/%@/statusFlag",sharedManager.uid];
     Firebase *myRootRef = [[Firebase alloc] initWithUrl:urlString];
     [myRootRef setValue:@"0"];
+    
+    NSString *urlString2 = [NSString stringWithFormat:@"https://fiery-torch-962.firebaseio.com/wizzes/%@/online",sharedManager.uid];
+    Firebase *myRootRef2 = [[Firebase alloc] initWithUrl:urlString2];
+    [myRootRef2 setValue:@"0"];
     
 }
 

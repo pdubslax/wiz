@@ -20,6 +20,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self wizOnline];
+    
+    WIZUserDataSharedManager *sharedManager = [WIZUserDataSharedManager sharedManager];
+    NSString *urlString = [NSString stringWithFormat:@"https://fiery-torch-962.firebaseio.com/wizzes/%@/jobID",sharedManager.uid];
+    Firebase *myRootRef = [[Firebase alloc] initWithUrl:urlString];
+    [myRootRef observeEventType:FEventTypeChildChanged withBlock:^(FDataSnapshot *snapshot) {
+        //recived Job request
+        NSString *jobURL = [NSString stringWithFormat:@"https://fiery-torch-962.firebaseio.com/jobs/%@",snapshot.name];
+        Firebase *jobRequested = [[Firebase alloc] initWithUrl:jobURL];
+        NSLog(@"%@",[jobRequested valueForKey:@"description"]);
+    }];
     // Do any additional setup after loading the view.
 }
 

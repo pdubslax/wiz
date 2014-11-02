@@ -50,6 +50,8 @@
         WIZUserDataSharedManager *sharedManager = [WIZUserDataSharedManager sharedManager];
         sharedManager.uid = newString;
         
+        
+        
     }
     }];
 }

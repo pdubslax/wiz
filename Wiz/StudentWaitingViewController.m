@@ -54,14 +54,27 @@
         NSArray *keys= [snapshot.value allKeys];
         NSMutableArray *availableWizzes = [[NSMutableArray alloc] init];
         for (NSString *key in keys){
-            if ([snapshot.value[key][@"online"]  isEqual: @"1"] ){
+            if ([snapshot.value[key][@"online"]  isEqual: @"1"] && [snapshot.value[key][@"statusFlag"] isEqual: @"0"]){
                 [availableWizzes addObject:key];
             }
         }
+        NSLog(@"%@",availableWizzes);
+        for (NSString *wizID in availableWizzes){
+            NSString *tmpString2 = [NSString stringWithFormat:@"%@/jobID",wizID];
+            Firebase *specificWiz2 = [wizzes childByAppendingPath:tmpString2];
+            [specificWiz2 setValue:newJob.name];
+            
+            NSString *tmpString = [NSString stringWithFormat:@"%@/beingRequested",wizID];
+            Firebase *specificWiz = [wizzes childByAppendingPath:tmpString];
+            [specificWiz setValue:@"1"];
+            
+        }
         
+        [wizzes removeAllObservers];
     } withCancelBlock:^(NSError *error) {
         NSLog(@"%@", error.description);
     }];
+    
     
 }
 
