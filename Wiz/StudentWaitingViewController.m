@@ -9,6 +9,8 @@
 #import "StudentWaitingViewController.h"
 #import "WIZMapViewController.h"
 #import "StudentRequestAcceptedViewController.h"
+#import <Firebase/Firebase.h>
+#import "WIZUserDataSharedManager.h"
 
 @interface StudentWaitingViewController ()
 
@@ -23,8 +25,9 @@
     
     NSString *descriptionString = [NSString stringWithFormat:@"Description: %@", self.problemDescription];
     [self.descriptionLabel setText:descriptionString];
-    
     [self.activityIndicator startAnimating];
+    
+    [self makeRequest];
     
     
 }
@@ -32,6 +35,20 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)makeRequest {
+    NSString *urlString = [NSString stringWithFormat:@"https://fiery-torch-962.firebaseio.com/jobs/"];
+    Firebase *myRootRef = [[Firebase alloc] initWithUrl:urlString];
+    WIZUserDataSharedManager *sharedManager = [WIZUserDataSharedManager sharedManager];
+    Firebase *newJob = [myRootRef childByAutoId];
+    [newJob setValue:[NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:sharedManager.uid,@"-1",@"0",self.problemDescription, nil]
+                                          forKeys:[NSArray arrayWithObjects:@"requesterID",@"wizID",@"statusFlag",@"description", nil]]];
+    sharedManager.currentJob = newJob.name;
+    
+    
+    
+    
 }
 
 /*

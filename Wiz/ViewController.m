@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import <Firebase/Firebase.h>
 #import "WIZMapViewController.h"
+#import "WIZUserDataSharedManager.h"
 
 @interface ViewController ()
 
@@ -36,6 +37,18 @@
     } else {
         // We are now logged in
         NSLog(@"%@", authData.uid) ;
+        
+        //
+        NSRange range = [authData.uid rangeOfString:@":"];
+        NSString *newString = [authData.uid substringFromIndex:range.location+1];
+        NSString *urlString = [NSString stringWithFormat:@"https://fiery-torch-962.firebaseio.com/users/%@/statusFlag",newString];
+        
+        Firebase *myRootRef = [[Firebase alloc] initWithUrl:urlString];
+        [myRootRef setValue:@"1"];
+        
+        WIZUserDataSharedManager *sharedManager = [WIZUserDataSharedManager sharedManager];
+        sharedManager.uid = newString;
+        
     }
     }];
 }

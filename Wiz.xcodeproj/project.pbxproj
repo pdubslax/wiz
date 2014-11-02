@@ -11,6 +11,7 @@
 		8B26C6481A0696FF00A9E92E /* StudentWaitingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B26C6471A0696FF00A9E92E /* StudentWaitingViewController.m */; };
 		8B26C64B1A06A20200A9E92E /* StudentRequestAcceptedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B26C64A1A06A20200A9E92E /* StudentRequestAcceptedViewController.m */; };
 		8B26C64E1A06AE7A00A9E92E /* WIZWaitingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B26C64D1A06AE7A00A9E92E /* WIZWaitingViewController.m */; };
+		8B26C6511A06B86D00A9E92E /* WIZUserDataSharedManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B26C6501A06B86D00A9E92E /* WIZUserDataSharedManager.m */; };
 		8B9F01B219FEE873008BDA75 /* pin.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B9F01AF19FEE873008BDA75 /* pin.png */; };
 		8B9F01B319FEE873008BDA75 /* TaskTwitter.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B9F01B019FEE873008BDA75 /* TaskTwitter.xib */; };
 		8B9F01C019FEEA2D008BDA75 /* WIZMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B9F01BF19FEEA2D008BDA75 /* WIZMapViewController.m */; };
@@ -47,6 +48,8 @@
 		8B26C64A1A06A20200A9E92E /* StudentRequestAcceptedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudentRequestAcceptedViewController.m; sourceTree = "<group>"; };
 		8B26C64C1A06AE7A00A9E92E /* WIZWaitingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WIZWaitingViewController.h; sourceTree = "<group>"; };
 		8B26C64D1A06AE7A00A9E92E /* WIZWaitingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WIZWaitingViewController.m; sourceTree = "<group>"; };
+		8B26C64F1A06B86D00A9E92E /* WIZUserDataSharedManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WIZUserDataSharedManager.h; sourceTree = "<group>"; };
+		8B26C6501A06B86D00A9E92E /* WIZUserDataSharedManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WIZUserDataSharedManager.m; sourceTree = "<group>"; };
 		8B9F01AF19FEE873008BDA75 /* pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pin.png; path = Wiz/pin.png; sourceTree = "<group>"; };
 		8B9F01B019FEE873008BDA75 /* TaskTwitter.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TaskTwitter.xib; path = Wiz/TaskTwitter.xib; sourceTree = "<group>"; };
 		8B9F01BE19FEEA2D008BDA75 /* WIZMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WIZMapViewController.h; sourceTree = "<group>"; };
@@ -130,6 +133,8 @@
 		8BEF720D19FD6EF7005F24F0 /* Wiz */ = {
 			isa = PBXGroup;
 			children = (
+				8B26C64F1A06B86D00A9E92E /* WIZUserDataSharedManager.h */,
+				8B26C6501A06B86D00A9E92E /* WIZUserDataSharedManager.m */,
 				8B26C64C1A06AE7A00A9E92E /* WIZWaitingViewController.h */,
 				8B26C64D1A06AE7A00A9E92E /* WIZWaitingViewController.m */,
 				8B9F01BE19FEEA2D008BDA75 /* WIZMapViewController.h */,
@@ -328,6 +333,7 @@
 			files = (
 				8B9F01C019FEEA2D008BDA75 /* WIZMapViewController.m in Sources */,
 				8BEF721719FD6EF7005F24F0 /* ViewController.m in Sources */,
+				8B26C6511A06B86D00A9E92E /* WIZUserDataSharedManager.m in Sources */,
 				8BEF721419FD6EF7005F24F0 /* AppDelegate.m in Sources */,
 				8B26C6481A0696FF00A9E92E /* StudentWaitingViewController.m in Sources */,
 				8BEF721119FD6EF7005F24F0 /* main.m in Sources */,

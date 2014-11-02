@@ -164,13 +164,22 @@
                                                 <action selector="switchToStudent:" destination="YNl-oa-jEt" id="yEW-E0-shN"/>
                                             </connections>
                                         </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" style="plain" id="T4K-PV-aBs">
+                                            <switch key="customView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="qkW-jj-2Np">
+                                                <rect key="frame" x="-25" y="-15" width="51" height="31"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <connections>
+                                                    <action selector="onlineSwitch:" destination="YNl-oa-jEt" eventType="valueChanged" id="Gkc-bW-ZaE"/>
+                                                </connections>
+                                            </switch>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="0.0" y="0.0" width="400" height="44"/>
                                 </variation>
                             </navigationBar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Awaiting Incoming Requests" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WU3-Zm-Leg">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Awaiting Incoming Requests!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WU3-Zm-Leg">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -194,6 +203,10 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="awaitingLabel" destination="WU3-Zm-Leg" id="Lhp-PV-T8v"/>
+                        <outlet property="onlineSwitch" destination="qkW-jj-2Np" id="St6-b6-J48"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8eE-qi-YKm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

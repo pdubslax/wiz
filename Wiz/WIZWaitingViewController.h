@@ -11,5 +11,8 @@
 @interface WIZWaitingViewController : UIViewController
 - (IBAction)switchToStudent:(id)sender;
 @property (nonatomic, strong) NSString *username;
+@property (strong, nonatomic) IBOutlet UILabel *awaitingLabel;
+- (IBAction)onlineSwitch:(id)sender;
+@property (strong, nonatomic) IBOutlet UISwitch *onlineSwitch;
 
 @end

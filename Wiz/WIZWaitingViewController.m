@@ -8,6 +8,8 @@
 
 #import "WIZWaitingViewController.h"
 #import "WIZMapViewController.h"
+#import <Firebase/Firebase.h>
+#import "WIZUserDataSharedManager.h"
 
 @interface WIZWaitingViewController ()
 
@@ -17,6 +19,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self wizOnline];
     // Do any additional setup after loading the view.
 }
 
@@ -25,21 +28,36 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 - (IBAction)switchToStudent:(id)sender {
     WIZMapViewController *vc = (WIZMapViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"map"];
     vc.username = self.username;
     [self presentViewController:vc animated:NO completion:^{
+        [self wizOffline];
         //
     }];
+}
+
+- (void)wizOnline{
+    WIZUserDataSharedManager *sharedManager = [WIZUserDataSharedManager sharedManager];
+    NSString *urlString = [NSString stringWithFormat:@"https://fiery-torch-962.firebaseio.com/wizzes/%@/online",sharedManager.uid];
+    Firebase *myRootRef = [[Firebase alloc] initWithUrl:urlString];
+    [myRootRef setValue:@"1"];
+}
+
+- (void)wizOffline{
+    WIZUserDataSharedManager *sharedManager = [WIZUserDataSharedManager sharedManager];
+    NSString *urlString = [NSString stringWithFormat:@"https://fiery-torch-962.firebaseio.com/wizzes/%@/online",sharedManager.uid];
+    Firebase *myRootRef = [[Firebase alloc] initWithUrl:urlString];
+    [myRootRef setValue:@"0"];
+}
+
+- (IBAction)onlineSwitch:(id)sender {
+    if (self.onlineSwitch.isOn){
+        [self wizOnline];
+    }else{
+        [self wizOffline];
+    }
+    
 }
 @end
