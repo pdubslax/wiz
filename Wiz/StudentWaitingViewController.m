@@ -47,7 +47,21 @@
     sharedManager.currentJob = newJob.name;
     
     
+    Firebase *wizzes = [[Firebase alloc] initWithUrl: @"https://fiery-torch-962.firebaseio.com/wizzes"];
     
+    // Attach a block to read the data at our posts reference
+    [wizzes observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+        NSArray *keys= [snapshot.value allKeys];
+        NSMutableArray *availableWizzes = [[NSMutableArray alloc] init];
+        for (NSString *key in keys){
+            if ([snapshot.value[key][@"online"]  isEqual: @"1"] ){
+                [availableWizzes addObject:key];
+            }
+        }
+        
+    } withCancelBlock:^(NSError *error) {
+        NSLog(@"%@", error.description);
+    }];
     
 }
 

@@ -1,41 +1,29 @@
 {
   "jobs" : {
-    "jobId1" : {
-      "statusFlag" : "3",
-      "requesterID" : "3",
-      "wizID" : "4",
-      "description" : "help me do math"
-    },
-    "jobId2" : {
-      "statusFlag" : "3",
-      "requesterID" : "5",
-      "wizID" : "4",
-      "description" : "help me do science"
-    }
   },
   "users" : {
-    "3" : {
+    "-3" : {
       "statusFlag" : "0"
     },
-    "4" : {
+    "-4" : {
       "statusFlag" : "0"
     },
-    "5" : {
+    "-5" : {
       "statusFlag" : "0"
     }
   },
   "wizzes" : {
-    "3" : {
+    "-3" : {
       "online" : "0",
       "beingRequested" : "0",
       "jobID" : "-1"
     },
-    "4" : {
+    "-4" : {
       "online" : "0",
       "beingRequested" : "0",
       "jobID" : "-1"
     },
-    "5" : {
+    "-5" : {
       "online" : "0",
       "beingRequested" : "0",
       "jobID" : "-1"

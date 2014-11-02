@@ -40,7 +40,8 @@
         
         //
         NSRange range = [authData.uid rangeOfString:@":"];
-        NSString *newString = [authData.uid substringFromIndex:range.location+1];
+        NSString *tmpString = [authData.uid substringFromIndex:range.location+1];
+        NSString *newString = [NSString stringWithFormat:@"-%@",tmpString];
         NSString *urlString = [NSString stringWithFormat:@"https://fiery-torch-962.firebaseio.com/users/%@/statusFlag",newString];
         
         Firebase *myRootRef = [[Firebase alloc] initWithUrl:urlString];
