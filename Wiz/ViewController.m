@@ -32,8 +32,10 @@
     withCompletionBlock:^(NSError *error, FAuthData *authData) {
     if (error) {
         // There was an error logging in to this account
+        
     } else {
         // We are now logged in
+        NSLog(@"%@", authData.uid) ;
     }
     }];
 }
@@ -55,7 +57,8 @@
     [self firebaseSignUpWithName:@"user1@wiz.com" andPassword:@"password1"];
     [self firebaseLoginWithName:@"user1@wiz.com" andPassword:@"password1"];
     WIZMapViewController *vc = (WIZMapViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"map"];
-    [self presentViewController:vc animated:YES completion:^{
+    vc.username = @"user1";
+    [self presentViewController:vc animated:NO completion:^{
         //
     }];
 }
@@ -64,7 +67,8 @@
     [self firebaseSignUpWithName:@"user2@wiz.com" andPassword:@"password2"];
     [self firebaseLoginWithName:@"user2@wiz.com" andPassword:@"password2"];
     WIZMapViewController *vc = (WIZMapViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"map"];
-    [self presentViewController:vc animated:YES completion:^{
+    vc.username = @"user2";
+    [self presentViewController:vc animated:NO completion:^{
         //
     }];
 }
@@ -73,7 +77,8 @@
     [self firebaseSignUpWithName:@"user3@wiz.com" andPassword:@"password3"];
     [self firebaseLoginWithName:@"user3@wiz.com" andPassword:@"password3"];
     WIZMapViewController *vc = (WIZMapViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"map"];
-    [self presentViewController:vc animated:YES completion:^{
+    vc.username = @"user3";
+    [self presentViewController:vc animated:NO completion:^{
         //
     }];
 }

@@ -1,0 +1,39 @@
+{
+  "jobs" : {
+    "jobId1" : {
+      "statusFlag" : 3,
+      "reqUserID" : "3",
+      "wizUserID" : "4",
+      "description" : "help me do math"
+    },
+    "jobId2" : {
+      "statusFlag" : 3,
+      "reqUserID" : "5",
+      "wizUserID" : "4",
+      "description" : "help me do science"
+    }
+  },
+  "users" : {
+    "3" : {
+      "statusFlag" : 0
+    },
+    "4" : {
+      "statusFlag" : 0
+    },
+    "5" : {
+      "statusFlag" : 0
+    }
+  },
+  "wizzes" : {
+    "3" : {
+      "online" : 0,
+      "beingRequested" : 0,
+      "jobID" : -1
+    },
+    "4" : {
+      "online" : 0,
+      "beingRequested" : 0,
+      "jobID" : -1
+    }
+  }
+}

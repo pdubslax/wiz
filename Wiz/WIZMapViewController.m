@@ -7,6 +7,8 @@
 //
 
 #import "WIZMapViewController.h"
+#import "StudentWaitingViewController.h"
+#import "WIZWaitingViewController.h"
 
 
 @interface WIZMapViewController ()
@@ -23,7 +25,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    
+    [self.userLabel setText:[NSString stringWithFormat:@"%@ is logged in",self.username]];
     
     [[UIApplication sharedApplication] setStatusBarHidden:YES];
     self.descriptionBox = [[[NSBundle mainBundle] loadNibNamed:@"TaskTwitter" owner:self options:nil] objectAtIndex:0];
@@ -32,7 +34,6 @@
     self.descriptionBox.layer.borderWidth = 5;
     self.descriptionBox.layer.cornerRadius = 10;
     self.descriptionBox.userInteractionEnabled = YES;
-    
     
     //Set Location Button
     self.setLocationButton = [[UIButton alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - 100, self.view.frame.size.height/2 - 60, 200, 30)];
@@ -126,7 +127,23 @@
 }
 
 - (IBAction)requestPressed:(id)sender {
-    self.userInput.text = nil;
+    
     [self.descriptionBox removeFromSuperview];
+    StudentWaitingViewController *vc = (StudentWaitingViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"studentWaiting"];
+    vc.problemDescription = self.userInput.text;
+    vc.username = [self username];
+    self.userInput.text = nil;
+    [self presentViewController:vc animated:NO completion:^{
+        //
+    }];
+    
+}
+- (IBAction)switchToWizView:(id)sender {
+    WIZWaitingViewController *vc = (WIZWaitingViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"wizWait"];
+    vc.username = self.username;
+    [self presentViewController:vc animated:NO completion:^{
+        //
+    }];
+    
 }
 @end

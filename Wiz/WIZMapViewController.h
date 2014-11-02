@@ -14,6 +14,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *characterCount;
 - (IBAction)cancelPressed:(id)sender;
 - (IBAction)requestPressed:(id)sender;
+@property (nonatomic, strong) NSString *username;
+@property (strong, nonatomic) IBOutlet UILabel *userLabel;
+- (IBAction)switchToWizView:(id)sender;
 
 
 @end
