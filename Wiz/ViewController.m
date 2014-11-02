@@ -50,6 +50,11 @@
         WIZUserDataSharedManager *sharedManager = [WIZUserDataSharedManager sharedManager];
         sharedManager.uid = newString;
         
+        WIZMapViewController *vc = (WIZMapViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"map"];
+        vc.username = sharedManager.uid;
+        [self presentViewController:vc animated:NO completion:^{
+            //
+        }];
         
         
     }
@@ -72,30 +77,18 @@
 - (IBAction)user1:(id)sender {
     [self firebaseSignUpWithName:@"user1@wiz.com" andPassword:@"password1"];
     [self firebaseLoginWithName:@"user1@wiz.com" andPassword:@"password1"];
-    WIZMapViewController *vc = (WIZMapViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"map"];
-    vc.username = @"user1";
-    [self presentViewController:vc animated:NO completion:^{
-        //
-    }];
+    
 }
 
 - (IBAction)user2:(id)sender {
     [self firebaseSignUpWithName:@"user2@wiz.com" andPassword:@"password2"];
     [self firebaseLoginWithName:@"user2@wiz.com" andPassword:@"password2"];
-    WIZMapViewController *vc = (WIZMapViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"map"];
-    vc.username = @"user2";
-    [self presentViewController:vc animated:NO completion:^{
-        //
-    }];
+    
 }
 
 - (IBAction)user3:(id)sender {
     [self firebaseSignUpWithName:@"user3@wiz.com" andPassword:@"password3"];
     [self firebaseLoginWithName:@"user3@wiz.com" andPassword:@"password3"];
-    WIZMapViewController *vc = (WIZMapViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"map"];
-    vc.username = @"user3";
-    [self presentViewController:vc animated:NO completion:^{
-        //
-    }];
+    
 }
 @end
