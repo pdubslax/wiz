@@ -153,8 +153,18 @@
                         <viewControllerLayoutGuide type="bottom" id="D45-Ds-3rU"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8yx-c4-Ybm">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bPH-rV-pGS">
+                                <rect key="frame" x="-25" y="-15" width="51" height="31"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="114" y="250" width="51" height="31"/>
+                                </variation>
+                                <connections>
+                                    <action selector="onlineSwitch:" destination="YNl-oa-jEt" eventType="valueChanged" id="Qw0-Bk-mGQ"/>
+                                </connections>
+                            </switch>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x8h-Oe-wAU">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <items>
@@ -163,15 +173,6 @@
                                             <connections>
                                                 <action selector="switchToStudent:" destination="YNl-oa-jEt" id="yEW-E0-shN"/>
                                             </connections>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" style="plain" id="T4K-PV-aBs">
-                                            <switch key="customView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="qkW-jj-2Np">
-                                                <rect key="frame" x="-25" y="-15" width="51" height="31"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <connections>
-                                                    <action selector="onlineSwitch:" destination="YNl-oa-jEt" eventType="valueChanged" id="Gkc-bW-ZaE"/>
-                                                </connections>
-                                            </switch>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
@@ -188,24 +189,40 @@
                                     <rect key="frame" x="51" y="349" width="303" height="21"/>
                                 </variation>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rx9-fi-dz3">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="51" y="393" width="223" height="137"/>
+                                </variation>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <variation key="default">
                             <mask key="subviews">
+                                <exclude reference="bPH-rV-pGS"/>
                                 <exclude reference="x8h-Oe-wAU"/>
                                 <exclude reference="WU3-Zm-Leg"/>
+                                <exclude reference="Rx9-fi-dz3"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
+                                <include reference="bPH-rV-pGS"/>
                                 <include reference="x8h-Oe-wAU"/>
                                 <include reference="WU3-Zm-Leg"/>
+                                <include reference="Rx9-fi-dz3"/>
                             </mask>
                         </variation>
                     </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="JobLabel" destination="Rx9-fi-dz3" id="nMU-rq-3kK"/>
                         <outlet property="awaitingLabel" destination="WU3-Zm-Leg" id="Lhp-PV-T8v"/>
-                        <outlet property="onlineSwitch" destination="qkW-jj-2Np" id="St6-b6-J48"/>
+                        <outlet property="onlineSwitch" destination="bPH-rV-pGS" id="k9p-YQ-8Av"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8eE-qi-YKm" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -221,6 +238,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Fwl-Uz-a5E"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Xpa-RL-NNK">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yzZ-oJ-OWj">
@@ -238,7 +256,7 @@
                                     <navigationItem title="Requesting Wiz" id="NbO-zj-6Ff"/>
                                 </items>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="0.0" width="400" height="63"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="400" height="40"/>
                                 </variation>
                             </navigationBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Topic:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="16W-uF-meu">
@@ -332,6 +350,7 @@
                         <viewControllerLayoutGuide type="bottom" id="ldK-wa-vYp"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="j8q-64-qhA">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We've matched you with a Wiz!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sOD-No-AIh">

@@ -27,7 +27,20 @@
     [myRootRef observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
         //recived Job request
         NSLog(@"%@",snapshot.value);
-        //check if not -1, show job info 
+        self.JobLabel.text = snapshot.value;
+        if (![snapshot.value isEqual:@"-1"]){
+            NSString *urlString2 = [NSString stringWithFormat:@"https://fiery-torch-962.firebaseio.com/jobs/%@/description",snapshot.value];
+            Firebase *jobInfo = [[Firebase alloc] initWithUrl:urlString2];
+            [jobInfo observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+                if (![snapshot.value  isEqual: @"-1"]){
+                    UIAlertView *test = [[UIAlertView alloc] initWithTitle:@"New Job Alert" message:snapshot.value delegate:self cancelButtonTitle:@"Reject" otherButtonTitles:@"Accept", nil];
+                    [test show];
+                }
+            }];
+        }
+        
+        
+        //check if not -1, show job info
         
         
     }];
@@ -39,6 +52,12 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    NSLog(@"%ld",(long)buttonIndex);
+    //0 is reject
+    //1 is accept
+    
+}
 
 - (IBAction)switchToStudent:(id)sender {
     WIZMapViewController *vc = (WIZMapViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"map"];

@@ -48,6 +48,14 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+//    WIZUserDataSharedManager *sharedManager = [WIZUserDataSharedManager sharedManager];
+//    NSString *urlString = [NSString stringWithFormat:@"https://fiery-torch-962.firebaseio.com/users/%@/statusFlag",sharedManager.uid];
+//    Firebase *myRootRef = [[Firebase alloc] initWithUrl:urlString];
+//    [myRootRef setValue:@"1"];
+//    
+//    NSString *urlString2 = [NSString stringWithFormat:@"https://fiery-torch-962.firebaseio.com/wizzes/%@/online",sharedManager.uid];
+//    Firebase *myRootRef2 = [[Firebase alloc] initWithUrl:urlString2];
+//    [myRootRef2 setValue:@"1"];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
