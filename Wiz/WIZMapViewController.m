@@ -64,8 +64,9 @@
     
     
     // Create the GMSMapView with the camera position.
-    mapView_ = [GMSMapView mapWithFrame:self.mapView.bounds camera:camera];
     
+    
+    mapView_ = [GMSMapView mapWithFrame:self.view.bounds camera:camera];
     //Enable location settings and set Delegate to self
     mapView_.myLocationEnabled = YES;
     mapView_.accessibilityElementsHidden = NO;
@@ -102,14 +103,17 @@
 
     
     //Coordinate Label
+    
+    CGPoint superCenter = CGPointMake(CGRectGetMidX(self.view.bounds), 105);
     self.coordinateLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 75, 280, 60)];
+    [self.coordinateLabel setCenter:superCenter];
     self.coordinateLabel.backgroundColor = [UIColor colorWithRed:255 green:253 blue:208 alpha:0.8];
     self.coordinateLabel.textAlignment = UITextAlignmentCenter;
     
     
     
     // Set the controller view to be the MapView.
-    [self.mapView insertSubview:mapView_ atIndex:0];
+    [self.view insertSubview:mapView_ atIndex:0];
     
     
     //Remove googles stupid gesture blocker
@@ -117,9 +121,9 @@
     
     
     //Adding subviews
-    [self.mapView insertSubview:self.coordinateLabel aboveSubview:mapView_];
-    [self.mapView insertSubview:self.setLocationButton aboveSubview:mapView_];
-    [self.mapView insertSubview:pinHolder aboveSubview:mapView_];
+    [self.view insertSubview:self.coordinateLabel aboveSubview:mapView_];
+    [self.view insertSubview:self.setLocationButton aboveSubview:mapView_];
+    [self.view insertSubview:pinHolder aboveSubview:mapView_];
     
 
 }
