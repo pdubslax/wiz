@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F287D071A0DF0A300DD0A57 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F287D061A0DF0A300DD0A57 /* AVFoundation.framework */; };
+		2F287D091A0DF0AC00DD0A57 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F287D081A0DF0AC00DD0A57 /* CoreData.framework */; };
+		2F287D0B1A0DF0B500DD0A57 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F287D0A1A0DF0B500DD0A57 /* CoreLocation.framework */; };
+		2F287D0D1A0DF0BF00DD0A57 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F287D0C1A0DF0BF00DD0A57 /* CoreText.framework */; };
+		2F287D0F1A0DF0C800DD0A57 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F287D0E1A0DF0C800DD0A57 /* GLKit.framework */; };
+		2F287D111A0DF0D100DD0A57 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F287D101A0DF0D100DD0A57 /* ImageIO.framework */; };
+		2F287D131A0DF0E700DD0A57 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F287D121A0DF0E700DD0A57 /* libz.dylib */; };
+		2F287D151A0DF0F100DD0A57 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F287D141A0DF0F100DD0A57 /* OpenGLES.framework */; };
+		2F287D171A0DF0FB00DD0A57 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F287D161A0DF0FB00DD0A57 /* QuartzCore.framework */; };
+		2FDB1F8D1A0E064900C666A2 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FDB1F8C1A0E064900C666A2 /* GoogleMaps.framework */; };
+		2FDB1F8F1A0E066300C666A2 /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2FDB1F8E1A0E066300C666A2 /* GoogleMaps.bundle */; };
 		6BE865D0A3A0EA803AE70C61 /* libPods-Wiz.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 387E29B8737A2C79589D47B9 /* libPods-Wiz.a */; };
 		8B26C6481A0696FF00A9E92E /* StudentWaitingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B26C6471A0696FF00A9E92E /* StudentWaitingViewController.m */; };
 		8B26C64B1A06A20200A9E92E /* StudentRequestAcceptedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B26C64A1A06A20200A9E92E /* StudentRequestAcceptedViewController.m */; };
@@ -40,6 +51,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2F287D061A0DF0A300DD0A57 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		2F287D081A0DF0AC00DD0A57 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		2F287D0A1A0DF0B500DD0A57 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		2F287D0C1A0DF0BF00DD0A57 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		2F287D0E1A0DF0C800DD0A57 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		2F287D101A0DF0D100DD0A57 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		2F287D121A0DF0E700DD0A57 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		2F287D141A0DF0F100DD0A57 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		2F287D161A0DF0FB00DD0A57 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		2FDB1F8C1A0E064900C666A2 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMaps.framework; sourceTree = "<group>"; };
+		2FDB1F8E1A0E066300C666A2 /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
 		3070CE58CA7BF6D37A1DFC09 /* Pods-Wiz.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wiz.release.xcconfig"; path = "Pods/Target Support Files/Pods-Wiz/Pods-Wiz.release.xcconfig"; sourceTree = "<group>"; };
 		387E29B8737A2C79589D47B9 /* libPods-Wiz.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Wiz.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B26C6461A0696FF00A9E92E /* StudentWaitingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudentWaitingViewController.h; sourceTree = "<group>"; };
@@ -81,10 +103,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				8BEF723D19FD7648005F24F0 /* SystemConfiguration.framework in Frameworks */,
+				2F287D171A0DF0FB00DD0A57 /* QuartzCore.framework in Frameworks */,
+				2F287D151A0DF0F100DD0A57 /* OpenGLES.framework in Frameworks */,
+				2F287D131A0DF0E700DD0A57 /* libz.dylib in Frameworks */,
+				2F287D111A0DF0D100DD0A57 /* ImageIO.framework in Frameworks */,
+				2F287D0F1A0DF0C800DD0A57 /* GLKit.framework in Frameworks */,
+				2F287D0D1A0DF0BF00DD0A57 /* CoreText.framework in Frameworks */,
+				2F287D0B1A0DF0B500DD0A57 /* CoreLocation.framework in Frameworks */,
+				2F287D091A0DF0AC00DD0A57 /* CoreData.framework in Frameworks */,
+				2F287D071A0DF0A300DD0A57 /* AVFoundation.framework in Frameworks */,
 				8BEF723B19FD7641005F24F0 /* Security.framework in Frameworks */,
 				8BEF723919FD763B005F24F0 /* CFNetwork.framework in Frameworks */,
 				8BEF723719FD7632005F24F0 /* libc++.dylib in Frameworks */,
 				8BEF723519FD7629005F24F0 /* libicucore.dylib in Frameworks */,
+				2FDB1F8D1A0E064900C666A2 /* GoogleMaps.framework in Frameworks */,
 				6BE865D0A3A0EA803AE70C61 /* libPods-Wiz.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -184,6 +216,17 @@
 		E85557ED3F94C7DC0A324326 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2FDB1F8E1A0E066300C666A2 /* GoogleMaps.bundle */,
+				2FDB1F8C1A0E064900C666A2 /* GoogleMaps.framework */,
+				2F287D161A0DF0FB00DD0A57 /* QuartzCore.framework */,
+				2F287D141A0DF0F100DD0A57 /* OpenGLES.framework */,
+				2F287D121A0DF0E700DD0A57 /* libz.dylib */,
+				2F287D101A0DF0D100DD0A57 /* ImageIO.framework */,
+				2F287D0E1A0DF0C800DD0A57 /* GLKit.framework */,
+				2F287D0C1A0DF0BF00DD0A57 /* CoreText.framework */,
+				2F287D0A1A0DF0B500DD0A57 /* CoreLocation.framework */,
+				2F287D081A0DF0AC00DD0A57 /* CoreData.framework */,
+				2F287D061A0DF0A300DD0A57 /* AVFoundation.framework */,
 				8BEF723C19FD7648005F24F0 /* SystemConfiguration.framework */,
 				8BEF723A19FD7641005F24F0 /* Security.framework */,
 				8BEF723819FD763B005F24F0 /* CFNetwork.framework */,
@@ -280,6 +323,7 @@
 				8B9F01B319FEE873008BDA75 /* TaskTwitter.xib in Resources */,
 				8BEF721A19FD6EF7005F24F0 /* Main.storyboard in Resources */,
 				8B9F01B219FEE873008BDA75 /* pin.png in Resources */,
+				2FDB1F8F1A0E066300C666A2 /* GoogleMaps.bundle in Resources */,
 				8BEF721F19FD6EF7005F24F0 /* LaunchScreen.xib in Resources */,
 				8BEF721C19FD6EF7005F24F0 /* Images.xcassets in Resources */,
 			);
@@ -418,6 +462,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -452,6 +497,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};

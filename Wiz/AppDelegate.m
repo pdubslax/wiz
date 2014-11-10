@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 #import <Firebase/Firebase.h>
 #import "WIZUserDataSharedManager.h"
+#import <GoogleMaps/GoogleMaps.h>
+#import "WIZMapViewController.h"
 
 @interface AppDelegate ()
 
@@ -19,6 +21,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    //Add in your API key here:
+    [GMSServices provideAPIKey:@"AIzaSyDyeIUUfpbwGJ7bkSWK4H2fZiW9wbgzi5g"];
     
     
     return YES;
