@@ -1,993 +1,475 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-	<key>archiveVersion</key>
-	<string>1</string>
-	<key>classes</key>
-	<dict/>
-	<key>objectVersion</key>
-	<string>46</string>
-	<key>objects</key>
-	<dict>
-		<key>0158DC223870934C7F202D19</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>735D8537645703E5C99950FC</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Pods</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>018240783D0F74A3EE5DB796</key>
-		<dict>
-			<key>fileRef</key>
-			<string>3279990E9B13CBD0CC5FC246</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>057059124A882FE0CED890AE</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text</string>
-			<key>path</key>
-			<string>Pods-Wiz-acknowledgements.markdown</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>05A5A434F39C6715A1E00E47</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>367823F75FFF3F1C7F68CBF9</string>
-				<string>16030EEFDD4FE2141A8B9D81</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>079427E2A89F7E81493A0FA4</key>
-		<dict>
-			<key>fileRef</key>
-			<string>9334D026213EB27F06730C1C</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>0FCBB9D4A4F13F03317568A9</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>CFNetwork.framework</string>
-			<key>path</key>
-			<string>Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/CFNetwork.framework</string>
-			<key>sourceTree</key>
-			<string>DEVELOPER_DIR</string>
-		</dict>
-		<key>10AEFFAFD69AE033F6286A76</key>
-		<dict>
-			<key>fileRef</key>
-			<string>3D099D4EE99187E12F7D2D41</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>16030EEFDD4FE2141A8B9D81</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>300FDFB558A3E0DE5EAC5B3C</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>YES</string>
-				<key>DSTROOT</key>
-				<string>/tmp/xcodeproj.dst</string>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>INSTALL_PATH</key>
-				<string>$(BUILT_PRODUCTS_DIR)</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>8.1</string>
-				<key>OTHER_CFLAGS</key>
-				<array>
-					<string>-DNS_BLOCK_ASSERTIONS=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>OTHER_CPLUSPLUSFLAGS</key>
-				<array>
-					<string>-DNS_BLOCK_ASSERTIONS=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>OTHER_LDFLAGS</key>
-				<string></string>
-				<key>OTHER_LIBTOOLFLAGS</key>
-				<string></string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>PUBLIC_HEADERS_FOLDER_PATH</key>
-				<string>$(TARGET_NAME)</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-				<key>VALIDATE_PRODUCT</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>1610457D42D8A079A84E94AB</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>0FCBB9D4A4F13F03317568A9</string>
-				<string>7B8DA7E89343310D44E89BBA</string>
-				<string>75395CDD27089B844A9E6B13</string>
-				<string>3D099D4EE99187E12F7D2D41</string>
-				<string>9334D026213EB27F06730C1C</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>iOS</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>25D0DF05455DE8D6CD94B59C</key>
-		<dict>
-			<key>fileRef</key>
-			<string>7B8DA7E89343310D44E89BBA</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>2E5898A3BFA18ABC8BC0B414</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>AD22B62F8751B4C3927802E9</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>300FDFB558A3E0DE5EAC5B3C</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>path</key>
-			<string>Pods-Wiz.release.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>3279990E9B13CBD0CC5FC246</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>Pods-Wiz-dummy.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>367823F75FFF3F1C7F68CBF9</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>C032ADFED2C0B1BDFDAE8972</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>NO</string>
-				<key>DSTROOT</key>
-				<string>/tmp/xcodeproj.dst</string>
-				<key>GCC_DYNAMIC_NO_PIC</key>
-				<string>NO</string>
-				<key>GCC_OPTIMIZATION_LEVEL</key>
-				<string>0</string>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
-				<array>
-					<string>DEBUG=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
-				<string>NO</string>
-				<key>INSTALL_PATH</key>
-				<string>$(BUILT_PRODUCTS_DIR)</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>8.1</string>
-				<key>OTHER_LDFLAGS</key>
-				<string></string>
-				<key>OTHER_LIBTOOLFLAGS</key>
-				<string></string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>PUBLIC_HEADERS_FOLDER_PATH</key>
-				<string>$(TARGET_NAME)</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>3D099D4EE99187E12F7D2D41</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>Security.framework</string>
-			<key>path</key>
-			<string>Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/Security.framework</string>
-			<key>sourceTree</key>
-			<string>DEVELOPER_DIR</string>
-		</dict>
-		<key>492837B6A4624481FC113825</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text</string>
-			<key>name</key>
-			<string>Podfile</string>
-			<key>path</key>
-			<string>../Podfile</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-			<key>xcLanguageSpecificationIdentifier</key>
-			<string>xcode.lang.ruby</string>
-		</dict>
-		<key>4D23694EA5D7762D7B8E318E</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>path</key>
-			<string>Pods-Wiz-Firebase-Private.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>53A274A97F1985BED5C7145D</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>4D23694EA5D7762D7B8E318E</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>YES</string>
-				<key>DSTROOT</key>
-				<string>/tmp/xcodeproj.dst</string>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>Target Support Files/Pods-Wiz-Firebase/Pods-Wiz-Firebase-prefix.pch</string>
-				<key>INSTALL_PATH</key>
-				<string>$(BUILT_PRODUCTS_DIR)</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>8.1</string>
-				<key>OTHER_CFLAGS</key>
-				<array>
-					<string>-DNS_BLOCK_ASSERTIONS=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>OTHER_CPLUSPLUSFLAGS</key>
-				<array>
-					<string>-DNS_BLOCK_ASSERTIONS=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>OTHER_LDFLAGS</key>
-				<string></string>
-				<key>OTHER_LIBTOOLFLAGS</key>
-				<string></string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>PUBLIC_HEADERS_FOLDER_PATH</key>
-				<string>$(TARGET_NAME)</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-				<key>VALIDATE_PRODUCT</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>5AC75A4B15ADB28FECDC6F5D</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.script.sh</string>
-			<key>path</key>
-			<string>Pods-Wiz-resources.sh</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5E079AFD38B93627C86ED717</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXTargetDependency</string>
-			<key>target</key>
-			<string>CF05F8C7A81AE2F3C50ED54A</string>
-			<key>targetProxy</key>
-			<string>F982BD16216C6CAE2B87F17A</string>
-		</dict>
-		<key>5F25134EDC9A27A770DA65E3</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>492837B6A4624481FC113825</string>
-				<string>EA3DAE1F5D190EDC5CAB8B75</string>
-				<string>0158DC223870934C7F202D19</string>
-				<string>67398092D863475916B5AD4B</string>
-				<string>893089B955D81BD772618124</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>6638330037A53B6CE6E6F69F</key>
-		<dict>
-			<key>fileRef</key>
-			<string>75395CDD27089B844A9E6B13</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>67398092D863475916B5AD4B</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>F514E820A4CAE18CA83CED63</string>
-				<string>7283F49310489053B29E2139</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Products</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>69540BE24F77F99AB4EEF494</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>path</key>
-			<string>Pods-Wiz-Firebase.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>7283F49310489053B29E2139</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>archive.ar</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>libPods-Wiz-Firebase.a</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>735D8537645703E5C99950FC</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>817F45A5B7A0C4C37EA95173</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Firebase</string>
-			<key>path</key>
-			<string>Firebase</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>745EAC28FE857D5C9429EB0A</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>NO</string>
-				<key>CLANG_WARN_BOOL_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
-				<string>YES</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
-				<string>YES</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>NO</string>
-				<key>ENABLE_NS_ASSERTIONS</key>
-				<string>NO</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
-				<array>
-					<string>RELEASE=1</string>
-				</array>
-				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_FUNCTION</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>8.1</string>
-				<key>STRIP_INSTALLED_PRODUCT</key>
-				<string>NO</string>
-				<key>VALIDATE_PRODUCT</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>75395CDD27089B844A9E6B13</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>Foundation.framework</string>
-			<key>path</key>
-			<string>Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/Foundation.framework</string>
-			<key>sourceTree</key>
-			<string>DEVELOPER_DIR</string>
-		</dict>
-		<key>7B8DA7E89343310D44E89BBA</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>Firebase.framework</string>
-			<key>path</key>
-			<string>Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/Firebase.framework</string>
-			<key>sourceTree</key>
-			<string>DEVELOPER_DIR</string>
-		</dict>
-		<key>7C5F6C76FBD69646984A01C6</key>
-		<dict>
-			<key>attributes</key>
-			<dict>
-				<key>LastUpgradeCheck</key>
-				<string>0510</string>
-			</dict>
-			<key>buildConfigurationList</key>
-			<string>FEC77880C5127D8B3B17392D</string>
-			<key>compatibilityVersion</key>
-			<string>Xcode 3.2</string>
-			<key>developmentRegion</key>
-			<string>English</string>
-			<key>hasScannedForEncodings</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXProject</string>
-			<key>knownRegions</key>
-			<array>
-				<string>en</string>
-			</array>
-			<key>mainGroup</key>
-			<string>5F25134EDC9A27A770DA65E3</string>
-			<key>productRefGroup</key>
-			<string>67398092D863475916B5AD4B</string>
-			<key>projectDirPath</key>
-			<string></string>
-			<key>projectReferences</key>
-			<array/>
-			<key>projectRoot</key>
-			<string></string>
-			<key>targets</key>
-			<array>
-				<string>975CC2D815DCCCE0183AFD69</string>
-				<string>CF05F8C7A81AE2F3C50ED54A</string>
-			</array>
-		</dict>
-		<key>8119E22C612709A890E40AE8</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>Pods-Wiz-environment.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>817F45A5B7A0C4C37EA95173</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>69540BE24F77F99AB4EEF494</string>
-				<string>4D23694EA5D7762D7B8E318E</string>
-				<string>B6FAF271B1CD52F9F0B32F87</string>
-				<string>94735009FFA1FB816D90C406</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Support Files</string>
-			<key>path</key>
-			<string>../Target Support Files/Pods-Wiz-Firebase</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>87D72CEEC31F83690DAF11FC</key>
-		<dict>
-			<key>fileRef</key>
-			<string>B6FAF271B1CD52F9F0B32F87</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>893089B955D81BD772618124</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>ED847A7A5A723AF4100F02A6</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Targets Support Files</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>9334D026213EB27F06730C1C</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>SystemConfiguration.framework</string>
-			<key>path</key>
-			<string>Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/SystemConfiguration.framework</string>
-			<key>sourceTree</key>
-			<string>DEVELOPER_DIR</string>
-		</dict>
-		<key>94735009FFA1FB816D90C406</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>Pods-Wiz-Firebase-prefix.pch</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>975CC2D815DCCCE0183AFD69</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>05A5A434F39C6715A1E00E47</string>
-			<key>buildPhases</key>
-			<array>
-				<string>B3A460ADDFBA11B63B2F7B9D</string>
-				<string>2E5898A3BFA18ABC8BC0B414</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array>
-				<string>5E079AFD38B93627C86ED717</string>
-			</array>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>Pods-Wiz</string>
-			<key>productName</key>
-			<string>Pods-Wiz</string>
-			<key>productReference</key>
-			<string>F514E820A4CAE18CA83CED63</string>
-			<key>productType</key>
-			<string>com.apple.product-type.library.static</string>
-		</dict>
-		<key>AD22B62F8751B4C3927802E9</key>
-		<dict>
-			<key>fileRef</key>
-			<string>75395CDD27089B844A9E6B13</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>AEB53E02E5F99554B99A7017</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>F629C9498AE3B5C6A2520D17</string>
-				<string>53A274A97F1985BED5C7145D</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>B3A460ADDFBA11B63B2F7B9D</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>018240783D0F74A3EE5DB796</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>B4B53B2D17E4C5CF39F88356</key>
-		<dict>
-			<key>fileRef</key>
-			<string>0FCBB9D4A4F13F03317568A9</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>B691F2817F71EC162FF3BFEA</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>B4B53B2D17E4C5CF39F88356</string>
-				<string>25D0DF05455DE8D6CD94B59C</string>
-				<string>6638330037A53B6CE6E6F69F</string>
-				<string>10AEFFAFD69AE033F6286A76</string>
-				<string>079427E2A89F7E81493A0FA4</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>B6FAF271B1CD52F9F0B32F87</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>Pods-Wiz-Firebase-dummy.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BF0729EA3C4192D6F2047048</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>87D72CEEC31F83690DAF11FC</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>C032ADFED2C0B1BDFDAE8972</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>path</key>
-			<string>Pods-Wiz.debug.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CF05F8C7A81AE2F3C50ED54A</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>AEB53E02E5F99554B99A7017</string>
-			<key>buildPhases</key>
-			<array>
-				<string>BF0729EA3C4192D6F2047048</string>
-				<string>B691F2817F71EC162FF3BFEA</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>Pods-Wiz-Firebase</string>
-			<key>productName</key>
-			<string>Pods-Wiz-Firebase</string>
-			<key>productReference</key>
-			<string>7283F49310489053B29E2139</string>
-			<key>productType</key>
-			<string>com.apple.product-type.library.static</string>
-		</dict>
-		<key>D74F41F36E065E6E41834B75</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Pods-Wiz-acknowledgements.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>EA3DAE1F5D190EDC5CAB8B75</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>1610457D42D8A079A84E94AB</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Frameworks</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>ED847A7A5A723AF4100F02A6</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>057059124A882FE0CED890AE</string>
-				<string>D74F41F36E065E6E41834B75</string>
-				<string>3279990E9B13CBD0CC5FC246</string>
-				<string>8119E22C612709A890E40AE8</string>
-				<string>5AC75A4B15ADB28FECDC6F5D</string>
-				<string>C032ADFED2C0B1BDFDAE8972</string>
-				<string>300FDFB558A3E0DE5EAC5B3C</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Pods-Wiz</string>
-			<key>path</key>
-			<string>Target Support Files/Pods-Wiz</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F45C8D96E2B9B78ACFF31117</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>NO</string>
-				<key>CLANG_WARN_BOOL_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
-				<string>YES</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
-				<string>YES</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>YES</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_DYNAMIC_NO_PIC</key>
-				<string>NO</string>
-				<key>GCC_OPTIMIZATION_LEVEL</key>
-				<string>0</string>
-				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
-				<array>
-					<string>DEBUG=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
-				<string>NO</string>
-				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_FUNCTION</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>8.1</string>
-				<key>ONLY_ACTIVE_ARCH</key>
-				<string>YES</string>
-				<key>STRIP_INSTALLED_PRODUCT</key>
-				<string>NO</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>F514E820A4CAE18CA83CED63</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>archive.ar</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>libPods-Wiz.a</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>F629C9498AE3B5C6A2520D17</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>4D23694EA5D7762D7B8E318E</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>NO</string>
-				<key>DSTROOT</key>
-				<string>/tmp/xcodeproj.dst</string>
-				<key>GCC_DYNAMIC_NO_PIC</key>
-				<string>NO</string>
-				<key>GCC_OPTIMIZATION_LEVEL</key>
-				<string>0</string>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>Target Support Files/Pods-Wiz-Firebase/Pods-Wiz-Firebase-prefix.pch</string>
-				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
-				<array>
-					<string>DEBUG=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
-				<string>NO</string>
-				<key>INSTALL_PATH</key>
-				<string>$(BUILT_PRODUCTS_DIR)</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>8.1</string>
-				<key>OTHER_LDFLAGS</key>
-				<string></string>
-				<key>OTHER_LIBTOOLFLAGS</key>
-				<string></string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>PUBLIC_HEADERS_FOLDER_PATH</key>
-				<string>$(TARGET_NAME)</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>F982BD16216C6CAE2B87F17A</key>
-		<dict>
-			<key>containerPortal</key>
-			<string>7C5F6C76FBD69646984A01C6</string>
-			<key>isa</key>
-			<string>PBXContainerItemProxy</string>
-			<key>proxyType</key>
-			<string>1</string>
-			<key>remoteGlobalIDString</key>
-			<string>CF05F8C7A81AE2F3C50ED54A</string>
-			<key>remoteInfo</key>
-			<string>Pods-Wiz-Firebase</string>
-		</dict>
-		<key>FEC77880C5127D8B3B17392D</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>F45C8D96E2B9B78ACFF31117</string>
-				<string>745EAC28FE857D5C9429EB0A</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-	</dict>
-	<key>rootObject</key>
-	<string>7C5F6C76FBD69646984A01C6</string>
-</dict>
-</plist>
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		018240783D0F74A3EE5DB796 /* Pods-Wiz-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3279990E9B13CBD0CC5FC246 /* Pods-Wiz-dummy.m */; };
+		079427E2A89F7E81493A0FA4 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9334D026213EB27F06730C1C /* SystemConfiguration.framework */; };
+		10AEFFAFD69AE033F6286A76 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D099D4EE99187E12F7D2D41 /* Security.framework */; };
+		25D0DF05455DE8D6CD94B59C /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B8DA7E89343310D44E89BBA /* Firebase.framework */; };
+		6638330037A53B6CE6E6F69F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75395CDD27089B844A9E6B13 /* Foundation.framework */; };
+		87D72CEEC31F83690DAF11FC /* Pods-Wiz-Firebase-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B6FAF271B1CD52F9F0B32F87 /* Pods-Wiz-Firebase-dummy.m */; };
+		AD22B62F8751B4C3927802E9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75395CDD27089B844A9E6B13 /* Foundation.framework */; };
+		B4B53B2D17E4C5CF39F88356 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FCBB9D4A4F13F03317568A9 /* CFNetwork.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F982BD16216C6CAE2B87F17A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7C5F6C76FBD69646984A01C6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CF05F8C7A81AE2F3C50ED54A;
+			remoteInfo = "Pods-Wiz-Firebase";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		057059124A882FE0CED890AE /* Pods-Wiz-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Wiz-acknowledgements.markdown"; sourceTree = "<group>"; };
+		0FCBB9D4A4F13F03317568A9 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/CFNetwork.framework; sourceTree = DEVELOPER_DIR; };
+		300FDFB558A3E0DE5EAC5B3C /* Pods-Wiz.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Wiz.release.xcconfig"; sourceTree = "<group>"; };
+		3279990E9B13CBD0CC5FC246 /* Pods-Wiz-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Wiz-dummy.m"; sourceTree = "<group>"; };
+		3D099D4EE99187E12F7D2D41 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
+		492837B6A4624481FC113825 /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		4D23694EA5D7762D7B8E318E /* Pods-Wiz-Firebase-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Wiz-Firebase-Private.xcconfig"; sourceTree = "<group>"; };
+		5AC75A4B15ADB28FECDC6F5D /* Pods-Wiz-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Wiz-resources.sh"; sourceTree = "<group>"; };
+		69540BE24F77F99AB4EEF494 /* Pods-Wiz-Firebase.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Wiz-Firebase.xcconfig"; sourceTree = "<group>"; };
+		7283F49310489053B29E2139 /* libPods-Wiz-Firebase.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Wiz-Firebase.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		75395CDD27089B844A9E6B13 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		7B8DA7E89343310D44E89BBA /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Firebase.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/Firebase.framework; sourceTree = DEVELOPER_DIR; };
+		8119E22C612709A890E40AE8 /* Pods-Wiz-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Wiz-environment.h"; sourceTree = "<group>"; };
+		9334D026213EB27F06730C1C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
+		94735009FFA1FB816D90C406 /* Pods-Wiz-Firebase-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Wiz-Firebase-prefix.pch"; sourceTree = "<group>"; };
+		B6FAF271B1CD52F9F0B32F87 /* Pods-Wiz-Firebase-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Wiz-Firebase-dummy.m"; sourceTree = "<group>"; };
+		C032ADFED2C0B1BDFDAE8972 /* Pods-Wiz.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Wiz.debug.xcconfig"; sourceTree = "<group>"; };
+		D74F41F36E065E6E41834B75 /* Pods-Wiz-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Wiz-acknowledgements.plist"; sourceTree = "<group>"; };
+		F514E820A4CAE18CA83CED63 /* libPods-Wiz.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Wiz.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2E5898A3BFA18ABC8BC0B414 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD22B62F8751B4C3927802E9 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B691F2817F71EC162FF3BFEA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B4B53B2D17E4C5CF39F88356 /* CFNetwork.framework in Frameworks */,
+				25D0DF05455DE8D6CD94B59C /* Firebase.framework in Frameworks */,
+				6638330037A53B6CE6E6F69F /* Foundation.framework in Frameworks */,
+				10AEFFAFD69AE033F6286A76 /* Security.framework in Frameworks */,
+				079427E2A89F7E81493A0FA4 /* SystemConfiguration.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0158DC223870934C7F202D19 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				735D8537645703E5C99950FC /* Firebase */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		1610457D42D8A079A84E94AB /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				0FCBB9D4A4F13F03317568A9 /* CFNetwork.framework */,
+				7B8DA7E89343310D44E89BBA /* Firebase.framework */,
+				75395CDD27089B844A9E6B13 /* Foundation.framework */,
+				3D099D4EE99187E12F7D2D41 /* Security.framework */,
+				9334D026213EB27F06730C1C /* SystemConfiguration.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		5F25134EDC9A27A770DA65E3 = {
+			isa = PBXGroup;
+			children = (
+				492837B6A4624481FC113825 /* Podfile */,
+				EA3DAE1F5D190EDC5CAB8B75 /* Frameworks */,
+				0158DC223870934C7F202D19 /* Pods */,
+				67398092D863475916B5AD4B /* Products */,
+				893089B955D81BD772618124 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		67398092D863475916B5AD4B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F514E820A4CAE18CA83CED63 /* libPods-Wiz.a */,
+				7283F49310489053B29E2139 /* libPods-Wiz-Firebase.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		735D8537645703E5C99950FC /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				817F45A5B7A0C4C37EA95173 /* Support Files */,
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
+		817F45A5B7A0C4C37EA95173 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				69540BE24F77F99AB4EEF494 /* Pods-Wiz-Firebase.xcconfig */,
+				4D23694EA5D7762D7B8E318E /* Pods-Wiz-Firebase-Private.xcconfig */,
+				B6FAF271B1CD52F9F0B32F87 /* Pods-Wiz-Firebase-dummy.m */,
+				94735009FFA1FB816D90C406 /* Pods-Wiz-Firebase-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Pods-Wiz-Firebase";
+			sourceTree = "<group>";
+		};
+		893089B955D81BD772618124 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				ED847A7A5A723AF4100F02A6 /* Pods-Wiz */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		EA3DAE1F5D190EDC5CAB8B75 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1610457D42D8A079A84E94AB /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		ED847A7A5A723AF4100F02A6 /* Pods-Wiz */ = {
+			isa = PBXGroup;
+			children = (
+				057059124A882FE0CED890AE /* Pods-Wiz-acknowledgements.markdown */,
+				D74F41F36E065E6E41834B75 /* Pods-Wiz-acknowledgements.plist */,
+				3279990E9B13CBD0CC5FC246 /* Pods-Wiz-dummy.m */,
+				8119E22C612709A890E40AE8 /* Pods-Wiz-environment.h */,
+				5AC75A4B15ADB28FECDC6F5D /* Pods-Wiz-resources.sh */,
+				C032ADFED2C0B1BDFDAE8972 /* Pods-Wiz.debug.xcconfig */,
+				300FDFB558A3E0DE5EAC5B3C /* Pods-Wiz.release.xcconfig */,
+			);
+			name = "Pods-Wiz";
+			path = "Target Support Files/Pods-Wiz";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		975CC2D815DCCCE0183AFD69 /* Pods-Wiz */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 05A5A434F39C6715A1E00E47 /* Build configuration list for PBXNativeTarget "Pods-Wiz" */;
+			buildPhases = (
+				B3A460ADDFBA11B63B2F7B9D /* Sources */,
+				2E5898A3BFA18ABC8BC0B414 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5E079AFD38B93627C86ED717 /* PBXTargetDependency */,
+			);
+			name = "Pods-Wiz";
+			productName = "Pods-Wiz";
+			productReference = F514E820A4CAE18CA83CED63 /* libPods-Wiz.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		CF05F8C7A81AE2F3C50ED54A /* Pods-Wiz-Firebase */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AEB53E02E5F99554B99A7017 /* Build configuration list for PBXNativeTarget "Pods-Wiz-Firebase" */;
+			buildPhases = (
+				BF0729EA3C4192D6F2047048 /* Sources */,
+				B691F2817F71EC162FF3BFEA /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-Wiz-Firebase";
+			productName = "Pods-Wiz-Firebase";
+			productReference = 7283F49310489053B29E2139 /* libPods-Wiz-Firebase.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7C5F6C76FBD69646984A01C6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+			};
+			buildConfigurationList = FEC77880C5127D8B3B17392D /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 5F25134EDC9A27A770DA65E3;
+			productRefGroup = 67398092D863475916B5AD4B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				975CC2D815DCCCE0183AFD69 /* Pods-Wiz */,
+				CF05F8C7A81AE2F3C50ED54A /* Pods-Wiz-Firebase */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B3A460ADDFBA11B63B2F7B9D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				018240783D0F74A3EE5DB796 /* Pods-Wiz-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF0729EA3C4192D6F2047048 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				87D72CEEC31F83690DAF11FC /* Pods-Wiz-Firebase-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5E079AFD38B93627C86ED717 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CF05F8C7A81AE2F3C50ED54A /* Pods-Wiz-Firebase */;
+			targetProxy = F982BD16216C6CAE2B87F17A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		16030EEFDD4FE2141A8B9D81 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 300FDFB558A3E0DE5EAC5B3C /* Pods-Wiz.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DSTROOT = /tmp/xcodeproj.dst;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				OTHER_CFLAGS = (
+					"-DNS_BLOCK_ASSERTIONS=1",
+					"$(inherited)",
+				);
+				OTHER_CPLUSPLUSFLAGS = (
+					"-DNS_BLOCK_ASSERTIONS=1",
+					"$(inherited)",
+				);
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		367823F75FFF3F1C7F68CBF9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C032ADFED2C0B1BDFDAE8972 /* Pods-Wiz.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				DSTROOT = /tmp/xcodeproj.dst;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		53A274A97F1985BED5C7145D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4D23694EA5D7762D7B8E318E /* Pods-Wiz-Firebase-Private.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DSTROOT = /tmp/xcodeproj.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-Wiz-Firebase/Pods-Wiz-Firebase-prefix.pch";
+				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				OTHER_CFLAGS = (
+					"-DNS_BLOCK_ASSERTIONS=1",
+					"$(inherited)",
+				);
+				OTHER_CPLUSPLUSFLAGS = (
+					"-DNS_BLOCK_ASSERTIONS=1",
+					"$(inherited)",
+				);
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		745EAC28FE857D5C9429EB0A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				STRIP_INSTALLED_PRODUCT = NO;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F45C8D96E2B9B78ACFF31117 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+			};
+			name = Debug;
+		};
+		F629C9498AE3B5C6A2520D17 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4D23694EA5D7762D7B8E318E /* Pods-Wiz-Firebase-Private.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				DSTROOT = /tmp/xcodeproj.dst;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-Wiz-Firebase/Pods-Wiz-Firebase-prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		05A5A434F39C6715A1E00E47 /* Build configuration list for PBXNativeTarget "Pods-Wiz" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				367823F75FFF3F1C7F68CBF9 /* Debug */,
+				16030EEFDD4FE2141A8B9D81 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AEB53E02E5F99554B99A7017 /* Build configuration list for PBXNativeTarget "Pods-Wiz-Firebase" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F629C9498AE3B5C6A2520D17 /* Debug */,
+				53A274A97F1985BED5C7145D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FEC77880C5127D8B3B17392D /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F45C8D96E2B9B78ACFF31117 /* Debug */,
+				745EAC28FE857D5C9429EB0A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7C5F6C76FBD69646984A01C6 /* Project object */;
+}

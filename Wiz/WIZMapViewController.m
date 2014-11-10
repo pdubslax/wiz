@@ -11,11 +11,18 @@
 #import "WIZWaitingViewController.h"
 
 
-@interface WIZMapViewController ()
+@interface WIZMapViewController (){
+    GMSMapView *mapView_;
+    BOOL firstLocationUpdate_;
+    GMSGeocoder *geocoder_;
+    
+}
 
 @property (nonatomic,strong) UIButton *setLocationButton;
 @property (nonatomic, strong) UILabel *coordinateLabel;
 @property (nonatomic, strong) UIView *descriptionBox;
+
+
 
 @end
 
@@ -25,6 +32,14 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    self.locationManager = [[CLLocationManager alloc] init];
+    self.locationManager.delegate = self;
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    self.locationManager.distanceFilter = kCLDistanceFilterNone;
+    [self.locationManager requestAlwaysAuthorization];
+
+    
+    //LABEL STUFF
     [self.userLabel setText:[NSString stringWithFormat:@"%@ is logged in",self.username]];
     
     [[UIApplication sharedApplication] setStatusBarHidden:YES];
@@ -34,6 +49,40 @@
     self.descriptionBox.layer.borderWidth = 5;
     self.descriptionBox.layer.cornerRadius = 10;
     self.descriptionBox.userInteractionEnabled = YES;
+    
+    
+    
+    CLLocationCoordinate2D coordinate = [self getLocation];
+    
+    NSLog(@"%f, %f", coordinate.latitude, coordinate.longitude);
+    
+    //Set Camera to myLocation
+    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:coordinate.latitude
+                                                            longitude:coordinate.longitude
+                                                                 zoom:15];
+    
+    
+    
+    // Create the GMSMapView with the camera position.
+    mapView_ = [GMSMapView mapWithFrame:self.mapView.bounds camera:camera];
+    
+    //Enable location settings and set Delegate to self
+    mapView_.myLocationEnabled = YES;
+    mapView_.accessibilityElementsHidden = NO;
+    mapView_.settings.myLocationButton = YES;
+    mapView_.delegate = self;
+    mapView_.userInteractionEnabled = YES;
+    
+    
+    
+    //Set observer for MyLocation
+    [mapView_ addObserver:self forKeyPath:@"myLocation" options:NSKeyValueObservingOptionNew context:NULL];
+    // Ask for My Location data after the map has already been added to the UI.
+    dispatch_async(dispatch_get_main_queue(), ^{
+        mapView_.myLocationEnabled = YES;
+    });
+    
+    
     
     //Set Location Button
     self.setLocationButton = [[UIButton alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - 100, self.view.frame.size.height/2 - 60, 200, 30)];
@@ -52,18 +101,72 @@
     pinHolder.image = image;
 
     
-    [self.view addSubview:self.setLocationButton];
+    //Coordinate Label
+    self.coordinateLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 75, 280, 60)];
+    self.coordinateLabel.backgroundColor = [UIColor colorWithRed:255 green:253 blue:208 alpha:0.8];
+    self.coordinateLabel.textAlignment = UITextAlignmentCenter;
+    
+    
+    
+    // Set the controller view to be the MapView.
+    [self.mapView insertSubview:mapView_ atIndex:0];
+    
+    
+    //Remove googles stupid gesture blocker
+    [WIZMapViewController removeGMSBlockingGestureRecognizerFromMapView:mapView_];
+    
+    
+    //Adding subviews
+    [self.mapView insertSubview:self.coordinateLabel aboveSubview:mapView_];
+    [self.mapView insertSubview:self.setLocationButton aboveSubview:mapView_];
+    [self.mapView insertSubview:pinHolder aboveSubview:mapView_];
+    
+
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
+- (void)dealloc {
+    [mapView_ removeObserver:self forKeyPath:@"myLocation" context:NULL];
 }
 
+
+
+//getlocation method
+-(CLLocationCoordinate2D) getLocation{
+    
+    NSLog(@"Get Location was called");
+
+    
+    [self.locationManager startUpdatingLocation];
+    CLLocation *location = [self.locationManager location];
+    CLLocationCoordinate2D coordinate = [location coordinate];
+    
+    return coordinate;
+}
+
+#pragma mark - KVO updates
+
+//Method to zoom in on current location at first
+- (void)observeValueForKeyPath:(NSString *)keyPath
+                      ofObject:(id)object
+                        change:(NSDictionary *)change
+                       context:(void *)context {
+    if (!firstLocationUpdate_) {
+        NSLog(@"not first location update");
+        // If the first location update has not yet been recieved, then jump to that
+        // location.
+        firstLocationUpdate_ = YES;
+        CLLocation *location = [change objectForKey:NSKeyValueChangeNewKey];
+        mapView_.camera = [GMSCameraPosition cameraWithTarget:location.coordinate
+                                                         zoom:20];
+    }
+}
+
+//When button is pressed to Select Meeting Location
 - (void)locationIsSet:(UIButton *)button {
     NSLog(@"Location button was pressed");
     
-    [self.view addSubview:self.descriptionBox];
+    [self.view insertSubview:self.descriptionBox aboveSubview:mapView_];
     self.characterCount.text = [NSString stringWithFormat:@"140"];
     self.characterCount.textColor = [UIColor whiteColor];
     self.userInput.layer.borderWidth = 1;
@@ -71,8 +174,63 @@
     self.userInput.layer.cornerRadius = 10;
     self.descriptionBox.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:.99];
     [self.requestButton setEnabled:NO];
-
+    
+    
+    
+    
 }
+
+//Clear the map view
+- (void)mapView:(GMSMapView *)mapView willMove:(BOOL)gesture {
+    self.setLocationButton.alpha = 0;
+    mapView_.settings.myLocationButton = NO;
+    self.coordinateLabel.text = @"Go To Pin";
+    
+    [mapView clear];
+}
+
+
+//When Map becomes still/idle after being moved
+-(void)mapView:(GMSMapView *)mapView idleAtCameraPosition:(GMSCameraPosition *)position{
+    
+    //Make the button re apprear
+    self.setLocationButton.alpha = 100;
+    mapView_.settings.myLocationButton = YES;
+    
+    CGPoint point = mapView.center;
+    CLLocationCoordinate2D coor = [mapView.projection coordinateForPoint:point];
+    NSLog(@"Latitude: %f , Longitude: %f", coor.latitude, coor.longitude);
+    
+    
+    [[GMSGeocoder geocoder] reverseGeocodeCoordinate:CLLocationCoordinate2DMake(coor.latitude,coor.longitude) completionHandler:^(GMSReverseGeocodeResponse *response, NSError *error)
+     {
+         NSLog( @"Error is %@", error) ;
+         NSLog( @"%@" , response.firstResult.addressLine1 ) ;
+         NSLog( @"%@" , response.firstResult.addressLine2 ) ;
+         //         GMSMarker *marker = [[GMSMarker alloc] init];
+         //         marker.position = coor;
+         //         marker.title = response.firstResult.addressLine1;
+         //         marker.snippet = response.firstResult.addressLine2;
+         //         marker.appearAnimation = kGMSMarkerAnimationPop;
+         NSArray* parts = [response.firstResult.addressLine2 componentsSeparatedByCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@","]];
+         
+         
+         self.addressString = [NSString stringWithFormat:@"%@, %@", response.firstResult.addressLine1, response.firstResult.addressLine2];
+         self.coordinateLabel.text = self.addressString;
+         
+         //marker.map = mapView;
+     } ] ;
+}
+
+
+
+
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {
@@ -131,6 +289,9 @@
     [self.descriptionBox removeFromSuperview];
     StudentWaitingViewController *vc = (StudentWaitingViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"studentWaiting"];
     vc.problemDescription = self.userInput.text;
+    
+    vc.meetingString = [NSString stringWithString:self.addressString];
+    NSLog(@"addressString: %@", self.addressString);
     vc.username = [self username];
     self.userInput.text = nil;
     [self presentViewController:vc animated:NO completion:^{
@@ -146,4 +307,22 @@
     }];
     
 }
+
++ (void)removeGMSBlockingGestureRecognizerFromMapView:(GMSMapView *)mapView
+{
+    if([mapView.settings respondsToSelector:@selector(consumesGesturesInView)]) {
+        mapView.settings.consumesGesturesInView = NO;
+    }
+    else {
+        for (id gestureRecognizer in mapView.gestureRecognizers)
+        {
+            if (![gestureRecognizer isKindOfClass:[UILongPressGestureRecognizer class]])
+            {
+                [mapView removeGestureRecognizer:gestureRecognizer];
+            }
+        }
+    }
+}
+
+
 @end

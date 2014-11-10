@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AppDelegate.h"
+#import <GoogleMaps/GoogleMaps.h>
 
-@interface WIZMapViewController : UIViewController <UITextFieldDelegate>
+
+@interface WIZMapViewController : UIViewController <UITextFieldDelegate, GMSMapViewDelegate, CLLocationManagerDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *userInput;
 @property (weak, nonatomic) IBOutlet UIButton *requestButton;
 @property (weak, nonatomic) IBOutlet UILabel *characterCount;
@@ -17,6 +20,13 @@
 @property (nonatomic, strong) NSString *username;
 @property (strong, nonatomic) IBOutlet UILabel *userLabel;
 - (IBAction)switchToWizView:(id)sender;
+@property (strong, nonatomic) NSString *addressString;
+
+
+@property (weak, nonatomic) IBOutlet UIView *mapView;
+@property(strong, nonatomic) CLLocationManager *locationManager;
+
+
 
 
 @end

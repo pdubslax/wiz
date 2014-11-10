@@ -22,9 +22,13 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 
+    NSLog(@"meeting location is: %@", self.meetingString);
     
     NSString *descriptionString = [NSString stringWithFormat:@"Description: %@", self.problemDescription];
     [self.descriptionLabel setText:descriptionString];
+    
+//    NSString *locationString = [NSString stringWithFormat:@"Location: %@", self.meetingString];
+    [self.locationLabel setText:self.meetingString];
     [self.activityIndicator startAnimating];
     
     [self makeRequest];
