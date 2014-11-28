@@ -480,6 +480,9 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="informationLabel" destination="sOD-No-AIh" id="pPK-PS-XmR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gjj-nU-4kO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

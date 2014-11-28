@@ -12,6 +12,7 @@
 @interface StudentRequestAcceptedViewController : UIViewController
 @property (nonatomic, strong) NSString *wizName;
 @property (nonatomic, strong) NSString *username;
+@property (strong, nonatomic) IBOutlet UILabel *informationLabel;
 
 
 

@@ -19,11 +19,15 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    [NSTimer scheduledTimerWithTimeInterval:2.0
-                                     target:self
-                                   selector:@selector(closeView)
-                                   userInfo:nil
-                                    repeats:NO];
+//    [NSTimer scheduledTimerWithTimeInterval:2.0
+//                                     target:self
+//                                   selector:@selector(closeView)
+//                                   userInfo:nil
+//                                    repeats:NO];
+//
+    
+    self.informationLabel.text = [NSString stringWithFormat:@"%@ is your wiz",self.wizName];
+
 }
 
 - (void)didReceiveMemoryWarning {

@@ -92,7 +92,7 @@
         if ([snapshot.value isEqual:@"1"]){
             //they have accepted the job
             [test removeAllObservers];
-            [self requestAccepted];
+            [self requestAccepted:[self.availableWizzes firstObject]];
         }
         else if ([snapshot.value isEqual:@"2"]){
             //they have denied the job
@@ -140,9 +140,10 @@
     }];
 }
 
-- (void)requestAccepted {
+- (void)requestAccepted:(NSString*)userID {
     StudentRequestAcceptedViewController *vc = (StudentRequestAcceptedViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"accepted"];
     vc.username = [self username];
+    vc.wizName = userID;
     [self presentViewController:vc animated:NO completion:^{
         //
     }];
