@@ -533,5 +533,53 @@
             </objects>
             <point key="canvasLocation" x="2832" y="1338"/>
         </scene>
+        <!--Accepted Request View Controller-->
+        <scene sceneID="2Gs-Eb-6Fc">
+            <objects>
+                <viewController storyboardIdentifier="wizmatch" id="sdq-Ot-Ief" customClass="WIZAcceptedRequestViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="EqK-uZ-rzY"/>
+                        <viewControllerLayoutGuide type="bottom" id="qAR-gB-mJc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dVP-dt-ews">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You have accepted the Job" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N0w-iC-cSZ">
+                                <rect key="frame" x="134" y="106" width="332" height="59"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="N0w-iC-cSZ" secondAttribute="centerX" id="M8m-1i-4k8"/>
+                            <constraint firstAttribute="centerY" secondItem="N0w-iC-cSZ" secondAttribute="centerY" constant="0.5" id="aqw-WL-Kvh"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="N0w-iC-cSZ"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="aqw-WL-Kvh"/>
+                                <exclude reference="M8m-1i-4k8"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="N0w-iC-cSZ"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="aqw-WL-Kvh"/>
+                                <include reference="M8m-1i-4k8"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1gG-T9-oak" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2184" y="1338"/>
+        </scene>
     </scenes>
 </document>

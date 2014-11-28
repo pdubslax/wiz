@@ -10,6 +10,7 @@
 #import "WIZMapViewController.h"
 #import <Firebase/Firebase.h>
 #import "WIZUserDataSharedManager.h"
+#import "WIZAcceptedRequestViewController.h"
 
 @interface WIZWaitingViewController ()
 
@@ -73,8 +74,7 @@
         Firebase *myRootRef = [[Firebase alloc] initWithUrl:urlString];
         [myRootRef updateChildValues:[NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:@"0",@"1", nil]
                                                                  forKeys:[NSArray arrayWithObjects:@"beingRequested",@"statusFlag", nil]]];
-        self.statusLabel.text = @"Proceed to the Job Location";
-        self.JobLabel.text = @"Job Accepted";
+        [self acceptedJob];
         
     }
     
@@ -118,5 +118,13 @@
         [self wizOffline];
     }
     
+}
+
+- (void)acceptedJob{
+    WIZAcceptedRequestViewController *vc = (WIZAcceptedRequestViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"wizmatch"];
+    vc.username = [self username];
+    [self presentViewController:vc animated:NO completion:^{
+        //
+    }];
 }
 @end

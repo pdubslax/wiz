@@ -27,6 +27,7 @@
 		8B9F01B319FEE873008BDA75 /* TaskTwitter.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B9F01B019FEE873008BDA75 /* TaskTwitter.xib */; };
 		8B9F01C019FEEA2D008BDA75 /* WIZMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B9F01BF19FEEA2D008BDA75 /* WIZMapViewController.m */; };
 		8BA84FDA1A28FF6D008C331F /* StudentRequestNoMatchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BA84FD91A28FF6D008C331F /* StudentRequestNoMatchViewController.m */; };
+		8BA84FDD1A290578008C331F /* WIZAcceptedRequestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BA84FDC1A290578008C331F /* WIZAcceptedRequestViewController.m */; };
 		8BEF721119FD6EF7005F24F0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BEF721019FD6EF7005F24F0 /* main.m */; };
 		8BEF721419FD6EF7005F24F0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BEF721319FD6EF7005F24F0 /* AppDelegate.m */; };
 		8BEF721719FD6EF7005F24F0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BEF721619FD6EF7005F24F0 /* ViewController.m */; };
@@ -79,6 +80,8 @@
 		8B9F01BF19FEEA2D008BDA75 /* WIZMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WIZMapViewController.m; sourceTree = "<group>"; };
 		8BA84FD81A28FF6D008C331F /* StudentRequestNoMatchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudentRequestNoMatchViewController.h; sourceTree = "<group>"; };
 		8BA84FD91A28FF6D008C331F /* StudentRequestNoMatchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudentRequestNoMatchViewController.m; sourceTree = "<group>"; };
+		8BA84FDB1A290578008C331F /* WIZAcceptedRequestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WIZAcceptedRequestViewController.h; sourceTree = "<group>"; };
+		8BA84FDC1A290578008C331F /* WIZAcceptedRequestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WIZAcceptedRequestViewController.m; sourceTree = "<group>"; };
 		8BEF720B19FD6EF7005F24F0 /* Wiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BEF720F19FD6EF7005F24F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8BEF721019FD6EF7005F24F0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -185,6 +188,8 @@
 				8B26C64A1A06A20200A9E92E /* StudentRequestAcceptedViewController.m */,
 				8BA84FD81A28FF6D008C331F /* StudentRequestNoMatchViewController.h */,
 				8BA84FD91A28FF6D008C331F /* StudentRequestNoMatchViewController.m */,
+				8BA84FDB1A290578008C331F /* WIZAcceptedRequestViewController.h */,
+				8BA84FDC1A290578008C331F /* WIZAcceptedRequestViewController.m */,
 				8BEF721B19FD6EF7005F24F0 /* Images.xcassets */,
 				8BEF721D19FD6EF7005F24F0 /* LaunchScreen.xib */,
 				8BEF720E19FD6EF7005F24F0 /* Supporting Files */,
@@ -381,6 +386,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BA84FDD1A290578008C331F /* WIZAcceptedRequestViewController.m in Sources */,
 				8B9F01C019FEEA2D008BDA75 /* WIZMapViewController.m in Sources */,
 				8BEF721719FD6EF7005F24F0 /* ViewController.m in Sources */,
 				8B26C6511A06B86D00A9E92E /* WIZUserDataSharedManager.m in Sources */,
