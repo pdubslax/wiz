@@ -4,4 +4,4 @@ Wiz
 Wiz Mobile Application
 
 
-LETS GO BABY
+A mobile application designed to follow the uber paradigm bringing students seeking knowledge together with students who can provide them that knowledge
