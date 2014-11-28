@@ -9,11 +9,12 @@
 #import "StudentWaitingViewController.h"
 #import "WIZMapViewController.h"
 #import "StudentRequestAcceptedViewController.h"
+#import "StudentRequestNoMatchViewController.h"
 #import <Firebase/Firebase.h>
 #import "WIZUserDataSharedManager.h"
 
 @interface StudentWaitingViewController ()
-
+@property (nonatomic,strong) NSMutableArray *availableWizzes;
 @end
 
 @implementation StudentWaitingViewController
@@ -54,32 +55,60 @@
     Firebase *wizzes = [[Firebase alloc] initWithUrl: @"https://fiery-torch-962.firebaseio.com/wizzes"];
     
     // Attach a block to read the data at our posts reference
-    [wizzes observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+    [wizzes observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
         NSArray *keys= [snapshot.value allKeys];
-        NSMutableArray *availableWizzes = [[NSMutableArray alloc] init];
+        self.availableWizzes = [[NSMutableArray alloc] init];
         for (NSString *key in keys){
             if ([snapshot.value[key][@"online"]  isEqual: @"1"] && [snapshot.value[key][@"statusFlag"] isEqual: @"0"]){
-                [availableWizzes addObject:key];
+                [self.availableWizzes addObject:key];
             }
         }
-        NSLog(@"%@",availableWizzes);
-        for (NSString *wizID in availableWizzes){
-            NSString *tmpString2 = [NSString stringWithFormat:@"%@/jobID",wizID];
-            Firebase *specificWiz2 = [wizzes childByAppendingPath:tmpString2];
-            [specificWiz2 setValue:newJob.name];
-            
-            NSString *tmpString = [NSString stringWithFormat:@"%@/beingRequested",wizID];
-            Firebase *specificWiz = [wizzes childByAppendingPath:tmpString];
-            [specificWiz setValue:@"1"];
-            
+        NSLog(@"%@",self.availableWizzes);
+        if ([self.availableWizzes count]>0){
+            [self requestManager:self.availableWizzes withJobName:newJob.name];
+        }else{
+            [self noMatch];
         }
-        
         [wizzes removeAllObservers];
+        
     } withCancelBlock:^(NSError *error) {
         NSLog(@"%@", error.description);
     }];
     
     
+    
+}
+
+- (void)requestManager:(NSArray*)availableWizzes withJobName:(NSString*)newJobName{
+    Firebase *wizzes = [[Firebase alloc] initWithUrl: @"https://fiery-torch-962.firebaseio.com/wizzes"];
+    NSString *wizID = [self.availableWizzes firstObject];
+    NSString *tmpString2 = [NSString stringWithFormat:@"%@/",wizID];
+    Firebase *specificWiz2 = [wizzes childByAppendingPath:tmpString2];
+    
+    [specificWiz2 updateChildValues:[NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:@"1",newJobName, nil]
+                                                                forKeys:[NSArray arrayWithObjects:@"beingRequested",@"jobID", nil]]];
+    Firebase *test = [specificWiz2 childByAppendingPath:@"statusFlag"];
+    [test observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+        if ([snapshot.value isEqual:@"1"]){
+            //they have accepted the job
+            [test removeAllObservers];
+            [self requestAccepted];
+        }
+        else if ([snapshot.value isEqual:@"2"]){
+            //they have denied the job
+            [test removeAllObservers];
+            [self.availableWizzes removeObject:wizID];
+            if ([self.availableWizzes count]>0){
+                [self requestManager:self.availableWizzes withJobName:newJobName];
+            }
+        }
+        if ([self.availableWizzes count]==0){
+            //sorry no one accepted your job
+            NSLog(@"No one can field your request");
+            [test removeAllObservers];
+            [self noMatch];
+        }
+    }];
 }
 
 /*
@@ -93,6 +122,8 @@
 */
 
 - (IBAction)cancelRequest:(id)sender {
+    //TODO handle the canceling of wizzes here
+    
     WIZMapViewController *vc = (WIZMapViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"map"];
     vc.username = [self username];
     [self presentViewController:vc animated:NO completion:^{
@@ -101,7 +132,15 @@
     
 }
 
-- (IBAction)requestAccepted:(id)sender {
+- (void)noMatch{
+    StudentRequestNoMatchViewController *vc = (StudentRequestNoMatchViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"nomatch"];
+    vc.username = [self username];
+    [self presentViewController:vc animated:NO completion:^{
+        //
+    }];
+}
+
+- (void)requestAccepted {
     StudentRequestAcceptedViewController *vc = (StudentRequestAcceptedViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"accepted"];
     vc.username = [self username];
     [self presentViewController:vc animated:NO completion:^{

@@ -170,7 +170,7 @@
 - (void)locationIsSet:(UIButton *)button {
     NSLog(@"Location button was pressed");
     
-    [self.view insertSubview:self.descriptionBox aboveSubview:mapView_];
+    [self.view insertSubview:self.descriptionBox aboveSubview:_setLocationButton];
     self.characterCount.text = [NSString stringWithFormat:@"140"];
     self.characterCount.textColor = [UIColor whiteColor];
     self.userInput.layer.borderWidth = 1;

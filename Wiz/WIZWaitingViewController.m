@@ -26,16 +26,15 @@
     Firebase *myRootRef = [[Firebase alloc] initWithUrl:urlString];
     [myRootRef observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
         //recived Job request
-        NSLog(@"%@",snapshot.value);
-        self.JobLabel.text = snapshot.value;
+        //self.JobLabel.text = @"You are Online";
         if (![snapshot.value isEqual:@"-1"]){
             NSString *urlString2 = [NSString stringWithFormat:@"https://fiery-torch-962.firebaseio.com/jobs/%@/description",snapshot.value];
             Firebase *jobInfo = [[Firebase alloc] initWithUrl:urlString2];
-            [jobInfo observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
-                if (![snapshot.value  isEqual: @"-1"]){
-                    UIAlertView *test = [[UIAlertView alloc] initWithTitle:@"New Job Alert" message:snapshot.value delegate:self cancelButtonTitle:@"Reject" otherButtonTitles:@"Accept", nil];
-                    [test show];
-                }
+            [jobInfo observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot2) {
+                
+                UIAlertView *test = [[UIAlertView alloc] initWithTitle:@"New Job Alert" message:snapshot2.value delegate:self cancelButtonTitle:@"Reject" otherButtonTitles:@"Accept", nil];
+                [test show];
+                
             }];
         }
         
@@ -54,9 +53,35 @@
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     NSLog(@"%ld",(long)buttonIndex);
-    //0 is reject
-    //1 is accept
+    if ((long)buttonIndex==0) {
+        self.statusLabel.text = @"Awaiting Incoming Requests";
+        self.JobLabel.text = @"Job Rejected";
+        [NSTimer scheduledTimerWithTimeInterval: 2.0 target: self
+                                       selector: @selector(clearText) userInfo: nil repeats: NO];
+        WIZUserDataSharedManager *sharedManager = [WIZUserDataSharedManager sharedManager];
+        NSString *urlString = [NSString stringWithFormat:@"https://fiery-torch-962.firebaseio.com/wizzes/%@/",sharedManager.uid];
+        Firebase *myRootRef = [[Firebase alloc] initWithUrl:urlString];
+        [myRootRef updateChildValues:[NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:@"0",@"-1",@"1",@"2", nil]
+                                                     forKeys:[NSArray arrayWithObjects:@"beingRequested",@"jobID",@"online",@"statusFlag", nil]]];
+        [myRootRef updateChildValues:[NSDictionary dictionaryWithObject:@"0" forKey:@"statusFlag"]];
+        
+    }else{
+        //accepted job
+        //status flag to 1
+        WIZUserDataSharedManager *sharedManager = [WIZUserDataSharedManager sharedManager];
+        NSString *urlString = [NSString stringWithFormat:@"https://fiery-torch-962.firebaseio.com/wizzes/%@/",sharedManager.uid];
+        Firebase *myRootRef = [[Firebase alloc] initWithUrl:urlString];
+        [myRootRef updateChildValues:[NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:@"0",@"1", nil]
+                                                                 forKeys:[NSArray arrayWithObjects:@"beingRequested",@"statusFlag", nil]]];
+        self.statusLabel.text = @"Proceed to the Job Location";
+        self.JobLabel.text = @"Job Accepted";
+        
+    }
     
+}
+
+- (void)clearText{
+    self.JobLabel.text = @"";
 }
 
 - (IBAction)switchToStudent:(id)sender {
@@ -73,6 +98,8 @@
     NSString *urlString = [NSString stringWithFormat:@"https://fiery-torch-962.firebaseio.com/wizzes/%@/online",sharedManager.uid];
     Firebase *myRootRef = [[Firebase alloc] initWithUrl:urlString];
     [myRootRef setValue:@"1"];
+    self.JobLabel.text = @"You are Online";
+    
 }
 
 - (void)wizOffline{
@@ -80,6 +107,8 @@
     NSString *urlString = [NSString stringWithFormat:@"https://fiery-torch-962.firebaseio.com/wizzes/%@/online",sharedManager.uid];
     Firebase *myRootRef = [[Firebase alloc] initWithUrl:urlString];
     [myRootRef setValue:@"0"];
+    self.JobLabel.text = @"You are Offline";
+    
 }
 
 - (IBAction)onlineSwitch:(id)sender {

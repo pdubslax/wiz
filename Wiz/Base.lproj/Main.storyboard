@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
@@ -288,6 +288,7 @@
                         <outlet property="JobLabel" destination="Rx9-fi-dz3" id="nMU-rq-3kK"/>
                         <outlet property="awaitingLabel" destination="WU3-Zm-Leg" id="Lhp-PV-T8v"/>
                         <outlet property="onlineSwitch" destination="bPH-rV-pGS" id="k9p-YQ-8Av"/>
+                        <outlet property="statusLabel" destination="WU3-Zm-Leg" id="hGf-0Z-uta"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8eE-qi-YKm" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -355,15 +356,6 @@
                                     <navigationItem title="Waiting for Wiz" id="10N-bv-4ew"/>
                                 </items>
                             </navigationBar>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f6R-xY-307">
-                                <rect key="frame" x="172" y="386" width="256" height="30"/>
-                                <state key="normal" title="Request was accepted">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="requestAccepted:" destination="K7G-O7-5Gj" eventType="touchUpInside" id="rK0-sG-o7Z"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -372,7 +364,6 @@
                             <constraint firstItem="yzZ-oJ-OWj" firstAttribute="leading" secondItem="16W-uF-meu" secondAttribute="leading" id="BVQ-p1-8r0"/>
                             <constraint firstItem="zsd-TF-r2i" firstAttribute="top" secondItem="yzZ-oJ-OWj" secondAttribute="bottom" constant="13" id="BcZ-KK-BlL"/>
                             <constraint firstItem="16W-uF-meu" firstAttribute="leading" secondItem="Xpa-RL-NNK" secondAttribute="leadingMargin" constant="15" id="Bgm-MG-t8b"/>
-                            <constraint firstItem="BQw-jl-uYm" firstAttribute="top" secondItem="f6R-xY-307" secondAttribute="bottom" constant="34" id="CV8-36-QA3"/>
                             <constraint firstAttribute="trailingMargin" secondItem="BQw-jl-uYm" secondAttribute="trailing" constant="-17" id="Exs-SQ-afU"/>
                             <constraint firstAttribute="centerY" secondItem="ak4-uq-r9N" secondAttribute="centerY" id="HX0-8W-u4k"/>
                             <constraint firstItem="Fwl-Uz-a5E" firstAttribute="top" secondItem="BQw-jl-uYm" secondAttribute="bottom" constant="32" id="IIG-iR-ewH"/>
@@ -382,7 +373,6 @@
                             <constraint firstItem="4GS-Ic-gR3" firstAttribute="leading" secondItem="Xpa-RL-NNK" secondAttribute="leadingMargin" constant="-16" id="VMb-0E-Ob4"/>
                             <constraint firstItem="yzZ-oJ-OWj" firstAttribute="top" secondItem="16W-uF-meu" secondAttribute="bottom" constant="22" id="ZVO-gV-yhG"/>
                             <constraint firstAttribute="centerX" secondItem="ak4-uq-r9N" secondAttribute="centerX" id="cPb-m5-Bfq"/>
-                            <constraint firstItem="f6R-xY-307" firstAttribute="centerX" secondItem="BQw-jl-uYm" secondAttribute="centerX" id="roO-b3-ho6"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
@@ -392,7 +382,6 @@
                                 <exclude reference="BQw-jl-uYm"/>
                                 <exclude reference="ak4-uq-r9N"/>
                                 <exclude reference="4GS-Ic-gR3"/>
-                                <exclude reference="f6R-xY-307"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="IIG-iR-ewH"/>
@@ -407,8 +396,6 @@
                                 <exclude reference="BcZ-KK-BlL"/>
                                 <exclude reference="HX0-8W-u4k"/>
                                 <exclude reference="cPb-m5-Bfq"/>
-                                <exclude reference="roO-b3-ho6"/>
-                                <exclude reference="CV8-36-QA3"/>
                                 <exclude reference="Exs-SQ-afU"/>
                                 <exclude reference="JRf-CA-W5d"/>
                             </mask>
@@ -421,7 +408,6 @@
                                 <include reference="BQw-jl-uYm"/>
                                 <include reference="ak4-uq-r9N"/>
                                 <include reference="4GS-Ic-gR3"/>
-                                <include reference="f6R-xY-307"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="IIG-iR-ewH"/>
@@ -436,8 +422,6 @@
                                 <include reference="BcZ-KK-BlL"/>
                                 <include reference="HX0-8W-u4k"/>
                                 <include reference="cPb-m5-Bfq"/>
-                                <include reference="roO-b3-ho6"/>
-                                <include reference="CV8-36-QA3"/>
                                 <include reference="Exs-SQ-afU"/>
                                 <include reference="JRf-CA-W5d"/>
                             </mask>
@@ -499,7 +483,55 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gjj-nU-4kO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2845" y="468"/>
+            <point key="canvasLocation" x="2832" y="462"/>
+        </scene>
+        <!--Student Request No Match View Controller-->
+        <scene sceneID="BjN-B0-iFH">
+            <objects>
+                <viewController storyboardIdentifier="nomatch" id="RZR-qF-uTq" customClass="StudentRequestNoMatchViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="DFY-ck-WWY"/>
+                        <viewControllerLayoutGuide type="bottom" id="b5B-cb-kMo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bph-2M-hxD">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We could not find a match for you" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="owb-N1-BlP">
+                                <rect key="frame" x="134" y="106" width="332" height="59"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="owb-N1-BlP" secondAttribute="centerX" id="8ft-kK-18u"/>
+                            <constraint firstAttribute="centerY" secondItem="owb-N1-BlP" secondAttribute="centerY" constant="0.5" id="ENt-B2-u3P"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="owb-N1-BlP"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="ENt-B2-u3P"/>
+                                <exclude reference="8ft-kK-18u"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="owb-N1-BlP"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="ENt-B2-u3P"/>
+                                <include reference="8ft-kK-18u"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Vd-6t-ewb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2832" y="1338"/>
         </scene>
     </scenes>
 </document>
