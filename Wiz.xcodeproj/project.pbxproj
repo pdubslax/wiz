@@ -18,6 +18,7 @@
 		2F287D171A0DF0FB00DD0A57 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F287D161A0DF0FB00DD0A57 /* QuartzCore.framework */; };
 		2FDB1F8D1A0E064900C666A2 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FDB1F8C1A0E064900C666A2 /* GoogleMaps.framework */; };
 		2FDB1F8F1A0E066300C666A2 /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2FDB1F8E1A0E066300C666A2 /* GoogleMaps.bundle */; };
+		2FE5B30D1A292AF6000C2B26 /* cancel.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FE5B30C1A292AF6000C2B26 /* cancel.png */; };
 		6BE865D0A3A0EA803AE70C61 /* libPods-Wiz.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 387E29B8737A2C79589D47B9 /* libPods-Wiz.a */; };
 		8B26C6481A0696FF00A9E92E /* StudentWaitingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B26C6471A0696FF00A9E92E /* StudentWaitingViewController.m */; };
 		8B26C64B1A06A20200A9E92E /* StudentRequestAcceptedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B26C64A1A06A20200A9E92E /* StudentRequestAcceptedViewController.m */; };
@@ -64,6 +65,7 @@
 		2F287D161A0DF0FB00DD0A57 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		2FDB1F8C1A0E064900C666A2 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMaps.framework; sourceTree = "<group>"; };
 		2FDB1F8E1A0E066300C666A2 /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
+		2FE5B30C1A292AF6000C2B26 /* cancel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cancel.png; sourceTree = "<group>"; };
 		3070CE58CA7BF6D37A1DFC09 /* Pods-Wiz.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wiz.release.xcconfig"; path = "Pods/Target Support Files/Pods-Wiz/Pods-Wiz.release.xcconfig"; sourceTree = "<group>"; };
 		387E29B8737A2C79589D47B9 /* libPods-Wiz.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Wiz.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B26C6461A0696FF00A9E92E /* StudentWaitingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudentWaitingViewController.h; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 		8BEF720E19FD6EF7005F24F0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				2FE5B30C1A292AF6000C2B26 /* cancel.png */,
 				8BEF720F19FD6EF7005F24F0 /* Info.plist */,
 				8BEF721019FD6EF7005F24F0 /* main.m */,
 			);
@@ -331,6 +334,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B9F01B319FEE873008BDA75 /* TaskTwitter.xib in Resources */,
+				2FE5B30D1A292AF6000C2B26 /* cancel.png in Resources */,
 				8BEF721A19FD6EF7005F24F0 /* Main.storyboard in Resources */,
 				8B9F01B219FEE873008BDA75 /* pin.png in Resources */,
 				2FDB1F8F1A0E066300C666A2 /* GoogleMaps.bundle in Resources */,
@@ -471,7 +475,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
@@ -507,7 +511,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;

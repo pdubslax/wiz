@@ -19,14 +19,14 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-//    [NSTimer scheduledTimerWithTimeInterval:2.0
-//                                     target:self
-//                                   selector:@selector(closeView)
-//                                   userInfo:nil
-//                                    repeats:NO];
-//
+    [NSTimer scheduledTimerWithTimeInterval:2.0
+                                     target:self
+                                   selector:@selector(closeView)
+                                   userInfo:nil
+                                    repeats:NO];
+
     
-    self.informationLabel.text = [NSString stringWithFormat:@"%@ is your wiz",self.wizName];
+    self.informationLabel.text = [NSString stringWithFormat:@"%@ has accepted your request!",self.wizName];
 
 }
 
@@ -48,6 +48,9 @@
 -(void)closeView {
     WIZMapViewController *vc = (WIZMapViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"map"];
     vc.username = [self username];
+    vc.wizName = self.wizName;
+    vc.inSession = true;
+
     [self presentViewController:vc animated:NO completion:^{
         //
     }];

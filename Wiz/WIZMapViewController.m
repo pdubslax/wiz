@@ -97,9 +97,9 @@
     
     
     //Pin in middle of the screen
-    UIImageView *pinHolder = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - 15, self.view.frame.size.height/2 - 30, 30, 30)];
+    self.pinHolder = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - 15, self.view.frame.size.height/2 - 30, 30, 30)];
     UIImage *image = [UIImage imageNamed:@"pin.png"];
-    pinHolder.image = image;
+    self.pinHolder.image = image;
 
     
     //Coordinate Label
@@ -122,8 +122,20 @@
     
     //Adding subviews
     [self.view insertSubview:self.coordinateLabel aboveSubview:mapView_];
+    
+    
+    
+    if (!self.inSession) {
+        
+        NSLog(@"not in session");
     [self.view insertSubview:self.setLocationButton aboveSubview:mapView_];
-    [self.view insertSubview:pinHolder aboveSubview:mapView_];
+    [self.view insertSubview:self.pinHolder aboveSubview:mapView_];
+        self.wizLabel.hidden = YES;
+        self.cancelButton.hidden = YES;
+        
+    }else{
+        self.wizLabel.text = [NSString stringWithFormat:@"%@ is on the way!",self.wizName];
+    }
     
 
 }
@@ -326,6 +338,37 @@
             }
         }
     }
+}
+
+
+- (IBAction)cancelButtonPressed:(id)sender {
+    UIAlertView *cancel = [[UIAlertView alloc] initWithTitle:@"Cancel" message:@"Are you sure you want to cancel your request?"
+                                                    delegate:self
+                                                    cancelButtonTitle:@"No"
+                                                    otherButtonTitles:@"Yes", nil];
+    [cancel show];
+    
+
+    
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    
+    if ((long)buttonIndex==0) {
+        
+    }else{
+        
+        //Patrick, handle cancelling job on backend here
+        NSLog(@"Cancelling Job");
+        self.inSession = false;
+        
+        [self.view insertSubview:self.setLocationButton aboveSubview:mapView_];
+        [self.view insertSubview:self.pinHolder aboveSubview:mapView_];
+        self.wizLabel.hidden = YES;
+        self.cancelButton.hidden = YES;
+
+    }
+    
 }
 
 
