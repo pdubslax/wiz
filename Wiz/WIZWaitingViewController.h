@@ -14,7 +14,8 @@
 @property (strong, nonatomic) IBOutlet UILabel *awaitingLabel;
 - (IBAction)onlineSwitch:(id)sender;
 @property (strong, nonatomic) IBOutlet UISwitch *onlineSwitch;
-@property (strong, nonatomic) IBOutlet UILabel *JobLabel;
 @property (strong, nonatomic) IBOutlet UILabel *statusLabel;
+
+
 
 @end
