@@ -22,8 +22,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-
-    NSLog(@"meeting location is: %@", self.meetingString);
+    self.progressView.progress = 0.0;
+    [self performSelectorOnMainThread:@selector(makeMyProgressBarMoving) withObject:nil waitUntilDone:NO];
     
     NSString *descriptionString = [NSString stringWithFormat:@"Description: %@", self.problemDescription];
     [self.descriptionLabel setText:descriptionString];
@@ -147,6 +147,23 @@
     [self presentViewController:vc animated:NO completion:^{
         //
     }];
+}
+
+#pragma mark - Progress Bar Animation
+- (void)makeMyProgressBarMoving {
+    
+    float actual = [self.progressView progress];
+    if (actual < 1) {
+        self.progressView.progress = actual + 0.01;
+        [NSTimer scheduledTimerWithTimeInterval:0.02 target:self selector:@selector(makeMyProgressBarMoving) userInfo:nil repeats:NO];
+    }
+    else{
+        self.progressView.progress = 0;
+        [NSTimer scheduledTimerWithTimeInterval:0.02 target:self selector:@selector(makeMyProgressBarMoving) userInfo:nil repeats:NO];
+        
+        
+    }
+    
 }
 
 

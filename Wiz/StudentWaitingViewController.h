@@ -18,6 +18,7 @@
 - (IBAction)cancelRequest:(id)sender;
 - (IBAction)requestAccepted:(id)sender;
 @property (strong, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+@property (weak, nonatomic) IBOutlet UIProgressView *progressView;
 
 @property (weak, nonatomic) NSString *meetingString;
 @end

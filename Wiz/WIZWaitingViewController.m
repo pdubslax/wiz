@@ -11,6 +11,8 @@
 #import <Firebase/Firebase.h>
 #import "WIZUserDataSharedManager.h"
 #import "WIZAcceptedRequestViewController.h"
+#import "MultiplePulsingHaloLayer.h"
+#import "PulsingHaloLayer.h"
 
 @interface WIZWaitingViewController ()
 
@@ -21,6 +23,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self wizOnline];
+    
+    
+    
+        PulsingHaloLayer *halo = [PulsingHaloLayer layer];
+        halo.position = self.view.center;
+        halo.useTimingFunction = NO;
+        halo.radius = self.view.frame.size.width / 2;
+        halo.animationDuration = 2;
+        [self.view.layer addSublayer:halo];
+
+    
+    
     
     WIZUserDataSharedManager *sharedManager = [WIZUserDataSharedManager sharedManager];
     NSString *urlString = [NSString stringWithFormat:@"https://fiery-torch-962.firebaseio.com/wizzes/%@/jobID",sharedManager.uid];
@@ -56,7 +70,6 @@
     NSLog(@"%ld",(long)buttonIndex);
     if ((long)buttonIndex==0) {
         self.statusLabel.text = @"Awaiting Incoming Requests";
-        self.JobLabel.text = @"Job Rejected";
         [NSTimer scheduledTimerWithTimeInterval: 2.0 target: self
                                        selector: @selector(clearText) userInfo: nil repeats: NO];
         WIZUserDataSharedManager *sharedManager = [WIZUserDataSharedManager sharedManager];
@@ -81,7 +94,7 @@
 }
 
 - (void)clearText{
-    self.JobLabel.text = @"";
+
 }
 
 - (IBAction)switchToStudent:(id)sender {
@@ -98,7 +111,6 @@
     NSString *urlString = [NSString stringWithFormat:@"https://fiery-torch-962.firebaseio.com/wizzes/%@/online",sharedManager.uid];
     Firebase *myRootRef = [[Firebase alloc] initWithUrl:urlString];
     [myRootRef setValue:@"1"];
-    self.JobLabel.text = @"You are Online";
     
 }
 
@@ -107,7 +119,6 @@
     NSString *urlString = [NSString stringWithFormat:@"https://fiery-torch-962.firebaseio.com/wizzes/%@/online",sharedManager.uid];
     Firebase *myRootRef = [[Firebase alloc] initWithUrl:urlString];
     [myRootRef setValue:@"0"];
-    self.JobLabel.text = @"You are Offline";
     
 }
 
@@ -127,4 +138,10 @@
         //
     }];
 }
+
+
+
+
+
+
 @end
