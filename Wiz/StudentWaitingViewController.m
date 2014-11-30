@@ -30,7 +30,6 @@
     
 //    NSString *locationString = [NSString stringWithFormat:@"Location: %@", self.meetingString];
     [self.locationLabel setText:self.meetingString];
-    [self.activityIndicator startAnimating];
     
     [self makeRequest];
     

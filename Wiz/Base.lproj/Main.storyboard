@@ -407,9 +407,6 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="ak4-uq-r9N">
-                                <rect key="frame" x="290" y="304" width="20" height="20"/>
-                            </activityIndicatorView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4GS-Ic-gR3">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <color key="barTintColor" red="0.082352943720000002" green="0.270588249" blue="0.53725492949999998" alpha="1" colorSpace="deviceRGB"/>
@@ -445,14 +442,12 @@
                             <constraint firstItem="yzZ-oJ-OWj" firstAttribute="leading" secondItem="16W-uF-meu" secondAttribute="leading" id="BVQ-p1-8r0"/>
                             <constraint firstItem="zsd-TF-r2i" firstAttribute="top" secondItem="yzZ-oJ-OWj" secondAttribute="bottom" constant="13" id="BcZ-KK-BlL"/>
                             <constraint firstItem="16W-uF-meu" firstAttribute="leading" secondItem="Xpa-RL-NNK" secondAttribute="leadingMargin" constant="15" id="Bgm-MG-t8b"/>
-                            <constraint firstAttribute="centerY" secondItem="ak4-uq-r9N" secondAttribute="centerY" id="HX0-8W-u4k"/>
                             <constraint firstAttribute="centerX" secondItem="4GS-Ic-gR3" secondAttribute="centerX" id="L0F-5s-Mfe"/>
                             <constraint firstItem="16W-uF-meu" firstAttribute="top" secondItem="4GS-Ic-gR3" secondAttribute="bottom" constant="79" id="RXe-PU-N0a"/>
                             <constraint firstAttribute="centerX" secondItem="BQw-jl-uYm" secondAttribute="centerX" id="TNJ-bj-4T6"/>
                             <constraint firstItem="4GS-Ic-gR3" firstAttribute="leading" secondItem="Xpa-RL-NNK" secondAttribute="leadingMargin" constant="-16" id="VMb-0E-Ob4"/>
                             <constraint firstItem="KZA-JR-CaG" firstAttribute="top" secondItem="UEd-xh-OvF" secondAttribute="bottom" constant="44" id="VfF-4U-ybl"/>
                             <constraint firstItem="yzZ-oJ-OWj" firstAttribute="top" secondItem="16W-uF-meu" secondAttribute="bottom" constant="22" id="ZVO-gV-yhG"/>
-                            <constraint firstAttribute="centerX" secondItem="ak4-uq-r9N" secondAttribute="centerX" id="cPb-m5-Bfq"/>
                             <constraint firstItem="Fwl-Uz-a5E" firstAttribute="top" secondItem="BQw-jl-uYm" secondAttribute="bottom" constant="61" id="jv2-eX-Lpv"/>
                             <constraint firstItem="KZA-JR-CaG" firstAttribute="leading" secondItem="Xpa-RL-NNK" secondAttribute="leadingMargin" constant="-16" id="mWs-hl-fgw"/>
                             <constraint firstAttribute="trailingMargin" secondItem="KZA-JR-CaG" secondAttribute="trailing" constant="-16" id="zFJ-QS-Qfc"/>
@@ -462,7 +457,6 @@
                                 <exclude reference="yzZ-oJ-OWj"/>
                                 <exclude reference="16W-uF-meu"/>
                                 <exclude reference="zsd-TF-r2i"/>
-                                <exclude reference="ak4-uq-r9N"/>
                                 <exclude reference="4GS-Ic-gR3"/>
                                 <exclude reference="KZA-JR-CaG"/>
                                 <exclude reference="BQw-jl-uYm"/>
@@ -480,8 +474,6 @@
                                 <exclude reference="ZVO-gV-yhG"/>
                                 <exclude reference="5Cd-GI-asJ"/>
                                 <exclude reference="BcZ-KK-BlL"/>
-                                <exclude reference="HX0-8W-u4k"/>
-                                <exclude reference="cPb-m5-Bfq"/>
                                 <exclude reference="TNJ-bj-4T6"/>
                                 <exclude reference="jv2-eX-Lpv"/>
                             </mask>
@@ -491,7 +483,6 @@
                                 <include reference="yzZ-oJ-OWj"/>
                                 <include reference="16W-uF-meu"/>
                                 <include reference="zsd-TF-r2i"/>
-                                <include reference="ak4-uq-r9N"/>
                                 <include reference="4GS-Ic-gR3"/>
                                 <include reference="KZA-JR-CaG"/>
                                 <include reference="BQw-jl-uYm"/>
@@ -509,15 +500,12 @@
                                 <include reference="ZVO-gV-yhG"/>
                                 <include reference="5Cd-GI-asJ"/>
                                 <include reference="BcZ-KK-BlL"/>
-                                <include reference="HX0-8W-u4k"/>
-                                <include reference="cPb-m5-Bfq"/>
                                 <include reference="TNJ-bj-4T6"/>
                                 <include reference="jv2-eX-Lpv"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="activityIndicator" destination="ak4-uq-r9N" id="OOJ-UU-urC"/>
                         <outlet property="descriptionLabel" destination="yzZ-oJ-OWj" id="2Br-h1-FLl"/>
                         <outlet property="locationLabel" destination="zsd-TF-r2i" id="vls-Z3-sQG"/>
                         <outlet property="progressView" destination="KZA-JR-CaG" id="cdG-Bf-jjx"/>
@@ -671,7 +659,7 @@
                             </navigationBar>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tUH-uP-lB5">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.082352943720000002" green="0.270588249" blue="0.53725492949999998" alpha="1" colorSpace="deviceRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="43" id="WTH-QB-xaj"/>
                                 </constraints>
@@ -695,7 +683,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aw5-qy-Fbm">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.082352943720000002" green="0.270588249" blue="0.53725492949999998" alpha="1" colorSpace="deviceRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="43" id="Mf4-Es-l6A"/>
                                 </constraints>
@@ -725,7 +713,7 @@
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="332" id="FIM-pe-Wma"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.082352943720000002" green="0.270588249" blue="0.53725492949999998" alpha="1" colorSpace="deviceRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -794,7 +782,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1gG-T9-oak" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2058" y="1338"/>
+            <point key="canvasLocation" x="2058" y="1326"/>
         </scene>
     </scenes>
     <resources>
