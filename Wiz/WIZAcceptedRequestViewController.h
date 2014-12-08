@@ -17,12 +17,16 @@ bool running;
 }
 @property (nonatomic, strong) NSString *wizName;
 @property (nonatomic, strong) NSString *username;
-@property (weak, nonatomic) IBOutlet UIButton *startSession;
-- (IBAction)startSessionPressed:(id)sender;
-@property (weak, nonatomic) IBOutlet UIButton *endSession;
-- (IBAction)endSessionPressed:(id)sender;
+@property (assign) CGFloat progress;
+@property (strong, nonatomic) NSString *sessionLengthString;
+@property (strong, nonatomic) UIImageView *wandImageHolder;
+@property (strong, nonatomic) UIView *summaryBox;
+@property (weak, nonatomic) IBOutlet UILabel *summaryNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *summaryDurationLabel;
+@property (weak, nonatomic) IBOutlet UILabel *summaryCostLabel;
 
-@property (weak, nonatomic) IBOutlet UILabel *timerLabel;
+
+
 
 
 @end

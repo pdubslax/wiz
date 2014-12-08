@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PulsingHaloLayer.h"
 
 @interface WIZWaitingViewController : UIViewController
 - (IBAction)switchToStudent:(id)sender;
@@ -15,6 +16,7 @@
 - (IBAction)onlineSwitch:(id)sender;
 @property (strong, nonatomic) IBOutlet UISwitch *onlineSwitch;
 @property (strong, nonatomic) IBOutlet UILabel *statusLabel;
+@property (strong, nonatomic) PulsingHaloLayer *halo;
 
 
 

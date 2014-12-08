@@ -22,16 +22,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.halo = [PulsingHaloLayer layer];
+    [self.view.layer addSublayer:self.halo];
     [self wizOnline];
     
     
     
-        PulsingHaloLayer *halo = [PulsingHaloLayer layer];
-        halo.position = self.view.center;
-        halo.useTimingFunction = NO;
-        halo.radius = self.view.frame.size.width / 2;
-        halo.animationDuration = 2;
-        [self.view.layer addSublayer:halo];
+
 
     
     
@@ -112,6 +110,9 @@
     Firebase *myRootRef = [[Firebase alloc] initWithUrl:urlString];
     [myRootRef setValue:@"1"];
     
+    //start radar
+    [self startRadar];
+    
 }
 
 - (void)wizOffline{
@@ -120,12 +121,18 @@
     Firebase *myRootRef = [[Firebase alloc] initWithUrl:urlString];
     [myRootRef setValue:@"0"];
     
+    [self stopRadar];
+
+    
 }
 
 - (IBAction)onlineSwitch:(id)sender {
     if (self.onlineSwitch.isOn){
         [self wizOnline];
     }else{
+        
+        UILabel *waitingLabel = (UILabel *)[self.view viewWithTag:17];
+        [self.view insertSubview:waitingLabel aboveSubview:self.view];
         [self wizOffline];
     }
     
@@ -137,6 +144,33 @@
     [self presentViewController:vc animated:NO completion:^{
         //
     }];
+}
+
+
+#pragma mark - Radar Animations
+- (void)startRadar{
+    //start pusling the radar
+    self.halo.position = self.view.center;
+    self.halo.useTimingFunction = NO;
+    self.halo.radius = self.view.frame.size.width / 2;
+    self.halo.animationDuration = 2;
+    self.halo.name = @"halo";
+    self.halo.repeatCount = INFINITY;
+    
+    
+    UIColor *color = [UIColor colorWithRed:0.000 green:0.478 blue:1.000 alpha:1];
+    self.halo.backgroundColor = color.CGColor;
+    
+
+    
+}
+
+- (void)stopRadar{
+
+    
+    self.halo.backgroundColor = CFBridgingRetain([UIColor whiteColor]);
+    
+    
 }
 
 

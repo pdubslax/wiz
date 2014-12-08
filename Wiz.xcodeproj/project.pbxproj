@@ -16,6 +16,12 @@
 		2F287D131A0DF0E700DD0A57 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F287D121A0DF0E700DD0A57 /* libz.dylib */; };
 		2F287D151A0DF0F100DD0A57 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F287D141A0DF0F100DD0A57 /* OpenGLES.framework */; };
 		2F287D171A0DF0FB00DD0A57 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F287D161A0DF0FB00DD0A57 /* QuartzCore.framework */; };
+		2FD476051A351DA100A38A3B /* FBShimmeringLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FD476021A351DA100A38A3B /* FBShimmeringLayer.m */; };
+		2FD476061A351DA100A38A3B /* FBShimmeringView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FD476041A351DA100A38A3B /* FBShimmeringView.m */; };
+		2FD476081A351EC200A38A3B /* starBackground.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2FD476071A351EC200A38A3B /* starBackground.jpg */; };
+		2FD4760A1A352CEF00A38A3B /* yellowWand.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FD476091A352CEF00A38A3B /* yellowWand.png */; };
+		2FD4760C1A35449F00A38A3B /* sessionSummary.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FD4760B1A35449F00A38A3B /* sessionSummary.xib */; };
+		2FD4760F1A35600500A38A3B /* EDStarRating.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FD4760E1A35600500A38A3B /* EDStarRating.m */; };
 		2FDB1F8D1A0E064900C666A2 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FDB1F8C1A0E064900C666A2 /* GoogleMaps.framework */; };
 		2FDB1F8F1A0E066300C666A2 /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2FDB1F8E1A0E066300C666A2 /* GoogleMaps.bundle */; };
 		2FE5B30D1A292AF6000C2B26 /* cancel.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FE5B30C1A292AF6000C2B26 /* cancel.png */; };
@@ -28,7 +34,7 @@
 		8B26C64E1A06AE7A00A9E92E /* WIZWaitingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B26C64D1A06AE7A00A9E92E /* WIZWaitingViewController.m */; };
 		8B26C6511A06B86D00A9E92E /* WIZUserDataSharedManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B26C6501A06B86D00A9E92E /* WIZUserDataSharedManager.m */; };
 		8B9F01B219FEE873008BDA75 /* pin.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B9F01AF19FEE873008BDA75 /* pin.png */; };
-		8B9F01B319FEE873008BDA75 /* TaskTwitter.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B9F01B019FEE873008BDA75 /* TaskTwitter.xib */; };
+		8B9F01B319FEE873008BDA75 /* descriptionBox.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B9F01B019FEE873008BDA75 /* descriptionBox.xib */; };
 		8B9F01C019FEEA2D008BDA75 /* WIZMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B9F01BF19FEEA2D008BDA75 /* WIZMapViewController.m */; };
 		8BA84FDA1A28FF6D008C331F /* StudentRequestNoMatchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BA84FD91A28FF6D008C331F /* StudentRequestNoMatchViewController.m */; };
 		8BA84FDD1A290578008C331F /* WIZAcceptedRequestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BA84FDC1A290578008C331F /* WIZAcceptedRequestViewController.m */; };
@@ -66,6 +72,17 @@
 		2F287D121A0DF0E700DD0A57 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		2F287D141A0DF0F100DD0A57 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		2F287D161A0DF0FB00DD0A57 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		2FD475FF1A351DA100A38A3B /* FBShimmering-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FBShimmering-Prefix.pch"; sourceTree = "<group>"; };
+		2FD476001A351DA100A38A3B /* FBShimmering.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBShimmering.h; sourceTree = "<group>"; };
+		2FD476011A351DA100A38A3B /* FBShimmeringLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBShimmeringLayer.h; sourceTree = "<group>"; };
+		2FD476021A351DA100A38A3B /* FBShimmeringLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBShimmeringLayer.m; sourceTree = "<group>"; };
+		2FD476031A351DA100A38A3B /* FBShimmeringView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBShimmeringView.h; sourceTree = "<group>"; };
+		2FD476041A351DA100A38A3B /* FBShimmeringView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBShimmeringView.m; sourceTree = "<group>"; };
+		2FD476071A351EC200A38A3B /* starBackground.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = starBackground.jpg; sourceTree = "<group>"; };
+		2FD476091A352CEF00A38A3B /* yellowWand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yellowWand.png; sourceTree = "<group>"; };
+		2FD4760B1A35449F00A38A3B /* sessionSummary.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = sessionSummary.xib; sourceTree = "<group>"; };
+		2FD4760D1A35600500A38A3B /* EDStarRating.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDStarRating.h; sourceTree = "<group>"; };
+		2FD4760E1A35600500A38A3B /* EDStarRating.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDStarRating.m; sourceTree = "<group>"; };
 		2FDB1F8C1A0E064900C666A2 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMaps.framework; sourceTree = "<group>"; };
 		2FDB1F8E1A0E066300C666A2 /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
 		2FE5B30C1A292AF6000C2B26 /* cancel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cancel.png; sourceTree = "<group>"; };
@@ -85,7 +102,7 @@
 		8B26C64F1A06B86D00A9E92E /* WIZUserDataSharedManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WIZUserDataSharedManager.h; sourceTree = "<group>"; };
 		8B26C6501A06B86D00A9E92E /* WIZUserDataSharedManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WIZUserDataSharedManager.m; sourceTree = "<group>"; };
 		8B9F01AF19FEE873008BDA75 /* pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pin.png; path = Wiz/pin.png; sourceTree = "<group>"; };
-		8B9F01B019FEE873008BDA75 /* TaskTwitter.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TaskTwitter.xib; path = Wiz/TaskTwitter.xib; sourceTree = "<group>"; };
+		8B9F01B019FEE873008BDA75 /* descriptionBox.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = descriptionBox.xib; path = Wiz/descriptionBox.xib; sourceTree = "<group>"; };
 		8B9F01BE19FEEA2D008BDA75 /* WIZMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WIZMapViewController.h; sourceTree = "<group>"; };
 		8B9F01BF19FEEA2D008BDA75 /* WIZMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WIZMapViewController.m; sourceTree = "<group>"; };
 		8BA84FD81A28FF6D008C331F /* StudentRequestNoMatchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudentRequestNoMatchViewController.h; sourceTree = "<group>"; };
@@ -147,6 +164,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2FD475FE1A351DA100A38A3B /* FBShimmering */ = {
+			isa = PBXGroup;
+			children = (
+				2FD475FF1A351DA100A38A3B /* FBShimmering-Prefix.pch */,
+				2FD476001A351DA100A38A3B /* FBShimmering.h */,
+				2FD476011A351DA100A38A3B /* FBShimmeringLayer.h */,
+				2FD476021A351DA100A38A3B /* FBShimmeringLayer.m */,
+				2FD476031A351DA100A38A3B /* FBShimmeringView.h */,
+				2FD476041A351DA100A38A3B /* FBShimmeringView.m */,
+			);
+			path = FBShimmering;
+			sourceTree = "<group>";
+		};
 		6DEDC14839D8B68B59DA5022 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -160,7 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				8B9F01AF19FEE873008BDA75 /* pin.png */,
-				8B9F01B019FEE873008BDA75 /* TaskTwitter.xib */,
+				8B9F01B019FEE873008BDA75 /* descriptionBox.xib */,
 				8BEF720D19FD6EF7005F24F0 /* Wiz */,
 				8BEF722719FD6EF7005F24F0 /* WizTests */,
 				8BEF720C19FD6EF7005F24F0 /* Products */,
@@ -200,6 +230,7 @@
 				8BA84FD91A28FF6D008C331F /* StudentRequestNoMatchViewController.m */,
 				8BA84FDB1A290578008C331F /* WIZAcceptedRequestViewController.h */,
 				8BA84FDC1A290578008C331F /* WIZAcceptedRequestViewController.m */,
+				2FD4760B1A35449F00A38A3B /* sessionSummary.xib */,
 				8BEF721B19FD6EF7005F24F0 /* Images.xcassets */,
 				8BEF721D19FD6EF7005F24F0 /* LaunchScreen.xib */,
 				8BEF720E19FD6EF7005F24F0 /* Supporting Files */,
@@ -210,11 +241,16 @@
 		8BEF720E19FD6EF7005F24F0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				2FD4760D1A35600500A38A3B /* EDStarRating.h */,
+				2FD4760E1A35600500A38A3B /* EDStarRating.m */,
+				2FD476071A351EC200A38A3B /* starBackground.jpg */,
+				2FD475FE1A351DA100A38A3B /* FBShimmering */,
 				2FE5B3101A2A9E1C000C2B26 /* MultiplePulsingHaloLayer.h */,
 				2FE5B3111A2A9E1C000C2B26 /* MultiplePulsingHaloLayer.m */,
 				2FE5B3121A2A9E1C000C2B26 /* PulsingHaloLayer.h */,
 				2FE5B3131A2A9E1C000C2B26 /* PulsingHaloLayer.m */,
 				2FE5B30C1A292AF6000C2B26 /* cancel.png */,
+				2FD476091A352CEF00A38A3B /* yellowWand.png */,
 				2FE5B30E1A2A2B50000C2B26 /* switch.png */,
 				8BEF720F19FD6EF7005F24F0 /* Info.plist */,
 				8BEF721019FD6EF7005F24F0 /* main.m */,
@@ -346,7 +382,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8B9F01B319FEE873008BDA75 /* TaskTwitter.xib in Resources */,
+				8B9F01B319FEE873008BDA75 /* descriptionBox.xib in Resources */,
+				2FD476081A351EC200A38A3B /* starBackground.jpg in Resources */,
+				2FD4760C1A35449F00A38A3B /* sessionSummary.xib in Resources */,
 				2FE5B30D1A292AF6000C2B26 /* cancel.png in Resources */,
 				8BEF721A19FD6EF7005F24F0 /* Main.storyboard in Resources */,
 				2FE5B30F1A2A2B50000C2B26 /* switch.png in Resources */,
@@ -354,6 +392,7 @@
 				2FDB1F8F1A0E066300C666A2 /* GoogleMaps.bundle in Resources */,
 				8BEF721F19FD6EF7005F24F0 /* LaunchScreen.xib in Resources */,
 				8BEF721C19FD6EF7005F24F0 /* Images.xcassets in Resources */,
+				2FD4760A1A352CEF00A38A3B /* yellowWand.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,13 +446,16 @@
 				2FE5B3151A2A9E1C000C2B26 /* PulsingHaloLayer.m in Sources */,
 				8BA84FDD1A290578008C331F /* WIZAcceptedRequestViewController.m in Sources */,
 				8B9F01C019FEEA2D008BDA75 /* WIZMapViewController.m in Sources */,
+				2FD476061A351DA100A38A3B /* FBShimmeringView.m in Sources */,
 				8BEF721719FD6EF7005F24F0 /* ViewController.m in Sources */,
 				8B26C6511A06B86D00A9E92E /* WIZUserDataSharedManager.m in Sources */,
 				8BEF721419FD6EF7005F24F0 /* AppDelegate.m in Sources */,
 				8B26C6481A0696FF00A9E92E /* StudentWaitingViewController.m in Sources */,
 				8BEF721119FD6EF7005F24F0 /* main.m in Sources */,
 				2FE5B3141A2A9E1C000C2B26 /* MultiplePulsingHaloLayer.m in Sources */,
+				2FD476051A351DA100A38A3B /* FBShimmeringLayer.m in Sources */,
 				8BA84FDA1A28FF6D008C331F /* StudentRequestNoMatchViewController.m in Sources */,
+				2FD4760F1A35600500A38A3B /* EDStarRating.m in Sources */,
 				8B26C64E1A06AE7A00A9E92E /* WIZWaitingViewController.m in Sources */,
 				8B26C64B1A06A20200A9E92E /* StudentRequestAcceptedViewController.m in Sources */,
 			);
