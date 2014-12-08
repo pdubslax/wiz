@@ -43,7 +43,7 @@
     [self.userLabel setText:[NSString stringWithFormat:@"%@ is logged in",self.username]];
     
     [[UIApplication sharedApplication] setStatusBarHidden:YES];
-    self.descriptionBox = [[[NSBundle mainBundle] loadNibNamed:@"TaskTwitter" owner:self options:nil] objectAtIndex:0];
+    self.descriptionBox = [[[NSBundle mainBundle] loadNibNamed:@"descriptionBox" owner:self options:nil] objectAtIndex:0];
     self.descriptionBox.center = CGPointMake(self.view.frame.size.width / 2, self.view.frame.size.height / 2);
     self.descriptionBox.layer.borderColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:.75].CGColor;
     self.descriptionBox.layer.borderWidth = 5;
