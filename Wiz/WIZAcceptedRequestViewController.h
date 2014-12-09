@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "EDStarRating.h"
 
-@interface WIZAcceptedRequestViewController : UIViewController{
+
+@interface WIZAcceptedRequestViewController : UIViewController<EDStarRatingProtocol>{
 
 
 NSTimer *stopTimer;
@@ -24,6 +26,9 @@ bool running;
 @property (weak, nonatomic) IBOutlet UILabel *summaryNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *summaryDurationLabel;
 @property (weak, nonatomic) IBOutlet UILabel *summaryCostLabel;
+
+@property (weak, nonatomic) IBOutlet EDStarRating *starRating;
+@property (strong,nonatomic) NSArray *colors;
 
 
 

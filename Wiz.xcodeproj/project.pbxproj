@@ -21,7 +21,11 @@
 		2FD476081A351EC200A38A3B /* starBackground.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2FD476071A351EC200A38A3B /* starBackground.jpg */; };
 		2FD4760A1A352CEF00A38A3B /* yellowWand.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FD476091A352CEF00A38A3B /* yellowWand.png */; };
 		2FD4760C1A35449F00A38A3B /* sessionSummary.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FD4760B1A35449F00A38A3B /* sessionSummary.xib */; };
-		2FD4760F1A35600500A38A3B /* EDStarRating.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FD4760E1A35600500A38A3B /* EDStarRating.m */; };
+		2FD476141A361DBB00A38A3B /* star-highlighted-template.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FD476101A361DBB00A38A3B /* star-highlighted-template.png */; };
+		2FD476151A361DBB00A38A3B /* star-highlighted-template@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FD476111A361DBB00A38A3B /* star-highlighted-template@2x.png */; };
+		2FD476161A361DBB00A38A3B /* star-template.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FD476121A361DBB00A38A3B /* star-template.png */; };
+		2FD476171A361DBB00A38A3B /* star-template@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FD476131A361DBB00A38A3B /* star-template@2x.png */; };
+		2FD4761B1A3631A500A38A3B /* EDStarRating.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FD4761A1A3631A500A38A3B /* EDStarRating.m */; };
 		2FDB1F8D1A0E064900C666A2 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FDB1F8C1A0E064900C666A2 /* GoogleMaps.framework */; };
 		2FDB1F8F1A0E066300C666A2 /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2FDB1F8E1A0E066300C666A2 /* GoogleMaps.bundle */; };
 		2FE5B30D1A292AF6000C2B26 /* cancel.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FE5B30C1A292AF6000C2B26 /* cancel.png */; };
@@ -81,8 +85,12 @@
 		2FD476071A351EC200A38A3B /* starBackground.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = starBackground.jpg; sourceTree = "<group>"; };
 		2FD476091A352CEF00A38A3B /* yellowWand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yellowWand.png; sourceTree = "<group>"; };
 		2FD4760B1A35449F00A38A3B /* sessionSummary.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = sessionSummary.xib; sourceTree = "<group>"; };
-		2FD4760D1A35600500A38A3B /* EDStarRating.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDStarRating.h; sourceTree = "<group>"; };
-		2FD4760E1A35600500A38A3B /* EDStarRating.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDStarRating.m; sourceTree = "<group>"; };
+		2FD476101A361DBB00A38A3B /* star-highlighted-template.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star-highlighted-template.png"; sourceTree = "<group>"; };
+		2FD476111A361DBB00A38A3B /* star-highlighted-template@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star-highlighted-template@2x.png"; sourceTree = "<group>"; };
+		2FD476121A361DBB00A38A3B /* star-template.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star-template.png"; sourceTree = "<group>"; };
+		2FD476131A361DBB00A38A3B /* star-template@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star-template@2x.png"; sourceTree = "<group>"; };
+		2FD476191A3631A500A38A3B /* EDStarRating.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDStarRating.h; sourceTree = "<group>"; };
+		2FD4761A1A3631A500A38A3B /* EDStarRating.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDStarRating.m; sourceTree = "<group>"; };
 		2FDB1F8C1A0E064900C666A2 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMaps.framework; sourceTree = "<group>"; };
 		2FDB1F8E1A0E066300C666A2 /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
 		2FE5B30C1A292AF6000C2B26 /* cancel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cancel.png; sourceTree = "<group>"; };
@@ -177,6 +185,15 @@
 			path = FBShimmering;
 			sourceTree = "<group>";
 		};
+		2FD476181A3631A500A38A3B /* EDStarRating */ = {
+			isa = PBXGroup;
+			children = (
+				2FD476191A3631A500A38A3B /* EDStarRating.h */,
+				2FD4761A1A3631A500A38A3B /* EDStarRating.m */,
+			);
+			path = EDStarRating;
+			sourceTree = "<group>";
+		};
 		6DEDC14839D8B68B59DA5022 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -241,9 +258,12 @@
 		8BEF720E19FD6EF7005F24F0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				2FD4760D1A35600500A38A3B /* EDStarRating.h */,
-				2FD4760E1A35600500A38A3B /* EDStarRating.m */,
+				2FD476101A361DBB00A38A3B /* star-highlighted-template.png */,
+				2FD476111A361DBB00A38A3B /* star-highlighted-template@2x.png */,
+				2FD476121A361DBB00A38A3B /* star-template.png */,
+				2FD476131A361DBB00A38A3B /* star-template@2x.png */,
 				2FD476071A351EC200A38A3B /* starBackground.jpg */,
+				2FD476181A3631A500A38A3B /* EDStarRating */,
 				2FD475FE1A351DA100A38A3B /* FBShimmering */,
 				2FE5B3101A2A9E1C000C2B26 /* MultiplePulsingHaloLayer.h */,
 				2FE5B3111A2A9E1C000C2B26 /* MultiplePulsingHaloLayer.m */,
@@ -382,15 +402,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2FD476151A361DBB00A38A3B /* star-highlighted-template@2x.png in Resources */,
 				8B9F01B319FEE873008BDA75 /* descriptionBox.xib in Resources */,
+				2FD476141A361DBB00A38A3B /* star-highlighted-template.png in Resources */,
 				2FD476081A351EC200A38A3B /* starBackground.jpg in Resources */,
 				2FD4760C1A35449F00A38A3B /* sessionSummary.xib in Resources */,
 				2FE5B30D1A292AF6000C2B26 /* cancel.png in Resources */,
 				8BEF721A19FD6EF7005F24F0 /* Main.storyboard in Resources */,
+				2FD476171A361DBB00A38A3B /* star-template@2x.png in Resources */,
 				2FE5B30F1A2A2B50000C2B26 /* switch.png in Resources */,
 				8B9F01B219FEE873008BDA75 /* pin.png in Resources */,
 				2FDB1F8F1A0E066300C666A2 /* GoogleMaps.bundle in Resources */,
 				8BEF721F19FD6EF7005F24F0 /* LaunchScreen.xib in Resources */,
+				2FD476161A361DBB00A38A3B /* star-template.png in Resources */,
 				8BEF721C19FD6EF7005F24F0 /* Images.xcassets in Resources */,
 				2FD4760A1A352CEF00A38A3B /* yellowWand.png in Resources */,
 			);
@@ -455,7 +479,7 @@
 				2FE5B3141A2A9E1C000C2B26 /* MultiplePulsingHaloLayer.m in Sources */,
 				2FD476051A351DA100A38A3B /* FBShimmeringLayer.m in Sources */,
 				8BA84FDA1A28FF6D008C331F /* StudentRequestNoMatchViewController.m in Sources */,
-				2FD4760F1A35600500A38A3B /* EDStarRating.m in Sources */,
+				2FD4761B1A3631A500A38A3B /* EDStarRating.m in Sources */,
 				8B26C64E1A06AE7A00A9E92E /* WIZWaitingViewController.m in Sources */,
 				8B26C64B1A06A20200A9E92E /* StudentRequestAcceptedViewController.m in Sources */,
 			);

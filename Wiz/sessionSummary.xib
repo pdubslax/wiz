@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WIZAcceptedRequestViewController">
             <connections>
+                <outlet property="starRating" destination="H6c-aG-pvy" id="jfM-fi-zLI"/>
                 <outlet property="summaryCostLabel" destination="Eok-fj-Pca" id="gvX-o4-CHy"/>
                 <outlet property="summaryDurationLabel" destination="9Wj-0U-1Q3" id="RIJ-Px-3eq"/>
                 <outlet property="summaryNameLabel" destination="Vja-8U-oc5" id="u9n-mW-9ja"/>
@@ -22,6 +23,16 @@
                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vja-8U-oc5">
+                    <rect key="frame" x="8" y="27" width="260" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="260" id="H0S-ID-3Ht"/>
+                        <constraint firstAttribute="height" constant="21" id="fR7-N0-gK7"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Duration: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Wj-0U-1Q3">
                     <rect key="frame" x="8" y="50" width="260" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
@@ -34,16 +45,10 @@
                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vja-8U-oc5">
-                    <rect key="frame" x="8" y="27" width="260" height="21"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="260" id="H0S-ID-3Ht"/>
-                        <constraint firstAttribute="height" constant="21" id="fR7-N0-gK7"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="H6c-aG-pvy" customClass="EDStarRating">
+                    <rect key="frame" x="8" y="145" width="260" height="39"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
@@ -57,7 +62,7 @@
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="424" y="184"/>
+            <point key="canvasLocation" x="441" y="293"/>
         </view>
     </objects>
 </document>
