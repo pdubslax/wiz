@@ -8,6 +8,7 @@
 
 #import "WIZAcceptedRequestViewController.h"
 #import "FBShimmeringView.h"
+#import "WIZWaitingViewController.h"
 
 
 @interface WIZAcceptedRequestViewController ()
@@ -24,6 +25,7 @@
     UILabel *_logoLabel;
     
     
+    
     CGFloat _panStartValue;
     BOOL _panVertical;
     
@@ -32,6 +34,7 @@
     
     
 }
+@synthesize starRating=_starRating;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -54,7 +57,7 @@
     [self.view addSubview:_shimmeringView];
     
     _logoLabel = [[UILabel alloc] initWithFrame:_shimmeringView.bounds];
-    _logoLabel.text = @"Begin Session";
+    _logoLabel.text = @"Swipe to Begin Session";
     _logoLabel.font = [UIFont fontWithName:@"HelveticaNeue-UltraLight" size:32.0];
     _logoLabel.textColor = [UIColor whiteColor];
     _logoLabel.textAlignment = NSTextAlignmentCenter;
@@ -83,6 +86,9 @@
     self.summaryBox.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:.99];
     self.summaryBox.layer.borderWidth = 5;
     self.summaryBox.layer.cornerRadius = 10;
+    
+    [self setUpRatingView];
+    
 }
 
 - (void)viewWillLayoutSubviews
@@ -165,7 +171,7 @@
                                                                 repeats:YES];
                     
                 //change label of shimmer label
-                _logoLabel.text = @"End Session";
+                _logoLabel.text = @"Swipe to End Session";
  
                     [UIView beginAnimations:nil context:nil];
                     [UIView setAnimationDuration:1.0f];
@@ -217,6 +223,38 @@
     } completion:^(BOOL finished){
         [self rotateLeft];
     }];
+}
+
+#pragma mark - Star Rating
+
+-(void)setUpRatingView{
+    
+        self.colors = @[ [UIColor colorWithRed:0.11f green:0.38f blue:0.94f alpha:1.0f], [UIColor colorWithRed:1.0f green:0.22f blue:0.22f alpha:1.0f], [UIColor colorWithRed:0.27f green:0.85f blue:0.46f alpha:1.0f], [UIColor colorWithRed:0.35f green:0.35f blue:0.81f alpha:1.0f]];
+    _starRating.backgroundColor  = [UIColor whiteColor];
+    _starRating.starImage = [[UIImage imageNamed:@"star-template"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    _starRating.starHighlightedImage = [[UIImage imageNamed:@"star-highlighted-template"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    _starRating.maxRating = 5.0;
+    _starRating.delegate = self;
+    _starRating.horizontalMargin = 15.0;
+    _starRating.editable=YES;
+    _starRating.rating= 0;
+    _starRating.displayMode=EDStarRatingDisplayFull;
+    [_starRating  setNeedsDisplay];
+    _starRating.tintColor = self.colors[0];
+    [self starsSelectionChanged:_starRating rating:0];
+
+}
+-(void)starsSelectionChanged:(EDStarRating *)control rating:(float)rating
+{
+    NSString *ratingString = [NSString stringWithFormat:@"Rating: %.1f", rating];
+    //DO Something once rating is selected
+    
+    NSLog(@"Rated the Wiz a %f", rating);
+    if (rating > 0) {
+    
+        //change wiz to Online again
+    [self dismissViewControllerAnimated:NO completion:nil];
+    }
 }
 
 
