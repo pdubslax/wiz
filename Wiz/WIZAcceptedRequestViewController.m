@@ -223,10 +223,9 @@
                 
                 NSLog(@"Session length: %@", self.sessionLengthString );
                 
-        
-                self.summaryNameLabel.text = self.username;
+                //self.username isn't the name of the student. need to find this
+                self.summaryNameLabel.text = [NSString stringWithFormat:@"How was your experience with %@?", self.username];
                 self.summaryDurationLabel.text = [NSString stringWithFormat:@"Duration: %@", self.sessionLengthString];
-                self.summaryCostLabel.text =[NSString stringWithFormat:@"Cost: $5"];
                 
                 [self.view addSubview:self.summaryBox];
                 

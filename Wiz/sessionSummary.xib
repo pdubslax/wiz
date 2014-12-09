@@ -7,7 +7,6 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WIZAcceptedRequestViewController">
             <connections>
                 <outlet property="starRating" destination="H6c-aG-pvy" id="jfM-fi-zLI"/>
-                <outlet property="summaryCostLabel" destination="Eok-fj-Pca" id="gvX-o4-CHy"/>
                 <outlet property="summaryDurationLabel" destination="9Wj-0U-1Q3" id="RIJ-Px-3eq"/>
                 <outlet property="summaryNameLabel" destination="Vja-8U-oc5" id="u9n-mW-9ja"/>
             </connections>
@@ -23,41 +22,31 @@
                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vja-8U-oc5">
-                    <rect key="frame" x="8" y="27" width="260" height="21"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="260" id="H0S-ID-3Ht"/>
-                        <constraint firstAttribute="height" constant="21" id="fR7-N0-gK7"/>
-                    </constraints>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vja-8U-oc5">
+                    <rect key="frame" x="8" y="126" width="260" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Duration: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Wj-0U-1Q3">
-                    <rect key="frame" x="8" y="50" width="260" height="21"/>
+                    <rect key="frame" x="8" y="48" width="260" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cost: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eok-fj-Pca">
-                    <rect key="frame" x="8" y="79" width="260" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="H6c-aG-pvy" customClass="EDStarRating">
+                <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="H6c-aG-pvy" customClass="EDStarRating">
                     <rect key="frame" x="8" y="145" width="260" height="39"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="dDb-YV-5O5" firstAttribute="centerX" secondItem="Vja-8U-oc5" secondAttribute="centerX" id="PdX-Ww-2zO"/>
+                <constraint firstItem="H6c-aG-pvy" firstAttribute="top" secondItem="Vja-8U-oc5" secondAttribute="bottom" constant="-2" id="V6A-K4-Dlv"/>
                 <constraint firstAttribute="trailing" secondItem="dDb-YV-5O5" secondAttribute="trailing" id="Zgp-NS-d1C"/>
                 <constraint firstAttribute="centerX" secondItem="dDb-YV-5O5" secondAttribute="centerX" id="gJV-4X-wvz"/>
                 <constraint firstAttribute="centerX" secondItem="dDb-YV-5O5" secondAttribute="centerX" id="get-Qt-3wU"/>
                 <constraint firstItem="dDb-YV-5O5" firstAttribute="top" secondItem="Qsk-d8-pvJ" secondAttribute="top" constant="8" id="jft-aV-MWN"/>
-                <constraint firstItem="Vja-8U-oc5" firstAttribute="top" secondItem="dDb-YV-5O5" secondAttribute="bottom" constant="-2" id="kBR-8o-ZBw"/>
+                <constraint firstItem="Vja-8U-oc5" firstAttribute="centerX" secondItem="H6c-aG-pvy" secondAttribute="centerX" id="pqJ-4M-gey"/>
                 <constraint firstItem="dDb-YV-5O5" firstAttribute="leading" secondItem="Qsk-d8-pvJ" secondAttribute="leading" id="vsf-2X-H9l"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>

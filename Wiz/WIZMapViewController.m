@@ -51,6 +51,15 @@
     self.descriptionBox.layer.cornerRadius = 10;
     self.descriptionBox.userInteractionEnabled = YES;
     
+    //set up rating box
+    //set up summary box
+    self.ratingBox = [[[NSBundle mainBundle] loadNibNamed:@"ratingBox" owner:self options:nil] objectAtIndex:0];
+    self.ratingBox.center = CGPointMake(self.view.frame.size.width / 2, self.view.frame.size.height / 2);
+    self.ratingBox.layer.borderColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:.75].CGColor;
+    self.ratingBox.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:.99];
+    self.ratingBox.layer.borderWidth = 5;
+    self.ratingBox.layer.cornerRadius = 10;
+    
     
     
     CLLocationCoordinate2D coordinate = [self getLocation];
@@ -143,6 +152,7 @@
         }];
     }
     
+    [self setUpRatingView];
 
 }
 
@@ -160,9 +170,11 @@
                 
                 self.wizLabel.text = [NSString stringWithFormat:@"%@ is on the way!",snapshot2.value];
             }else if ([snapshot.value isEqual:@"2"]){
-                self.wizLabel.text = [NSString stringWithFormat:@"Your session with %@ has begun!",snapshot2.value];
+                self.wizLabel.text = [NSString stringWithFormat:@"In session with %@",snapshot2.value];
             }else if ([snapshot.value isEqual:@"3"]){
-                self.wizLabel.text = [NSString stringWithFormat:@"Your session with %@ has ended!",snapshot2.value];
+                
+                
+                self.wizLabel.text = [NSString stringWithFormat:@"Session has ended!"];
                 //session has ended -> prompt rating
                 [self showRating];
                 
@@ -178,7 +190,9 @@
 
 - (void) showRating{
     //code here for getting the student rating
-    [self endTheSession];
+    
+    [self.view insertSubview:self.ratingBox aboveSubview:self.view];
+
 }
 
 
@@ -396,6 +410,7 @@
 - (void)endTheSession{
     self.inSession = false;
     
+    [self.ratingBox removeFromSuperview];
     [self.view insertSubview:self.setLocationButton aboveSubview:mapView_];
     [self.view insertSubview:self.pinHolder aboveSubview:mapView_];
     self.wizLabel.hidden = YES;
@@ -420,6 +435,37 @@
 
     }
     
+}
+
+#pragma mark - Star Rating
+
+-(void)setUpRatingView{
+    
+    self.colors = @[ [UIColor colorWithRed:0.11f green:0.38f blue:0.94f alpha:1.0f], [UIColor colorWithRed:1.0f green:0.22f blue:0.22f alpha:1.0f], [UIColor colorWithRed:0.27f green:0.85f blue:0.46f alpha:1.0f], [UIColor colorWithRed:0.35f green:0.35f blue:0.81f alpha:1.0f]];
+    _starRating.backgroundColor  = [UIColor whiteColor];
+    _starRating.starImage = [[UIImage imageNamed:@"star-template"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    _starRating.starHighlightedImage = [[UIImage imageNamed:@"star-highlighted-template"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    _starRating.maxRating = 5.0;
+    _starRating.delegate = self;
+    _starRating.horizontalMargin = 15.0;
+    _starRating.editable=YES;
+    _starRating.rating= 0;
+    _starRating.displayMode=EDStarRatingDisplayFull;
+    [_starRating  setNeedsDisplay];
+    _starRating.tintColor = self.colors[0];
+    [self starsSelectionChanged:_starRating rating:0];
+    
+}
+-(void)starsSelectionChanged:(EDStarRating *)control rating:(float)rating
+{
+    NSString *ratingString = [NSString stringWithFormat:@"Rating: %.1f", rating];
+    //DO Something once rating is selected
+    
+    NSLog(@"Rated the Wiz a %f", rating);
+    if (rating > 0) {
+        
+    [self endTheSession];
+    }
 }
 
 

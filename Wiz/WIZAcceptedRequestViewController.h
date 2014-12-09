@@ -28,7 +28,6 @@ bool running;
 @property (strong, nonatomic) UIView *summaryBox;
 @property (weak, nonatomic) IBOutlet UILabel *summaryNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *summaryDurationLabel;
-@property (weak, nonatomic) IBOutlet UILabel *summaryCostLabel;
 
 @property (weak, nonatomic) IBOutlet EDStarRating *starRating;
 @property (strong,nonatomic) NSArray *colors;

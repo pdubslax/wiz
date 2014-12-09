@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "AppDelegate.h"
+#import "EDStarRating.h"
 #import <GoogleMaps/GoogleMaps.h>
 
 
@@ -35,7 +36,9 @@
 @property (weak, nonatomic) IBOutlet UIView *mapView;
 @property(strong, nonatomic) CLLocationManager *locationManager;
 
-
+@property (strong,nonatomic) UIView *ratingBox;
+@property (weak, nonatomic) IBOutlet EDStarRating *starRating;
+@property (strong,nonatomic) NSArray *colors;
 
 
 @end
