@@ -185,6 +185,10 @@
                     [self rotateLeft];
                 }
             }else{
+                
+                 //session is over, reset the wiz and student info on the db
+                // force ratings , update job status
+                
                 endedSession = true;
                 running = FALSE;
                 [stopTimer invalidate];
