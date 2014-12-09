@@ -39,6 +39,8 @@
 @property (strong,nonatomic) UIView *ratingBox;
 @property (weak, nonatomic) IBOutlet EDStarRating *starRating;
 @property (strong,nonatomic) NSArray *colors;
+@property (strong, nonatomic) IBOutlet UILabel *ratingBoxWizNameLabel;
+@property (strong, nonatomic) IBOutlet UIImageView *ratingBoxWizImageView;
 
 
 @end
