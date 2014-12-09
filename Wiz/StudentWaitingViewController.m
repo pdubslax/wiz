@@ -140,6 +140,8 @@
 }
 
 - (void)requestAccepted:(NSString*)userID {
+    //TODO Update wizid for job on backend here
+    //manage the status flag on the job
     StudentRequestAcceptedViewController *vc = (StudentRequestAcceptedViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"accepted"];
     vc.username = [self username];
     vc.wizName = userID;
