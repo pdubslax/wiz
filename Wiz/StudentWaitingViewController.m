@@ -8,7 +8,6 @@
 
 #import "StudentWaitingViewController.h"
 #import "WIZMapViewController.h"
-#import "StudentRequestAcceptedViewController.h"
 #import "StudentRequestNoMatchViewController.h"
 #import <Firebase/Firebase.h>
 #import "WIZUserDataSharedManager.h"
@@ -91,7 +90,7 @@
         if ([snapshot.value isEqual:@"1"]){
             //they have accepted the job
             [test removeAllObservers];
-            [self requestAccepted:[self.availableWizzes firstObject]];
+            [self requestAccepted:[self.availableWizzes firstObject] withJobID:newJobName];
         }
         else if ([snapshot.value isEqual:@"2"]){
             //they have denied the job
@@ -139,12 +138,19 @@
     }];
 }
 
-- (void)requestAccepted:(NSString*)userID {
+- (void)requestAccepted:(NSString*)userID withJobID:(NSString *)jobID{
     //TODO Update wizid for job on backend here
     //manage the status flag on the job
-    StudentRequestAcceptedViewController *vc = (StudentRequestAcceptedViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"accepted"];
-    vc.username = [self username];
+    
+    Firebase *job = [[Firebase alloc] initWithUrl: @"https://fiery-torch-962.firebaseio.com/jobs/"];
+    Firebase * newRoot = [job childByAppendingPath:jobID];
+    [newRoot updateChildValues:[NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:userID,@"1", nil]
+                                                          forKeys:[NSArray arrayWithObjects:@"wizID",@"statusFlag", nil]]];
+    WIZMapViewController *vc = (WIZMapViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"map"];
+    vc.username = self.username;
     vc.wizName = userID;
+    vc.inSession = true;
+    vc.jobID = jobID;
     [self presentViewController:vc animated:NO completion:^{
         //
     }];

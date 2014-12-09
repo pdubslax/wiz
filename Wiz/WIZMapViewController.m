@@ -9,6 +9,7 @@
 #import "WIZMapViewController.h"
 #import "StudentWaitingViewController.h"
 #import "WIZWaitingViewController.h"
+#import <Firebase/Firebase.h>
 
 
 @interface WIZMapViewController (){
@@ -128,16 +129,56 @@
     if (!self.inSession) {
         
         NSLog(@"not in session");
-    [self.view insertSubview:self.setLocationButton aboveSubview:mapView_];
-    [self.view insertSubview:self.pinHolder aboveSubview:mapView_];
+        [self.view insertSubview:self.setLocationButton aboveSubview:mapView_];
+        [self.view insertSubview:self.pinHolder aboveSubview:mapView_];
         self.wizLabel.hidden = YES;
         self.cancelButton.hidden = YES;
         
     }else{
-        self.wizLabel.text = [NSString stringWithFormat:@"%@ is on the way!",self.wizName];
+        [self updateTextLabel];
+        Firebase *job = [[Firebase alloc] initWithUrl: @"https://fiery-torch-962.firebaseio.com/jobs/"];
+        Firebase * newRoot = [job childByAppendingPath:self.jobID];
+        [newRoot observeEventType:FEventTypeChildChanged withBlock:^(FDataSnapshot *snapshot) {
+            [self updateTextLabel];
+        }];
     }
     
 
+}
+
+- (void)updateTextLabel{
+    Firebase *job = [[Firebase alloc] initWithUrl: @"https://fiery-torch-962.firebaseio.com/jobs/"];
+    Firebase * newRoot = [job childByAppendingPath:self.jobID];
+    Firebase * newRoot2 = [newRoot childByAppendingPath:@"/statusFlag"];
+    
+    Firebase *wizInfo = [[Firebase alloc] initWithUrl:[NSString stringWithFormat:@"https://fiery-torch-962.firebaseio.com/users/%@/name",self.wizName]];
+    
+    [newRoot2 observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+        // do some stuff once
+        [wizInfo observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot2) {
+            if ([snapshot.value isEqual:@"1"]){
+                
+                self.wizLabel.text = [NSString stringWithFormat:@"%@ is on the way!",snapshot2.value];
+            }else if ([snapshot.value isEqual:@"2"]){
+                self.wizLabel.text = [NSString stringWithFormat:@"Your session with %@ has begun!",snapshot2.value];
+            }else if ([snapshot.value isEqual:@"3"]){
+                self.wizLabel.text = [NSString stringWithFormat:@"Your session with %@ has ended!",snapshot2.value];
+                //session has ended -> prompt rating
+                [self showRating];
+                
+                
+            }
+        }];
+        
+    }];
+    
+    
+    //= [NSString stringWithFormat:@"%@ is on the way!",self.wizName];
+}
+
+- (void) showRating{
+    //code here for getting the student rating
+    [self endTheSession];
 }
 
 
@@ -352,6 +393,15 @@
     
 }
 
+- (void)endTheSession{
+    self.inSession = false;
+    
+    [self.view insertSubview:self.setLocationButton aboveSubview:mapView_];
+    [self.view insertSubview:self.pinHolder aboveSubview:mapView_];
+    self.wizLabel.hidden = YES;
+    self.cancelButton.hidden = YES;
+}
+
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     
     if ((long)buttonIndex==0) {
@@ -359,6 +409,7 @@
     }else{
         
         //Patrick, handle cancelling job on backend here
+        
         NSLog(@"Cancelling Job");
         self.inSession = false;
         

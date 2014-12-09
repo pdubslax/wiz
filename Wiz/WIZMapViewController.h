@@ -30,7 +30,7 @@
 
 - (IBAction)cancelButtonPressed:(id)sender;
 
-
+@property (nonatomic,strong) NSString *jobID;
 
 @property (weak, nonatomic) IBOutlet UIView *mapView;
 @property(strong, nonatomic) CLLocationManager *locationManager;

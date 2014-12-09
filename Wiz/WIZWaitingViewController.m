@@ -16,7 +16,9 @@
 
 @interface WIZWaitingViewController ()
 
+@property (nonatomic,strong) NSString* jobID;
 @end
+
 
 @implementation WIZWaitingViewController
 
@@ -42,6 +44,7 @@
         //self.JobLabel.text = @"You are Online";
         if (![snapshot.value isEqual:@"-1"]){
             NSString *urlString2 = [NSString stringWithFormat:@"https://fiery-torch-962.firebaseio.com/jobs/%@/description",snapshot.value];
+            self.jobID = snapshot.value;
             Firebase *jobInfo = [[Firebase alloc] initWithUrl:urlString2];
             [jobInfo observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot2) {
                 
@@ -85,7 +88,7 @@
         Firebase *myRootRef = [[Firebase alloc] initWithUrl:urlString];
         [myRootRef updateChildValues:[NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:@"0",@"1", nil]
                                                                  forKeys:[NSArray arrayWithObjects:@"beingRequested",@"statusFlag", nil]]];
-        [self acceptedJob];
+        [self acceptedJobWithJobID:self.jobID];
         
     }
     
@@ -138,9 +141,10 @@
     
 }
 
-- (void)acceptedJob{
+- (void)acceptedJobWithJobID:(NSString*)jobID{
     WIZAcceptedRequestViewController *vc = (WIZAcceptedRequestViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"wizmatch"];
     vc.username = [self username];
+    vc.jobID = jobID;
     [self presentViewController:vc animated:NO completion:^{
         //
     }];

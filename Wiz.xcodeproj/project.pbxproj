@@ -34,7 +34,6 @@
 		2FE5B3151A2A9E1C000C2B26 /* PulsingHaloLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FE5B3131A2A9E1C000C2B26 /* PulsingHaloLayer.m */; };
 		6BE865D0A3A0EA803AE70C61 /* libPods-Wiz.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 387E29B8737A2C79589D47B9 /* libPods-Wiz.a */; };
 		8B26C6481A0696FF00A9E92E /* StudentWaitingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B26C6471A0696FF00A9E92E /* StudentWaitingViewController.m */; };
-		8B26C64B1A06A20200A9E92E /* StudentRequestAcceptedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B26C64A1A06A20200A9E92E /* StudentRequestAcceptedViewController.m */; };
 		8B26C64E1A06AE7A00A9E92E /* WIZWaitingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B26C64D1A06AE7A00A9E92E /* WIZWaitingViewController.m */; };
 		8B26C6511A06B86D00A9E92E /* WIZUserDataSharedManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B26C6501A06B86D00A9E92E /* WIZUserDataSharedManager.m */; };
 		8B9F01B219FEE873008BDA75 /* pin.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B9F01AF19FEE873008BDA75 /* pin.png */; };
@@ -103,8 +102,6 @@
 		387E29B8737A2C79589D47B9 /* libPods-Wiz.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Wiz.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B26C6461A0696FF00A9E92E /* StudentWaitingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudentWaitingViewController.h; sourceTree = "<group>"; };
 		8B26C6471A0696FF00A9E92E /* StudentWaitingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudentWaitingViewController.m; sourceTree = "<group>"; };
-		8B26C6491A06A20200A9E92E /* StudentRequestAcceptedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudentRequestAcceptedViewController.h; sourceTree = "<group>"; };
-		8B26C64A1A06A20200A9E92E /* StudentRequestAcceptedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudentRequestAcceptedViewController.m; sourceTree = "<group>"; };
 		8B26C64C1A06AE7A00A9E92E /* WIZWaitingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WIZWaitingViewController.h; sourceTree = "<group>"; };
 		8B26C64D1A06AE7A00A9E92E /* WIZWaitingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WIZWaitingViewController.m; sourceTree = "<group>"; };
 		8B26C64F1A06B86D00A9E92E /* WIZUserDataSharedManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WIZUserDataSharedManager.h; sourceTree = "<group>"; };
@@ -241,8 +238,6 @@
 				8BEF721519FD6EF7005F24F0 /* ViewController.h */,
 				8BEF721619FD6EF7005F24F0 /* ViewController.m */,
 				8BEF721819FD6EF7005F24F0 /* Main.storyboard */,
-				8B26C6491A06A20200A9E92E /* StudentRequestAcceptedViewController.h */,
-				8B26C64A1A06A20200A9E92E /* StudentRequestAcceptedViewController.m */,
 				8BA84FD81A28FF6D008C331F /* StudentRequestNoMatchViewController.h */,
 				8BA84FD91A28FF6D008C331F /* StudentRequestNoMatchViewController.m */,
 				8BA84FDB1A290578008C331F /* WIZAcceptedRequestViewController.h */,
@@ -481,7 +476,6 @@
 				8BA84FDA1A28FF6D008C331F /* StudentRequestNoMatchViewController.m in Sources */,
 				2FD4761B1A3631A500A38A3B /* EDStarRating.m in Sources */,
 				8B26C64E1A06AE7A00A9E92E /* WIZWaitingViewController.m in Sources */,
-				8B26C64B1A06A20200A9E92E /* StudentRequestAcceptedViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

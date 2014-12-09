@@ -125,7 +125,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" placeholderIntrinsicWidth="400" placeholderIntrinsicHeight="44" translatesAutoresizingMaskIntoConstraints="NO" id="yGS-Sp-Q9V">
+                            <navigationBar contentMode="scaleToFill" placeholderIntrinsicWidth="400" placeholderIntrinsicHeight="45" translatesAutoresizingMaskIntoConstraints="NO" id="yGS-Sp-Q9V">
                                 <rect key="frame" x="0.0" y="20" width="600" height="44"/>
                                 <color key="barTintColor" red="0.08235294371843338" green="0.27058824896812439" blue="0.5372549295425415" alpha="1" colorSpace="deviceRGB"/>
                                 <textAttributes key="titleTextAttributes">
@@ -143,6 +143,9 @@
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="20" width="400" height="44"/>
+                                </variation>
                             </navigationBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mkq-Q4-WDE">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
@@ -511,74 +514,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dxs-gP-qvC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2028" y="468"/>
-        </scene>
-        <!--Student Request Accepted View Controller-->
-        <scene sceneID="Tkv-pA-VPU">
-            <objects>
-                <viewController storyboardIdentifier="accepted" id="SwA-6E-l2Q" customClass="StudentRequestAcceptedViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="q3l-nc-pun"/>
-                        <viewControllerLayoutGuide type="bottom" id="ldK-wa-vYp"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="j8q-64-qhA">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We've matched you with a Wiz!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sOD-No-AIh">
-                                <rect key="frame" x="134" y="106" width="332" height="59"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YXO-Nu-SAk">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                <color key="barTintColor" red="0.082352943720000002" green="0.270588249" blue="0.53725492949999998" alpha="1" colorSpace="deviceRGB"/>
-                                <textAttributes key="titleTextAttributes">
-                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="21"/>
-                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <offsetWrapper key="textShadowOffset" horizontal="0.0" vertical="0.0"/>
-                                </textAttributes>
-                                <items>
-                                    <navigationItem title="Wiz" id="ABh-tj-rNt"/>
-                                </items>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="20" width="400" height="44"/>
-                                </variation>
-                            </navigationBar>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="centerY" secondItem="sOD-No-AIh" secondAttribute="centerY" constant="0.5" id="b7R-Z8-2ca"/>
-                            <constraint firstAttribute="centerX" secondItem="sOD-No-AIh" secondAttribute="centerX" id="gZH-U6-eG7"/>
-                        </constraints>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="sOD-No-AIh"/>
-                                <exclude reference="YXO-Nu-SAk"/>
-                            </mask>
-                            <mask key="constraints">
-                                <exclude reference="b7R-Z8-2ca"/>
-                                <exclude reference="gZH-U6-eG7"/>
-                            </mask>
-                        </variation>
-                        <variation key="heightClass=regular-widthClass=compact">
-                            <mask key="subviews">
-                                <include reference="sOD-No-AIh"/>
-                                <include reference="YXO-Nu-SAk"/>
-                            </mask>
-                            <mask key="constraints">
-                                <include reference="b7R-Z8-2ca"/>
-                                <include reference="gZH-U6-eG7"/>
-                            </mask>
-                        </variation>
-                    </view>
-                    <connections>
-                        <outlet property="informationLabel" destination="sOD-No-AIh" id="pPK-PS-XmR"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Gjj-nU-4kO" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2832" y="468"/>
         </scene>
         <!--Student Request No Match View Controller-->
         <scene sceneID="BjN-B0-iFH">

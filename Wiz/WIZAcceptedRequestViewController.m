@@ -9,6 +9,7 @@
 #import "WIZAcceptedRequestViewController.h"
 #import "FBShimmeringView.h"
 #import "WIZWaitingViewController.h"
+#import <Firebase/Firebase.h>
 
 
 @interface WIZAcceptedRequestViewController ()
@@ -127,6 +128,31 @@
     self.sessionLengthString = timeString;
 }
 
+- (void)startSession{
+    //find job id and change the status flag to 2
+    Firebase *job = [[Firebase alloc] initWithUrl: @"https://fiery-torch-962.firebaseio.com/jobs/"];
+    Firebase * newRoot = [job childByAppendingPath:self.jobID];
+    [newRoot updateChildValues:[NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:@"2", nil]
+                                                           forKeys:[NSArray arrayWithObjects:@"statusFlag", nil]]];
+    
+}
+
+- (void)endSession{
+    //find job id and change the status flag to 3
+    
+    //session is over, reset the wiz and student info on the db
+    // force ratings , update job status
+    
+    Firebase *job = [[Firebase alloc] initWithUrl: @"https://fiery-torch-962.firebaseio.com/jobs/"];
+    Firebase * newRoot = [job childByAppendingPath:self.jobID];
+    [newRoot updateChildValues:[NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:@"3", nil]
+                                                           forKeys:[NSArray arrayWithObjects:@"statusFlag", nil]]];
+    
+    Firebase *job2 = [[Firebase alloc] initWithUrl: @"https://fiery-torch-962.firebaseio.com/wizzes/"];
+    Firebase * newRoot2 = [job2 childByAppendingPath:self.username];
+    [newRoot2 updateChildValues:[NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:@"-1",@"1",@"0", nil]
+                                                           forKeys:[NSArray arrayWithObjects:@"jobID",@"online",@"statusFlag", nil]]];
+}
 
 #pragma mark - Shimmer Slider
 
@@ -158,7 +184,10 @@
         
         if (self.progress > .4) {
            //start timer for session
+            [self startSession];
             if (startedSession == false) {
+                //session Starts here
+                
                 
                 startedSession = true;
                 startDate = [NSDate date];
@@ -185,9 +214,7 @@
                     [self rotateLeft];
                 }
             }else{
-                
-                 //session is over, reset the wiz and student info on the db
-                // force ratings , update job status
+                [self endSession];
                 
                 endedSession = true;
                 running = FALSE;

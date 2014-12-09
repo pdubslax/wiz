@@ -17,8 +17,11 @@ NSTimer *stopTimer;
 NSDate *startDate;
 bool running;
 }
+
 @property (nonatomic, strong) NSString *wizName;
 @property (nonatomic, strong) NSString *username;
+@property (nonatomic, strong) NSString *jobID;
+
 @property (assign) CGFloat progress;
 @property (strong, nonatomic) NSString *sessionLengthString;
 @property (strong, nonatomic) UIImageView *wandImageHolder;
