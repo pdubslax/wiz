@@ -16,6 +16,8 @@
 
 @interface WIZWaitingViewController ()
 
+@property (nonatomic) BOOL shown;
+
 @property (nonatomic,strong) NSString* jobID;
 @end
 
@@ -28,8 +30,6 @@
     self.halo = [PulsingHaloLayer layer];
     [self.view.layer addSublayer:self.halo];
     [self wizOnline];
-    
-    
     
 
 
@@ -44,12 +44,17 @@
         //self.JobLabel.text = @"You are Online";
         if (![snapshot.value isEqual:@"-1"]){
             NSString *urlString2 = [NSString stringWithFormat:@"https://fiery-torch-962.firebaseio.com/jobs/%@/description",snapshot.value];
+            NSString *urlString3 = [NSString stringWithFormat:@"https://fiery-torch-962.firebaseio.com/jobs/%@/requesterID",snapshot.value];
             self.jobID = snapshot.value;
             Firebase *jobInfo = [[Firebase alloc] initWithUrl:urlString2];
-            [jobInfo observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot2) {
+            Firebase *client = [[Firebase alloc] initWithUrl:urlString3];
+            [jobInfo observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot2) {
+                [client observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot3) {
+                    self.clientID = snapshot3.value;
+                    UIAlertView *test = [[UIAlertView alloc] initWithTitle:@"New Job Alert" message:snapshot2.value delegate:self cancelButtonTitle:@"Reject" otherButtonTitles:@"Accept", nil];
+                    [test show];
+                }];
                 
-                UIAlertView *test = [[UIAlertView alloc] initWithTitle:@"New Job Alert" message:snapshot2.value delegate:self cancelButtonTitle:@"Reject" otherButtonTitles:@"Accept", nil];
-                [test show];
                 
             }];
         }
@@ -145,6 +150,7 @@
     WIZAcceptedRequestViewController *vc = (WIZAcceptedRequestViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"wizmatch"];
     vc.username = [self username];
     vc.jobID = jobID;
+    vc.clientID = self.clientID;
     [self presentViewController:vc animated:NO completion:^{
         //
     }];

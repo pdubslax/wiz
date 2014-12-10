@@ -18,7 +18,7 @@ NSDate *startDate;
 bool running;
 }
 
-@property (nonatomic, strong) NSString *wizName;
+@property (nonatomic, strong) NSString *clientID;
 @property (nonatomic, strong) NSString *username;
 @property (nonatomic, strong) NSString *jobID;
 
@@ -31,6 +31,7 @@ bool running;
 
 @property (weak, nonatomic) IBOutlet EDStarRating *starRating;
 @property (strong,nonatomic) NSArray *colors;
+@property (strong, nonatomic) IBOutlet UIImageView *sessionSummaryBoxImageView;
 
 
 

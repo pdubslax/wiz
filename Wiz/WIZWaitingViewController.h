@@ -17,6 +17,7 @@
 @property (strong, nonatomic) IBOutlet UISwitch *onlineSwitch;
 @property (strong, nonatomic) IBOutlet UILabel *statusLabel;
 @property (strong, nonatomic) PulsingHaloLayer *halo;
+@property (strong, nonatomic) NSString *clientID;
 
 
 

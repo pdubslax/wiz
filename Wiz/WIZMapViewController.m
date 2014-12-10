@@ -60,6 +60,19 @@
     self.ratingBox.layer.borderWidth = 5;
     self.ratingBox.layer.cornerRadius = 10;
     
+    //setup wiz info
+    if (self.inSession){
+    Firebase *wizInfoName = [[Firebase alloc] initWithUrl:[NSString stringWithFormat:@"https://fiery-torch-962.firebaseio.com/users/%@/name",self.wizName]];
+    [wizInfoName observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+        self.ratingBoxWizNameLabel.text = snapshot.value;
+    }];
+    
+    Firebase *wizInfoPhoto = [[Firebase alloc] initWithUrl:[NSString stringWithFormat:@"https://fiery-torch-962.firebaseio.com/users/%@/photoID",self.wizName]];
+    [wizInfoPhoto observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+        self.ratingBoxWizImageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:snapshot.value]]];
+    }];
+    }
+    
     
     
     CLLocationCoordinate2D coordinate = [self getLocation];
@@ -167,7 +180,6 @@
         // do some stuff once
         [wizInfo observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot2) {
             if ([snapshot.value isEqual:@"1"]){
-                
                 self.wizLabel.text = [NSString stringWithFormat:@"%@ is on the way!",snapshot2.value];
             }else if ([snapshot.value isEqual:@"2"]){
                 self.wizLabel.text = [NSString stringWithFormat:@"In session with %@",snapshot2.value];

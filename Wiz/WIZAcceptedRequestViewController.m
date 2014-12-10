@@ -224,10 +224,16 @@
                 NSLog(@"Session length: %@", self.sessionLengthString );
                 
                 //self.username isn't the name of the student. need to find this
-                self.summaryNameLabel.text = [NSString stringWithFormat:@"How was your experience with %@?", self.username];
-                self.summaryDurationLabel.text = [NSString stringWithFormat:@"Duration: %@", self.sessionLengthString];
+                Firebase *clientInfo = [[Firebase alloc] initWithUrl:[NSString stringWithFormat:@"https://fiery-torch-962.firebaseio.com/users/%@/name",self.clientID]];
+                [clientInfo observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+                    // do some stuff once
+                    self.summaryNameLabel.text = [NSString stringWithFormat:@"Rating for %@?", snapshot.value];
+                    self.summaryDurationLabel.text = [NSString stringWithFormat:@"Duration: %@", self.sessionLengthString];
+                    
+                    [self.view addSubview:self.summaryBox];
+                    
+                }];
                 
-                [self.view addSubview:self.summaryBox];
                 
                 
             }
@@ -272,6 +278,11 @@
     [_starRating  setNeedsDisplay];
     _starRating.tintColor = self.colors[0];
     [self starsSelectionChanged:_starRating rating:0];
+    
+    Firebase *clientInfo = [[Firebase alloc] initWithUrl:[NSString stringWithFormat:@"https://fiery-torch-962.firebaseio.com/users/%@/photoID",self.clientID]];
+    [clientInfo observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+        self.sessionSummaryBoxImageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:snapshot.value]]];
+    }];
 
 }
 -(void)starsSelectionChanged:(EDStarRating *)control rating:(float)rating
