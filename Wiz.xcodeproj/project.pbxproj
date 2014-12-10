@@ -17,6 +17,10 @@
 		2F287D151A0DF0F100DD0A57 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F287D141A0DF0F100DD0A57 /* OpenGLES.framework */; };
 		2F287D171A0DF0FB00DD0A57 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F287D161A0DF0FB00DD0A57 /* QuartzCore.framework */; };
 		2F3E78B81A37858D009A8242 /* ratingBox.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F3E78B71A37858D009A8242 /* ratingBox.xib */; };
+		2F3E78BA1A38FE3D009A8242 /* anonymous.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F3E78B91A38FE3D009A8242 /* anonymous.png */; };
+		2F3E78C01A390354009A8242 /* change_user-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F3E78BB1A390353009A8242 /* change_user-25.png */; };
+		2F3E78C11A390354009A8242 /* change_user-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F3E78BC1A390354009A8242 /* change_user-50.png */; };
+		2F3E78C61A390491009A8242 /* greenphone1-32.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F3E78C51A390491009A8242 /* greenphone1-32.png */; };
 		2FD476051A351DA100A38A3B /* FBShimmeringLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FD476021A351DA100A38A3B /* FBShimmeringLayer.m */; };
 		2FD476061A351DA100A38A3B /* FBShimmeringView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FD476041A351DA100A38A3B /* FBShimmeringView.m */; };
 		2FD476081A351EC200A38A3B /* starBackground.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2FD476071A351EC200A38A3B /* starBackground.jpg */; };
@@ -77,6 +81,10 @@
 		2F287D141A0DF0F100DD0A57 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		2F287D161A0DF0FB00DD0A57 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		2F3E78B71A37858D009A8242 /* ratingBox.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ratingBox.xib; sourceTree = "<group>"; };
+		2F3E78B91A38FE3D009A8242 /* anonymous.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = anonymous.png; sourceTree = "<group>"; };
+		2F3E78BB1A390353009A8242 /* change_user-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "change_user-25.png"; sourceTree = "<group>"; };
+		2F3E78BC1A390354009A8242 /* change_user-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "change_user-50.png"; sourceTree = "<group>"; };
+		2F3E78C51A390491009A8242 /* greenphone1-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "greenphone1-32.png"; sourceTree = "<group>"; };
 		2FD475FF1A351DA100A38A3B /* FBShimmering-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FBShimmering-Prefix.pch"; sourceTree = "<group>"; };
 		2FD476001A351DA100A38A3B /* FBShimmering.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBShimmering.h; sourceTree = "<group>"; };
 		2FD476011A351DA100A38A3B /* FBShimmeringLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBShimmeringLayer.h; sourceTree = "<group>"; };
@@ -256,6 +264,10 @@
 		8BEF720E19FD6EF7005F24F0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				2F3E78BB1A390353009A8242 /* change_user-25.png */,
+				2F3E78BC1A390354009A8242 /* change_user-50.png */,
+				2F3E78C51A390491009A8242 /* greenphone1-32.png */,
+				2F3E78B91A38FE3D009A8242 /* anonymous.png */,
 				2FD476101A361DBB00A38A3B /* star-highlighted-template.png */,
 				2FD476111A361DBB00A38A3B /* star-highlighted-template@2x.png */,
 				2FD476121A361DBB00A38A3B /* star-template.png */,
@@ -405,17 +417,21 @@
 				2FD476141A361DBB00A38A3B /* star-highlighted-template.png in Resources */,
 				2FD476081A351EC200A38A3B /* starBackground.jpg in Resources */,
 				2FD4760C1A35449F00A38A3B /* sessionSummary.xib in Resources */,
+				2F3E78BA1A38FE3D009A8242 /* anonymous.png in Resources */,
 				2FE5B30D1A292AF6000C2B26 /* cancel.png in Resources */,
+				2F3E78C01A390354009A8242 /* change_user-25.png in Resources */,
 				8BEF721A19FD6EF7005F24F0 /* Main.storyboard in Resources */,
 				2FD476171A361DBB00A38A3B /* star-template@2x.png in Resources */,
 				2FE5B30F1A2A2B50000C2B26 /* switch.png in Resources */,
 				8B9F01B219FEE873008BDA75 /* pin.png in Resources */,
 				2FDB1F8F1A0E066300C666A2 /* GoogleMaps.bundle in Resources */,
 				8BEF721F19FD6EF7005F24F0 /* LaunchScreen.xib in Resources */,
+				2F3E78C11A390354009A8242 /* change_user-50.png in Resources */,
 				2F3E78B81A37858D009A8242 /* ratingBox.xib in Resources */,
 				2FD476161A361DBB00A38A3B /* star-template.png in Resources */,
 				8BEF721C19FD6EF7005F24F0 /* Images.xcassets in Resources */,
 				2FD4760A1A352CEF00A38A3B /* yellowWand.png in Resources */,
+				2F3E78C61A390491009A8242 /* greenphone1-32.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

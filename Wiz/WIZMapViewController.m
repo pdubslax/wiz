@@ -33,16 +33,15 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    
+    //setUpLocationManager
     self.locationManager = [[CLLocationManager alloc] init];
     self.locationManager.delegate = self;
     self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     self.locationManager.distanceFilter = kCLDistanceFilterNone;
     [self.locationManager requestAlwaysAuthorization];
-
     
-    //LABEL STUFF
-    [self.userLabel setText:[NSString stringWithFormat:@"%@ is logged in",self.username]];
-    
+    //setUpDescriptionBox
     [[UIApplication sharedApplication] setStatusBarHidden:YES];
     self.descriptionBox = [[[NSBundle mainBundle] loadNibNamed:@"descriptionBox" owner:self options:nil] objectAtIndex:0];
     self.descriptionBox.center = CGPointMake(self.view.frame.size.width / 2, self.view.frame.size.height / 2);
@@ -51,8 +50,7 @@
     self.descriptionBox.layer.cornerRadius = 10;
     self.descriptionBox.userInteractionEnabled = YES;
     
-    //set up rating box
-    //set up summary box
+    //setUpRatingBox
     self.ratingBox = [[[NSBundle mainBundle] loadNibNamed:@"ratingBox" owner:self options:nil] objectAtIndex:0];
     self.ratingBox.center = CGPointMake(self.view.frame.size.width / 2, self.view.frame.size.height / 2);
     self.ratingBox.layer.borderColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:.75].CGColor;
@@ -60,8 +58,9 @@
     self.ratingBox.layer.borderWidth = 5;
     self.ratingBox.layer.cornerRadius = 10;
     
-    //setup wiz info
+    //Collect incoming Wiz info
     if (self.inSession){
+    self.wizInfoImageView.hidden = NO;
     Firebase *wizInfoName = [[Firebase alloc] initWithUrl:[NSString stringWithFormat:@"https://fiery-torch-962.firebaseio.com/users/%@/name",self.wizName]];
     [wizInfoName observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
         self.ratingBoxWizNameLabel.text = snapshot.value;
@@ -70,25 +69,22 @@
     Firebase *wizInfoPhoto = [[Firebase alloc] initWithUrl:[NSString stringWithFormat:@"https://fiery-torch-962.firebaseio.com/users/%@/photoID",self.wizName]];
     [wizInfoPhoto observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
         self.ratingBoxWizImageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:snapshot.value]]];
+        self.wizInfoImageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:snapshot.value]]];
+        //self.wizInfoImageView.hidden = NO;
     }];
     }
     
+    //ALL MAP STUFF
     
-    
+    //Initialize current location
     CLLocationCoordinate2D coordinate = [self getLocation];
-    
     NSLog(@"%f, %f", coordinate.latitude, coordinate.longitude);
     
     //Set Camera to myLocation
     GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:coordinate.latitude
                                                             longitude:coordinate.longitude
                                                                  zoom:15];
-    
-    
-    
     // Create the GMSMapView with the camera position.
-    
-    
     mapView_ = [GMSMapView mapWithFrame:self.view.bounds camera:camera];
     //Enable location settings and set Delegate to self
     mapView_.myLocationEnabled = YES;
@@ -96,8 +92,6 @@
     mapView_.settings.myLocationButton = YES;
     mapView_.delegate = self;
     mapView_.userInteractionEnabled = YES;
-    
-    
     
     //Set observer for MyLocation
     [mapView_ addObserver:self forKeyPath:@"myLocation" options:NSKeyValueObservingOptionNew context:NULL];
@@ -108,7 +102,7 @@
     
     
     
-    //Set Location Button
+    //setUpSetLocationButton
     self.setLocationButton = [[UIButton alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - 100, self.view.frame.size.height/2 - 60, 200, 30)];
     [self.setLocationButton addTarget:self action:@selector(locationIsSet:) forControlEvents:UIControlEventTouchUpInside];
     [self.setLocationButton setTitle:@"Set Meeting Location" forState:UIControlStateNormal];
@@ -117,16 +111,12 @@
     self.setLocationButton.layer.borderWidth = 2;
     self.setLocationButton.layer.borderColor = [UIColor darkGrayColor].CGColor;
     
-    
-    
-    //Pin in middle of the screen
+    //setUpPinHolder
     self.pinHolder = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - 15, self.view.frame.size.height/2 - 30, 30, 30)];
     UIImage *image = [UIImage imageNamed:@"pin.png"];
     self.pinHolder.image = image;
 
-    
-    //Coordinate Label
-    
+    //setUpCoordinateLabel
     CGPoint superCenter = CGPointMake(CGRectGetMidX(self.view.bounds), 105);
     self.coordinateLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 75, 280, 60)];
     [self.coordinateLabel setCenter:superCenter];
@@ -137,16 +127,13 @@
     
     // Set the controller view to be the MapView.
     [self.view insertSubview:mapView_ atIndex:0];
-    
-    
+
     //Remove googles stupid gesture blocker
     [WIZMapViewController removeGMSBlockingGestureRecognizerFromMapView:mapView_];
     
     
     //Adding subviews
     [self.view insertSubview:self.coordinateLabel aboveSubview:mapView_];
-    
-    
     
     if (!self.inSession) {
         
@@ -155,8 +142,13 @@
         [self.view insertSubview:self.pinHolder aboveSubview:mapView_];
         self.wizLabel.hidden = YES;
         self.cancelButton.hidden = YES;
+        self.wizInfoImageView.image = [UIImage imageNamed:@"anonymous.png"];
+        self.wizInfoImageView.hidden = YES;
+        self.wizInfoBackground.hidden = YES;
+        self.phoneButton.hidden = YES;
         
     }else{
+        
         [self updateTextLabel];
         Firebase *job = [[Firebase alloc] initWithUrl: @"https://fiery-torch-962.firebaseio.com/jobs/"];
         Firebase * newRoot = [job childByAppendingPath:self.jobID];
@@ -170,6 +162,9 @@
 }
 
 - (void)updateTextLabel{
+    
+    self.wizInfoImageView.hidden = NO;
+    
     Firebase *job = [[Firebase alloc] initWithUrl: @"https://fiery-torch-962.firebaseio.com/jobs/"];
     Firebase * newRoot = [job childByAppendingPath:self.jobID];
     Firebase * newRoot2 = [newRoot childByAppendingPath:@"/statusFlag"];
@@ -181,16 +176,21 @@
         [wizInfo observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot2) {
             if ([snapshot.value isEqual:@"1"]){
                 self.wizLabel.text = [NSString stringWithFormat:@"%@ is on the way!",snapshot2.value];
+                self.wizInfoBackground.hidden = NO;
+                self.phoneButton.hidden = NO;
             }else if ([snapshot.value isEqual:@"2"]){
+                self.cancelButton.hidden = YES;
+                self.phoneButton.hidden = YES;
                 self.wizLabel.text = [NSString stringWithFormat:@"In session with %@",snapshot2.value];
             }else if ([snapshot.value isEqual:@"3"]){
                 
-                
-                self.wizLabel.text = [NSString stringWithFormat:@"Session has ended!"];
+                self.wizInfoBackground.hidden = YES;
+                self.wizInfoImageView.hidden = YES;
+                self.wizLabel.hidden = YES;
+
+            
                 //session has ended -> prompt rating
                 [self showRating];
-                
-                
             }
         }];
         
@@ -413,6 +413,7 @@
                                                     delegate:self
                                                     cancelButtonTitle:@"No"
                                                     otherButtonTitles:@"Yes", nil];
+    [cancel setTag:0];
     [cancel show];
     
 
@@ -430,23 +431,23 @@
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
-    
-    if ((long)buttonIndex==0) {
-        
-    }else{
-        
-        //Patrick, handle cancelling job on backend here
-        
-        NSLog(@"Cancelling Job");
-        self.inSession = false;
-        
-        [self.view insertSubview:self.setLocationButton aboveSubview:mapView_];
-        [self.view insertSubview:self.pinHolder aboveSubview:mapView_];
-        self.wizLabel.hidden = YES;
-        self.cancelButton.hidden = YES;
+    if (alertView.tag == 0){
+        if ((long)buttonIndex==0) {
+            
+        }else{
+            
+            //Patrick, handle cancelling job on backend here
+            
+            NSLog(@"Cancelling Job");
+            self.inSession = false;
+            
+            [self.view insertSubview:self.setLocationButton aboveSubview:mapView_];
+            [self.view insertSubview:self.pinHolder aboveSubview:mapView_];
+            self.wizLabel.hidden = YES;
+            self.cancelButton.hidden = YES;
 
+        }
     }
-    
 }
 
 #pragma mark - Star Rating
@@ -480,5 +481,13 @@
     }
 }
 
+
+- (IBAction)phoneButtonPressed:(id)sender {
+    
+    NSURL *url = [NSURL URLWithString:@"telprompt://231-409-9896"];
+    [[UIApplication  sharedApplication] openURL:url];
+    
+
+}
 
 @end

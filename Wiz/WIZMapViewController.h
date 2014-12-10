@@ -20,7 +20,6 @@
 - (IBAction)cancelPressed:(id)sender;
 - (IBAction)requestPressed:(id)sender;
 @property (nonatomic, strong) NSString *username;
-@property (strong, nonatomic) IBOutlet UILabel *userLabel;
 - (IBAction)switchToWizView:(id)sender;
 @property (strong, nonatomic) NSString *addressString;
 
@@ -41,6 +40,10 @@
 @property (strong,nonatomic) NSArray *colors;
 @property (strong, nonatomic) IBOutlet UILabel *ratingBoxWizNameLabel;
 @property (strong, nonatomic) IBOutlet UIImageView *ratingBoxWizImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *wizInfoImageView;
+@property (weak, nonatomic) IBOutlet UILabel *wizInfoBackground;
+- (IBAction)phoneButtonPressed:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *phoneButton;
 
 
 @end
