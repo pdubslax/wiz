@@ -58,7 +58,7 @@
     [self.view addSubview:_shimmeringView];
     
     _logoLabel = [[UILabel alloc] initWithFrame:_shimmeringView.bounds];
-    _logoLabel.text = @"Swipe to Begin Session";
+    _logoLabel.text = @"swipe to begin session";
     _logoLabel.font = [UIFont fontWithName:@"HelveticaNeue-UltraLight" size:32.0];
     _logoLabel.textColor = [UIColor whiteColor];
     _logoLabel.textAlignment = NSTextAlignmentCenter;
@@ -200,7 +200,7 @@
                                                                 repeats:YES];
                     
                 //change label of shimmer label
-                _logoLabel.text = @"Swipe to End Session";
+                _logoLabel.text = @"swipe to end session";
  
                     [UIView beginAnimations:nil context:nil];
                     [UIView setAnimationDuration:1.0f];

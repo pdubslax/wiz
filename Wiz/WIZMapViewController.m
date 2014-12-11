@@ -83,7 +83,7 @@
     //Set Camera to myLocation
     GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:coordinate.latitude
                                                             longitude:coordinate.longitude
-                                                                 zoom:15];
+                                                                 zoom:16];
     // Create the GMSMapView with the camera position.
     mapView_ = [GMSMapView mapWithFrame:self.view.bounds camera:camera];
     //Enable location settings and set Delegate to self
@@ -102,8 +102,10 @@
     
     
     
+    
+    
     //setUpSetLocationButton
-    self.setLocationButton = [[UIButton alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - 100, self.view.frame.size.height/2 - 60, 200, 30)];
+    self.setLocationButton = [[UIButton alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - 100, self.view.frame.size.height/2 - 110, 200, 30)];
     [self.setLocationButton addTarget:self action:@selector(locationIsSet:) forControlEvents:UIControlEventTouchUpInside];
     [self.setLocationButton setTitle:@"Set Meeting Location" forState:UIControlStateNormal];
     self.setLocationButton.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:.8];
@@ -127,6 +129,9 @@
     
     // Set the controller view to be the MapView.
     [self.view insertSubview:mapView_ atIndex:0];
+    
+    //insert library markers
+    [self placeMarkers];
 
     //Remove googles stupid gesture blocker
     [WIZMapViewController removeGMSBlockingGestureRecognizerFromMapView:mapView_];
@@ -139,7 +144,7 @@
         
         NSLog(@"not in session");
         [self.view insertSubview:self.setLocationButton aboveSubview:mapView_];
-        [self.view insertSubview:self.pinHolder aboveSubview:mapView_];
+        //[self.view insertSubview:self.pinHolder aboveSubview:mapView_];
         self.wizLabel.hidden = YES;
         self.cancelButton.hidden = YES;
         self.wizInfoImageView.image = [UIImage imageNamed:@"anonymous.png"];
@@ -187,6 +192,7 @@
                 self.wizInfoBackground.hidden = YES;
                 self.wizInfoImageView.hidden = YES;
                 self.wizLabel.hidden = YES;
+                self.phoneButton.hidden = YES;
 
             
                 //session has ended -> prompt rating
@@ -240,8 +246,11 @@
         // location.
         firstLocationUpdate_ = YES;
         CLLocation *location = [change objectForKey:NSKeyValueChangeNewKey];
+
+        NSLog(@"New Location: %f, %f", location.coordinate.latitude, location.coordinate.longitude);
+        
         mapView_.camera = [GMSCameraPosition cameraWithTarget:location.coordinate
-                                                         zoom:20];
+                                                         zoom:16];
     }
 }
 
@@ -268,8 +277,29 @@
     self.setLocationButton.alpha = 0;
     mapView_.settings.myLocationButton = NO;
     self.coordinateLabel.text = @"Go To Pin";
+}
+
+-(void)placeMarkers{
     
-    [mapView clear];
+    
+    [self createMarkerWithLatitude:42.273003 withLongitude:-83.740038 withTitle:@"Law School"];
+    [self createMarkerWithLatitude:42.275706 withLongitude:-83.737159 withTitle:@"Ugli"];
+    [self createMarkerWithLatitude:42.272833 withLongitude:-83.737602 withTitle:@"Ross Business School"];
+    [self createMarkerWithLatitude:42.272200 withLongitude:-83.740292 withTitle:@"Ford School of Public Policy"];
+    [self createMarkerWithLatitude:42.291198 withLongitude:-83.715641 withTitle:@"Duderstadt Center"];
+    [self createMarkerWithLatitude:42.291360 withLongitude:-83.717255 withTitle:@"Pierpont Commons"];
+    [self createMarkerWithLatitude:42.291006 withLongitude:-83.713576 withTitle:@"IOE Building"];
+    [self createMarkerWithLatitude:42.293008 withLongitude:-83.715438 withTitle:@"Betsy Barbor Building"];
+    [self createMarkerWithLatitude:42.276740 withLongitude:-83.739585 withTitle:@"Fish Bowl"];
+    [self createMarkerWithLatitude:42.275907 withLongitude:-83.738216 withTitle:@"Ref Room"];
+    
+}
+-(void)createMarkerWithLatitude: (double)latitude withLongitude: (double)longitude withTitle: (NSString *)title{
+    CLLocationCoordinate2D position = CLLocationCoordinate2DMake(latitude, longitude);
+    GMSMarker *marker = [GMSMarker markerWithPosition:position];
+    marker.title = title;
+    marker.map = mapView_;
+    
 }
 
 
@@ -300,8 +330,6 @@
          
          self.addressString = [NSString stringWithFormat:@"%@, %@", response.firstResult.addressLine1, response.firstResult.addressLine2];
          self.coordinateLabel.text = self.addressString;
-         
-         //marker.map = mapView;
      } ] ;
 }
 
@@ -385,6 +413,8 @@
 - (IBAction)switchToWizView:(id)sender {
     WIZWaitingViewController *vc = (WIZWaitingViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"wizWait"];
     vc.username = self.username;
+    vc.mapView = mapView_;
+    vc.coordinateLabel = self.coordinateLabel;
     [self presentViewController:vc animated:NO completion:^{
         //
     }];
@@ -425,7 +455,7 @@
     
     [self.ratingBox removeFromSuperview];
     [self.view insertSubview:self.setLocationButton aboveSubview:mapView_];
-    [self.view insertSubview:self.pinHolder aboveSubview:mapView_];
+    //[self.view insertSubview:self.pinHolder aboveSubview:mapView_];
     self.wizLabel.hidden = YES;
     self.cancelButton.hidden = YES;
 }
@@ -442,7 +472,7 @@
             self.inSession = false;
             
             [self.view insertSubview:self.setLocationButton aboveSubview:mapView_];
-            [self.view insertSubview:self.pinHolder aboveSubview:mapView_];
+            //[self.view insertSubview:self.pinHolder aboveSubview:mapView_];
             self.wizLabel.hidden = YES;
             self.cancelButton.hidden = YES;
 

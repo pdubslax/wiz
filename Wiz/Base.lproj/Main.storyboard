@@ -396,33 +396,9 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <label opaque="NO" userInteractionEnabled="NO" tag="17" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Waiting..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yMu-va-mWh">
-                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="116" id="1wv-P5-OhB"/>
-                                    <constraint firstAttribute="height" constant="52" id="q2o-Pr-ssG"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="1wv-P5-OhB"/>
-                                        <exclude reference="q2o-Pr-ssG"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="1wv-P5-OhB"/>
-                                        <include reference="q2o-Pr-ssG"/>
-                                    </mask>
-                                </variation>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="centerY" secondItem="yMu-va-mWh" secondAttribute="centerY" constant="0.5" id="Jyw-zX-kcm"/>
-                            <constraint firstAttribute="centerX" secondItem="yMu-va-mWh" secondAttribute="centerX" id="ePE-SP-yRd"/>
                             <constraint firstAttribute="trailingMargin" secondItem="x8h-Oe-wAU" secondAttribute="trailing" constant="-16" id="pm7-ku-X0B"/>
                             <constraint firstItem="x8h-Oe-wAU" firstAttribute="leading" secondItem="8yx-c4-Ybm" secondAttribute="leadingMargin" constant="-16" id="rA2-J2-HLs"/>
                             <constraint firstItem="x8h-Oe-wAU" firstAttribute="top" secondItem="5ou-pc-9Zo" secondAttribute="bottom" id="xkg-7g-8yi"/>
@@ -430,11 +406,8 @@
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="x8h-Oe-wAU"/>
-                                <exclude reference="yMu-va-mWh"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="Jyw-zX-kcm"/>
-                                <exclude reference="ePE-SP-yRd"/>
                                 <exclude reference="pm7-ku-X0B"/>
                                 <exclude reference="rA2-J2-HLs"/>
                                 <exclude reference="xkg-7g-8yi"/>
@@ -443,11 +416,8 @@
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
                                 <include reference="x8h-Oe-wAU"/>
-                                <include reference="yMu-va-mWh"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="Jyw-zX-kcm"/>
-                                <include reference="ePE-SP-yRd"/>
                                 <include reference="pm7-ku-X0B"/>
                                 <include reference="rA2-J2-HLs"/>
                                 <include reference="xkg-7g-8yi"/>
