@@ -8,16 +8,18 @@
 
 #import <UIKit/UIKit.h>
 #import "PulsingHaloLayer.h"
+#import <GoogleMaps/GoogleMaps.h>
 
-@interface WIZWaitingViewController : UIViewController
+@interface WIZWaitingViewController : UIViewController <GMSMapViewDelegate, CLLocationManagerDelegate>
 - (IBAction)switchToStudent:(id)sender;
 @property (nonatomic, strong) NSString *username;
-@property (strong, nonatomic) IBOutlet UILabel *awaitingLabel;
 - (IBAction)onlineSwitch:(id)sender;
 @property (strong, nonatomic) IBOutlet UISwitch *onlineSwitch;
-@property (strong, nonatomic) IBOutlet UILabel *statusLabel;
+
 @property (strong, nonatomic) PulsingHaloLayer *halo;
 @property (strong, nonatomic) NSString *clientID;
+@property (strong, nonatomic) GMSMapView *mapView;
+@property (nonatomic, strong) UILabel *coordinateLabel;
 
 
 

@@ -27,8 +27,28 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    // Set the controller view to be the MapView.
+    
+    
+    //Remove googles stupid gesture blocker
+    self.mapView.delegate = self;
+    [self.mapView clear];
+    [WIZWaitingViewController removeGMSBlockingGestureRecognizerFromMapView:self.mapView];
+    
+    [self.view insertSubview:self.mapView atIndex:0];
+    
+    self.coordinateLabel.hidden = NO;
+    self.coordinateLabel.text = @"waiting for incoming requests";
+    [self.view insertSubview:self.coordinateLabel aboveSubview:self.mapView];
+    
+//    CGRect frameRect = self.view.frame;
+//    UIView *radarView = [[UIView alloc] initWithFrame:frameRect];
+//    [self.view insertSubview:radarView aboveSubview:self.mapView];
+    
+   
+    
     self.halo = [PulsingHaloLayer layer];
-    [self.view.layer addSublayer:self.halo];
+    [self.mapView.layer addSublayer:self.halo];
     [self wizOnline];
     
 
@@ -51,8 +71,9 @@
             [jobInfo observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot2) {
                 [client observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot3) {
                     self.clientID = snapshot3.value;
-                    UIAlertView *test = [[UIAlertView alloc] initWithTitle:@"New Job Alert" message:snapshot2.value delegate:self cancelButtonTitle:@"Reject" otherButtonTitles:@"Accept", nil];
-                    [test show];
+                    UIAlertView *newJobAlert = [[UIAlertView alloc] initWithTitle:@"New Job Alert" message:snapshot2.value delegate:self cancelButtonTitle:@"Reject" otherButtonTitles:@"Accept", nil];
+                    self.coordinateLabel.hidden = YES;
+                    [newJobAlert show];
                 }];
                 
                 
@@ -72,10 +93,28 @@
     // Dispose of any resources that can be recreated.
 }
 
++ (void)removeGMSBlockingGestureRecognizerFromMapView:(GMSMapView *)mapView
+{
+    if([mapView.settings respondsToSelector:@selector(consumesGesturesInView)]) {
+        mapView.settings.consumesGesturesInView = NO;
+    }
+    else {
+        for (id gestureRecognizer in mapView.gestureRecognizers)
+        {
+            if (![gestureRecognizer isKindOfClass:[UILongPressGestureRecognizer class]])
+            {
+                [mapView removeGestureRecognizer:gestureRecognizer];
+            }
+        }
+    }
+}
+
+
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     NSLog(@"%ld",(long)buttonIndex);
     if ((long)buttonIndex==0) {
-        self.statusLabel.text = @"Awaiting Incoming Requests";
+        
+        self.coordinateLabel.hidden = NO;
         [NSTimer scheduledTimerWithTimeInterval: 2.0 target: self
                                        selector: @selector(clearText) userInfo: nil repeats: NO];
         WIZUserDataSharedManager *sharedManager = [WIZUserDataSharedManager sharedManager];
