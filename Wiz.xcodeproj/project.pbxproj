@@ -21,6 +21,7 @@
 		2F3E78C01A390354009A8242 /* change_user-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F3E78BB1A390353009A8242 /* change_user-25.png */; };
 		2F3E78C11A390354009A8242 /* change_user-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F3E78BC1A390354009A8242 /* change_user-50.png */; };
 		2F3E78C61A390491009A8242 /* greenphone1-32.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F3E78C51A390491009A8242 /* greenphone1-32.png */; };
+		2FC636321A3B551D00753916 /* jobAlert.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FC636311A3B551C00753916 /* jobAlert.xib */; };
 		2FD476051A351DA100A38A3B /* FBShimmeringLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FD476021A351DA100A38A3B /* FBShimmeringLayer.m */; };
 		2FD476061A351DA100A38A3B /* FBShimmeringView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FD476041A351DA100A38A3B /* FBShimmeringView.m */; };
 		2FD476081A351EC200A38A3B /* starBackground.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2FD476071A351EC200A38A3B /* starBackground.jpg */; };
@@ -85,6 +86,7 @@
 		2F3E78BB1A390353009A8242 /* change_user-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "change_user-25.png"; sourceTree = "<group>"; };
 		2F3E78BC1A390354009A8242 /* change_user-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "change_user-50.png"; sourceTree = "<group>"; };
 		2F3E78C51A390491009A8242 /* greenphone1-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "greenphone1-32.png"; sourceTree = "<group>"; };
+		2FC636311A3B551C00753916 /* jobAlert.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = jobAlert.xib; sourceTree = "<group>"; };
 		2FD475FF1A351DA100A38A3B /* FBShimmering-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FBShimmering-Prefix.pch"; sourceTree = "<group>"; };
 		2FD476001A351DA100A38A3B /* FBShimmering.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBShimmering.h; sourceTree = "<group>"; };
 		2FD476011A351DA100A38A3B /* FBShimmeringLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBShimmeringLayer.h; sourceTree = "<group>"; };
@@ -248,6 +250,7 @@
 				8BEF721519FD6EF7005F24F0 /* ViewController.h */,
 				8BEF721619FD6EF7005F24F0 /* ViewController.m */,
 				8BEF721819FD6EF7005F24F0 /* Main.storyboard */,
+				2FC636311A3B551C00753916 /* jobAlert.xib */,
 				8BA84FD81A28FF6D008C331F /* StudentRequestNoMatchViewController.h */,
 				8BA84FD91A28FF6D008C331F /* StudentRequestNoMatchViewController.m */,
 				8BA84FDB1A290578008C331F /* WIZAcceptedRequestViewController.h */,
@@ -424,6 +427,7 @@
 				2FD476171A361DBB00A38A3B /* star-template@2x.png in Resources */,
 				2FE5B30F1A2A2B50000C2B26 /* switch.png in Resources */,
 				8B9F01B219FEE873008BDA75 /* pin.png in Resources */,
+				2FC636321A3B551D00753916 /* jobAlert.xib in Resources */,
 				2FDB1F8F1A0E066300C666A2 /* GoogleMaps.bundle in Resources */,
 				8BEF721F19FD6EF7005F24F0 /* LaunchScreen.xib in Resources */,
 				2F3E78C11A390354009A8242 /* change_user-50.png in Resources */,

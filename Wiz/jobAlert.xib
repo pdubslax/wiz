@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WIZWaitingViewController">
+            <connections>
+                <outlet property="jobAlert" destination="iN0-l3-epB" id="JyS-dc-YLz"/>
+                <outlet property="studentImageView" destination="nay-At-WX0" id="szO-hC-XyI"/>
+                <outlet property="studentJobDescription" destination="pc5-04-Ely" id="2eU-MD-e5Z"/>
+                <outlet property="studentName" destination="ZLX-W0-G8w" id="Ug3-4d-mN1"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="264" height="276"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nay-At-WX0">
+                    <rect key="frame" x="78" y="8" width="121" height="121"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="121" id="OMk-Bh-eQB"/>
+                        <constraint firstAttribute="height" constant="121" id="Uib-R4-sAN"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZLX-W0-G8w">
+                    <rect key="frame" x="8" y="134" width="260" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="Lrb-L0-jh3"/>
+                        <constraint firstAttribute="width" constant="260" id="WPK-7W-yNc"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pc5-04-Ely">
+                    <rect key="frame" x="14" y="158" width="249" height="79"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="79" id="A3p-Ta-XQp"/>
+                        <constraint firstAttribute="width" constant="249" id="txR-ZR-0Wc"/>
+                    </constraints>
+                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xwd-ig-F7f">
+                    <rect key="frame" x="48" y="239" width="46" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="CSK-Ew-ocL"/>
+                        <constraint firstAttribute="width" constant="46" id="mYM-rf-h9j"/>
+                    </constraints>
+                    <state key="normal" title="Reject">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="jobRejected:" destination="-1" eventType="touchUpInside" id="BcQ-Pa-Gg5"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="izj-F3-6zZ">
+                    <rect key="frame" x="171" y="238" width="58" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="hof-Oy-hNC"/>
+                        <constraint firstAttribute="width" constant="58" id="oDC-wL-K5s"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                    <state key="normal" title="Accept">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="jobAccepted:" destination="-1" eventType="touchUpInside" id="9aP-e9-4Bb"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="izj-F3-6zZ" secondAttribute="trailing" constant="47" id="1de-fY-SsM"/>
+                <constraint firstItem="izj-F3-6zZ" firstAttribute="top" secondItem="pc5-04-Ely" secondAttribute="bottom" constant="1" id="6t7-H5-ybC"/>
+                <constraint firstAttribute="centerX" secondItem="nay-At-WX0" secondAttribute="centerX" constant="-0.5" id="CPX-Dh-3vn"/>
+                <constraint firstItem="pc5-04-Ely" firstAttribute="centerX" secondItem="ZLX-W0-G8w" secondAttribute="centerX" constant="0.5" id="D7s-EE-AHk"/>
+                <constraint firstItem="Xwd-ig-F7f" firstAttribute="top" secondItem="pc5-04-Ely" secondAttribute="bottom" constant="2" id="ELi-kz-iJP"/>
+                <constraint firstItem="ZLX-W0-G8w" firstAttribute="top" secondItem="nay-At-WX0" secondAttribute="bottom" constant="5" id="QUd-qv-evd"/>
+                <constraint firstItem="pc5-04-Ely" firstAttribute="top" secondItem="ZLX-W0-G8w" secondAttribute="bottom" constant="3" id="Sig-tt-ZRJ"/>
+                <constraint firstItem="nay-At-WX0" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="a2U-Rm-n7h"/>
+                <constraint firstItem="ZLX-W0-G8w" firstAttribute="centerX" secondItem="nay-At-WX0" secondAttribute="centerX" constant="-0.5" id="d8r-Hu-sZ5"/>
+                <constraint firstItem="Xwd-ig-F7f" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="48" id="e23-9g-kF7"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="243" y="296"/>
+        </view>
+    </objects>
+</document>

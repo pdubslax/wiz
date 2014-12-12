@@ -29,6 +29,7 @@
 
 @property (assign) BOOL inSession;
 @property (strong, nonatomic) NSString *wizName;
+@property (strong, nonatomic) NSString *wizPhone;
 @property (weak, nonatomic) IBOutlet UILabel *wizLabel;
 @property (weak, nonatomic) IBOutlet UIButton *cancelButton;
 

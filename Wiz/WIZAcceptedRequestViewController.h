@@ -30,10 +30,22 @@ bool running;
 @property (strong, nonatomic) UIView *summaryBox;
 @property (weak, nonatomic) IBOutlet UILabel *summaryNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *summaryDurationLabel;
+@property (nonatomic, strong) UILabel *coordinateLabel;
 
 @property (weak, nonatomic) IBOutlet EDStarRating *starRating;
 @property (strong,nonatomic) NSArray *colors;
 @property (strong, nonatomic) IBOutlet UIImageView *sessionSummaryBoxImageView;
+@property (strong, nonatomic) NSString *studentPhone;
+
+@property (assign) double jobLatitude;
+@property (assign) double jobLongitude;
+
+@property (weak, nonatomic) IBOutlet UIImageView *studentImageView;
+- (IBAction)phoneButtonPressed:(id)sender;
+@property (weak, nonatomic) NSString *jobDescriptionString;
+@property (strong, nonatomic) UILabel *jobDescription;
+
+
 
 @property (strong,nonatomic) GMSMapView *mapView;
 @property (strong, nonatomic) PulsingHaloLayer *halo;

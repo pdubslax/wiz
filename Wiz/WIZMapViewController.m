@@ -63,19 +63,32 @@
     
     //Collect incoming Wiz info
     if (self.inSession){
-    self.wizInfoImageView.hidden = NO;
-    Firebase *wizInfoName = [[Firebase alloc] initWithUrl:[NSString stringWithFormat:@"https://fiery-torch-962.firebaseio.com/users/%@/name",self.wizName]];
-    [wizInfoName observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
-        self.ratingBoxWizNameLabel.text = snapshot.value;
-    }];
-    
-    Firebase *wizInfoPhoto = [[Firebase alloc] initWithUrl:[NSString stringWithFormat:@"https://fiery-torch-962.firebaseio.com/users/%@/photoID",self.wizName]];
-    [wizInfoPhoto observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
-        self.ratingBoxWizImageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:snapshot.value]]];
-        self.wizInfoImageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:snapshot.value]]];
-        //self.wizInfoImageView.hidden = NO;
-    }];
+
+        
+    Firebase *wizInfo =[[Firebase alloc] initWithUrl:[NSString stringWithFormat:@"https://fiery-torch-962.firebaseio.com/users/%@",self.wizName]];
+//    Firebase *wizInfoName = [[Firebase alloc] initWithUrl:[NSString stringWithFormat:@"https://fiery-torch-962.firebaseio.com/users/%@/name",self.wizName]];
+//    [wizInfoName observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+//        self.ratingBoxWizNameLabel.text = snapshot.value;
+//    }];
+//    
+//    Firebase *wizInfoPhoto = [[Firebase alloc] initWithUrl:[NSString stringWithFormat:@"https://fiery-torch-962.firebaseio.com/users/%@/photoID",self.wizName]];
+//    [wizInfoPhoto observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+//        self.ratingBoxWizImageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:snapshot.value]]];
+//        self.wizInfoImageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:snapshot.value]]];
+//        //self.wizInfoImageView.hidden = NO;
+//    }];
+        
+        [wizInfo observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot){
+            self.ratingBoxWizNameLabel.text = snapshot.value[@"name"];
+            self.ratingBoxWizImageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL: [NSURL URLWithString:snapshot.value[@"photoID"]]]];
+            self.wizInfoImageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL: [NSURL URLWithString:snapshot.value[@"photoID"]]]];
+            self.wizPhone = snapshot.value[@"phone"];
+                                                
+        }];
+            self.wizInfoImageView.hidden = NO;
     }
+    
+
     
     //ALL MAP STUFF
     
@@ -547,10 +560,9 @@
 
 - (IBAction)phoneButtonPressed:(id)sender {
     
-    NSURL *url = [NSURL URLWithString:@"telprompt://231-409-9896"];
+    NSURL *url = [NSURL URLWithString: [NSString stringWithFormat:@"telprompt://%@",self.wizPhone]];
     [[UIApplication  sharedApplication] openURL:url];
     
-
 }
 
 @end

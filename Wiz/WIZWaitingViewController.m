@@ -32,7 +32,16 @@
     
     [WIZWaitingViewController removeGMSBlockingGestureRecognizerFromMapView:self.mapView];
     self.halo = [PulsingHaloLayer layer];
+
     [self.mapView.layer addSublayer:self.halo];
+    
+    //setUpRatingBox
+    self.jobAlert = [[[NSBundle mainBundle] loadNibNamed:@"jobAlert" owner:self options:nil] objectAtIndex:0];
+    self.jobAlert.center = CGPointMake(self.view.frame.size.width / 2, self.view.frame.size.height - 150);
+    self.jobAlert.layer.borderColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:.75].CGColor;
+    self.jobAlert.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:.99];
+    self.jobAlert.layer.borderWidth = 5;
+    self.jobAlert.layer.cornerRadius = 10;
     
 
     
@@ -52,8 +61,9 @@
             
             [job observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot2) {
                 self.clientID = snapshot2.value[@"requesterID"];
-                UIAlertView *newJobAlert = [[UIAlertView alloc] initWithTitle:@"New Job Alert" message:snapshot2.value[@"description"] delegate:self cancelButtonTitle:@"Reject" otherButtonTitles:@"Accept", nil];
-                self.coordinateLabel.hidden = YES;
+//                UIAlertView *newJobAlert = [[UIAlertView alloc] initWithTitle:@"New Job Alert" message:snapshot2.value[@"description"] delegate:self cancelButtonTitle:@"Reject" otherButtonTitles:@"Accept", nil];
+                
+                self.coordinateLabel.text = snapshot2.value[@"addressString"];
                 
                 
                 NSString *latitudeString = snapshot2.value[@"latitude"];
@@ -66,7 +76,17 @@
                 [self createMarkerWithLatitude:self.jobLatitude withLongitude:self.jobLongitude withTitle:@"new job"];
                 
                 
-                [newJobAlert show];
+                //[newJobAlert show];
+                self.jobDescriptionString = snapshot2.value[@"description"];
+                self.studentJobDescription.text = self.jobDescriptionString;
+                
+                Firebase *clientInfo = [[Firebase alloc] initWithUrl:[NSString stringWithFormat:@"https://fiery-torch-962.firebaseio.com/users/%@",self.clientID]];
+                [clientInfo observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+                    self.studentImageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:snapshot.value[@"photoID"]]]];
+                    self.studentName.text = snapshot.value[@"name"];
+                }];
+                
+                [self.view insertSubview:self.jobAlert aboveSubview:self.mapView];
                 
             }];
         }
@@ -82,6 +102,7 @@
 -(void)viewWillAppear:(BOOL)animated{
     //Remove googles stupid gesture blocker
     self.mapView.delegate = self;
+
     [self.mapView clear];
 
     
@@ -128,33 +149,33 @@
 }
 
 
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
-    NSLog(@"%ld",(long)buttonIndex);
-    if ((long)buttonIndex==0) {
-        
-        self.coordinateLabel.hidden = NO;
-        [NSTimer scheduledTimerWithTimeInterval: 2.0 target: self
-                                       selector: @selector(clearText) userInfo: nil repeats: NO];
-        WIZUserDataSharedManager *sharedManager = [WIZUserDataSharedManager sharedManager];
-        NSString *urlString = [NSString stringWithFormat:@"https://fiery-torch-962.firebaseio.com/wizzes/%@/",sharedManager.uid];
-        Firebase *myRootRef = [[Firebase alloc] initWithUrl:urlString];
-        [myRootRef updateChildValues:[NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:@"0",@"-1",@"1",@"2", nil]
-                                                     forKeys:[NSArray arrayWithObjects:@"beingRequested",@"jobID",@"online",@"statusFlag", nil]]];
-        [myRootRef updateChildValues:[NSDictionary dictionaryWithObject:@"0" forKey:@"statusFlag"]];
-        
-    }else{
-        //accepted job
-        //status flag to 1
-        WIZUserDataSharedManager *sharedManager = [WIZUserDataSharedManager sharedManager];
-        NSString *urlString = [NSString stringWithFormat:@"https://fiery-torch-962.firebaseio.com/wizzes/%@/",sharedManager.uid];
-        Firebase *myRootRef = [[Firebase alloc] initWithUrl:urlString];
-        [myRootRef updateChildValues:[NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:@"0",@"1", nil]
-                                                                 forKeys:[NSArray arrayWithObjects:@"beingRequested",@"statusFlag", nil]]];
-        [self acceptedJobWithJobID:self.jobID];
-        
-    }
-    
-}
+//- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+//    NSLog(@"%ld",(long)buttonIndex);
+//    if ((long)buttonIndex==0) {
+//        
+//        self.coordinateLabel.hidden = NO;
+//        [NSTimer scheduledTimerWithTimeInterval: 2.0 target: self
+//                                       selector: @selector(clearText) userInfo: nil repeats: NO];
+//        WIZUserDataSharedManager *sharedManager = [WIZUserDataSharedManager sharedManager];
+//        NSString *urlString = [NSString stringWithFormat:@"https://fiery-torch-962.firebaseio.com/wizzes/%@/",sharedManager.uid];
+//        Firebase *myRootRef = [[Firebase alloc] initWithUrl:urlString];
+//        [myRootRef updateChildValues:[NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:@"0",@"-1",@"1",@"2", nil]
+//                                                     forKeys:[NSArray arrayWithObjects:@"beingRequested",@"jobID",@"online",@"statusFlag", nil]]];
+//        [myRootRef updateChildValues:[NSDictionary dictionaryWithObject:@"0" forKey:@"statusFlag"]];
+//        
+//    }else{
+//        //accepted job
+//        //status flag to 1
+//        WIZUserDataSharedManager *sharedManager = [WIZUserDataSharedManager sharedManager];
+//        NSString *urlString = [NSString stringWithFormat:@"https://fiery-torch-962.firebaseio.com/wizzes/%@/",sharedManager.uid];
+//        Firebase *myRootRef = [[Firebase alloc] initWithUrl:urlString];
+//        [myRootRef updateChildValues:[NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:@"0",@"1", nil]
+//                                                                 forKeys:[NSArray arrayWithObjects:@"beingRequested",@"statusFlag", nil]]];
+//        [self acceptedJobWithJobID:self.jobID];
+//        
+//    }
+//    
+//}
 
 - (void)clearText{
 
@@ -210,6 +231,10 @@
     vc.clientID = self.clientID;
     vc.mapView = self.mapView;
     vc.halo = self.halo;
+    vc.coordinateLabel = self.coordinateLabel;
+    vc.jobLatitude = self.jobLatitude;
+    vc.jobLongitude = self.jobLongitude;
+    vc.jobDescriptionString = self.jobDescriptionString;
     [self presentViewController:vc animated:NO completion:^{
         //
     }];
@@ -247,4 +272,32 @@
 
 
 
+- (IBAction)jobAccepted:(id)sender {
+    //accepted job
+    //status flag to 1
+    WIZUserDataSharedManager *sharedManager = [WIZUserDataSharedManager sharedManager];
+    NSString *urlString = [NSString stringWithFormat:@"https://fiery-torch-962.firebaseio.com/wizzes/%@/",sharedManager.uid];
+    Firebase *myRootRef = [[Firebase alloc] initWithUrl:urlString];
+    [myRootRef updateChildValues:[NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:@"0",@"1", nil]
+                                                             forKeys:[NSArray arrayWithObjects:@"beingRequested",@"statusFlag", nil]]];
+    [self acceptedJobWithJobID:self.jobID];
+    [self.jobAlert removeFromSuperview];
+}
+
+- (IBAction)jobRejected:(id)sender {
+    
+    self.coordinateLabel.hidden = NO;
+    [NSTimer scheduledTimerWithTimeInterval: 2.0 target: self
+                                   selector: @selector(clearText) userInfo: nil repeats: NO];
+    WIZUserDataSharedManager *sharedManager = [WIZUserDataSharedManager sharedManager];
+    NSString *urlString = [NSString stringWithFormat:@"https://fiery-torch-962.firebaseio.com/wizzes/%@/",sharedManager.uid];
+    Firebase *myRootRef = [[Firebase alloc] initWithUrl:urlString];
+    [myRootRef updateChildValues:[NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:@"0",@"-1",@"1",@"2", nil]
+                                                             forKeys:[NSArray arrayWithObjects:@"beingRequested",@"jobID",@"online",@"statusFlag", nil]]];
+    [myRootRef updateChildValues:[NSDictionary dictionaryWithObject:@"0" forKey:@"statusFlag"]];
+    
+    [self.mapView clear];
+    [self.jobAlert removeFromSuperview];
+    
+}
 @end

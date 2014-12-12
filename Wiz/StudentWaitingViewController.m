@@ -71,7 +71,7 @@
     NSString *latitudeString = [NSString stringWithFormat:@"%f", self.jobLatitude];
     NSString *longitudeString = [NSString stringWithFormat:@"%f", self.jobLongitude];
     
-    [newJob setValue:[NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:sharedManager.uid,@"-1",@"0",self.problemDescription,latitudeString, longitudeString, nil] forKeys:[NSArray arrayWithObjects:@"requesterID",@"wizID",@"statusFlag",@"description", @"latitude", @"longitude", nil]]];
+    [newJob setValue:[NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:sharedManager.uid,@"-1",@"0",self.problemDescription,latitudeString, longitudeString, self.coordinateLabel.text, nil] forKeys:[NSArray arrayWithObjects:@"requesterID",@"wizID",@"statusFlag",@"description", @"latitude", @"longitude",@"addressString", nil]]];
     
     sharedManager.currentJob = newJob.name;
     
