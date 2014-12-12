@@ -22,6 +22,10 @@
 @property (nonatomic, strong) NSString *username;
 - (IBAction)switchToWizView:(id)sender;
 @property (strong, nonatomic) NSString *addressString;
+@property (assign) double latitude;
+@property (assign) double longitude;
+
+
 
 @property (assign) BOOL inSession;
 @property (strong, nonatomic) NSString *wizName;

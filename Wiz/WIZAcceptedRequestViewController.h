@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "EDStarRating.h"
+#import <GoogleMaps/GoogleMaps.h>
+#import "PulsingHaloLayer.h"
 
 
 @interface WIZAcceptedRequestViewController : UIViewController<EDStarRatingProtocol>{
@@ -32,6 +34,9 @@ bool running;
 @property (weak, nonatomic) IBOutlet EDStarRating *starRating;
 @property (strong,nonatomic) NSArray *colors;
 @property (strong, nonatomic) IBOutlet UIImageView *sessionSummaryBoxImageView;
+
+@property (strong,nonatomic) GMSMapView *mapView;
+@property (strong, nonatomic) PulsingHaloLayer *halo;
 
 
 

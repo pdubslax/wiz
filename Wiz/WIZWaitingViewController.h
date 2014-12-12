@@ -20,6 +20,9 @@
 @property (strong, nonatomic) NSString *clientID;
 @property (strong, nonatomic) GMSMapView *mapView;
 @property (nonatomic, strong) UILabel *coordinateLabel;
+@property (assign) double jobLatitude;
+@property (assign) double jobLongitude;
+
 
 
 

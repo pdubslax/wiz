@@ -44,17 +44,17 @@
     startedSession = false;
     endedSession = false;
     
+    self.halo.backgroundColor = CFBridgingRetain([UIColor whiteColor]);
     
-    _wallpaperView = [[UIImageView alloc] initWithFrame:self.view.bounds];
-    _wallpaperView.image = [UIImage imageNamed:@"starBackground.jpg"];
-    _wallpaperView.contentMode = UIViewContentModeScaleAspectFill;
-    [self.view addSubview:_wallpaperView];
+    
+    [self.view insertSubview:self.mapView atIndex:0];
     
     
     _shimmeringView = [[FBShimmeringView alloc] init];
     _shimmeringView.shimmering = YES;
     _shimmeringView.shimmeringBeginFadeDuration = 0.3;
-    _shimmeringView.shimmeringOpacity = 0.3;
+    _shimmeringView.shimmeringOpacity = 0.7;
+    _shimmeringView.shimmeringSpeed = 200;
     [self.view addSubview:_shimmeringView];
     
     _logoLabel = [[UILabel alloc] initWithFrame:_shimmeringView.bounds];
@@ -73,7 +73,8 @@
     self.wandImageHolder.transform = CGAffineTransformMakeRotation((30.0f * M_PI) / 180.0f);
     self.wandImageHolder.center = self.view.center;
     self.wandImageHolder.alpha = 0.0f;
-    [self.view addSubview:self.wandImageHolder];
+    //[self.view insertSubview:self.wandImageHolder aboveSubview:self.mapView];
+
     
     
     UIPanGestureRecognizer *panRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(_panned:)];
@@ -97,9 +98,12 @@
     [super viewWillLayoutSubviews];
     
     CGRect shimmeringFrame = self.view.bounds;
-    shimmeringFrame.origin.y = shimmeringFrame.size.height * 0.68;
-    shimmeringFrame.size.height = shimmeringFrame.size.height * 0.32;
+    shimmeringFrame.origin.y = shimmeringFrame.size.height - 110;
+    shimmeringFrame.size.height = 50;
     _shimmeringView.frame = shimmeringFrame;
+    //put color behind the view
+    
+    _shimmeringView.backgroundColor = [UIColor blackColor];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -293,7 +297,7 @@
     NSLog(@"Rated the Wiz a %f", rating);
     if (rating > 0) {
     
-        //change wiz to Online again
+    //change wiz to Online again
     [self dismissViewControllerAnimated:NO completion:nil];
     }
 }
