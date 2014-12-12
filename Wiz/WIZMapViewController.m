@@ -16,6 +16,7 @@
     GMSMapView *mapView_;
     BOOL firstLocationUpdate_;
     GMSGeocoder *geocoder_;
+    BOOL markerTapped;
     
 }
 
@@ -33,6 +34,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    //Set markerTapped to false
+    markerTapped = false;
     
     //setUpLocationManager
     self.locationManager = [[CLLocationManager alloc] init];
@@ -141,10 +144,10 @@
     [self.view insertSubview:self.coordinateLabel aboveSubview:mapView_];
     
     if (!self.inSession) {
-        
-        NSLog(@"not in session");
+
+        self.setLocationButton.hidden = YES;
         [self.view insertSubview:self.setLocationButton aboveSubview:mapView_];
-        //[self.view insertSubview:self.pinHolder aboveSubview:mapView_];
+        [self.view insertSubview:self.pinHolder aboveSubview:mapView_];
         self.wizLabel.hidden = YES;
         self.cancelButton.hidden = YES;
         self.wizInfoImageView.image = [UIImage imageNamed:@"anonymous.png"];
@@ -272,11 +275,9 @@
 }
 
 //Clear the map view
-- (void)mapView:(GMSMapView *)mapView willMove:(BOOL)gesture {
-    self.setLocationButton.alpha = 0;
-    mapView_.settings.myLocationButton = NO;
-    self.coordinateLabel.text = @"Go To Pin";
-}
+
+
+
 
 -(void)placeMarkers{
     
@@ -301,12 +302,37 @@
     
 }
 
+- (void)mapView:(GMSMapView *)mapView willMove:(BOOL)gesture {
+    self.setLocationButton.hidden = YES;
+    mapView_.settings.myLocationButton = NO;
+    self.coordinateLabel.text = @"Go To Pin";
+}
+
+
+//-(BOOL)mapView:(GMSMapView *)mapView didTapMarker:(GMSMarker *)marker{
+//    
+//    if (markerTapped) {
+//        markerTapped = false;
+//        self.setLocationButton.hidden = YES;
+//    }else{
+//        markerTapped = true;
+//    }
+//    
+//    
+//    return NO;
+//}
 
 //When Map becomes still/idle after being moved
 -(void)mapView:(GMSMapView *)mapView idleAtCameraPosition:(GMSCameraPosition *)position{
     
     //Make the button re apprear
-    self.setLocationButton.alpha = 100;
+    
+//    if (markerTapped) {
+//        markerTapped = false;
+//        self.setLocationButton.hidden = NO;
+//    }
+    self.setLocationButton.hidden = NO;
+    
     mapView_.settings.myLocationButton = YES;
     
     CGPoint point = mapView.center;
@@ -320,7 +346,6 @@
     
     [[GMSGeocoder geocoder] reverseGeocodeCoordinate:CLLocationCoordinate2DMake(coor.latitude,coor.longitude) completionHandler:^(GMSReverseGeocodeResponse *response, NSError *error)
      {
-         NSLog( @"Error is %@", error) ;
          NSLog( @"%@" , response.firstResult.addressLine1 ) ;
          NSLog( @"%@" , response.firstResult.addressLine2 ) ;
          //         GMSMarker *marker = [[GMSMarker alloc] init];
@@ -463,7 +488,7 @@
     
     [self.ratingBox removeFromSuperview];
     [self.view insertSubview:self.setLocationButton aboveSubview:mapView_];
-    //[self.view insertSubview:self.pinHolder aboveSubview:mapView_];
+    [self.view insertSubview:self.pinHolder aboveSubview:mapView_];
     self.wizLabel.hidden = YES;
     self.cancelButton.hidden = YES;
 }
@@ -480,7 +505,7 @@
             self.inSession = false;
             
             [self.view insertSubview:self.setLocationButton aboveSubview:mapView_];
-            //[self.view insertSubview:self.pinHolder aboveSubview:mapView_];
+            [self.view insertSubview:self.pinHolder aboveSubview:mapView_];
             self.wizLabel.hidden = YES;
             self.cancelButton.hidden = YES;
 

@@ -44,7 +44,9 @@
     startedSession = false;
     endedSession = false;
     
-    self.mapView.delegate = self;
+    self.halo.backgroundColor = CFBridgingRetain([UIColor whiteColor]);
+    
+    
     [self.view insertSubview:self.mapView atIndex:0];
     
     
@@ -71,7 +73,7 @@
     self.wandImageHolder.transform = CGAffineTransformMakeRotation((30.0f * M_PI) / 180.0f);
     self.wandImageHolder.center = self.view.center;
     self.wandImageHolder.alpha = 0.0f;
-    [self.view insertSubview:self.wandImageHolder aboveSubview:self.mapView];
+    //[self.view insertSubview:self.wandImageHolder aboveSubview:self.mapView];
 
     
     
@@ -97,7 +99,7 @@
     
     CGRect shimmeringFrame = self.view.bounds;
     shimmeringFrame.origin.y = shimmeringFrame.size.height - 110;
-    shimmeringFrame.size.height = 55;
+    shimmeringFrame.size.height = 50;
     _shimmeringView.frame = shimmeringFrame;
     //put color behind the view
     

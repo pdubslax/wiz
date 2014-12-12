@@ -209,6 +209,7 @@
     vc.jobID = jobID;
     vc.clientID = self.clientID;
     vc.mapView = self.mapView;
+    vc.halo = self.halo;
     [self presentViewController:vc animated:NO completion:^{
         //
     }];
