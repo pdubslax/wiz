@@ -44,10 +44,25 @@
     startedSession = false;
     endedSession = false;
     
-    self.halo.backgroundColor = CFBridgingRetain([UIColor whiteColor]);
+    self.halo.backgroundColor = CFBridgingRetain([UIColor clearColor]);
     
     
+    CLLocationCoordinate2D coordinate;
+    coordinate.latitude = self.jobLatitude;
+    coordinate.longitude = self.jobLongitude;
+    self.mapView.camera = [GMSCameraPosition cameraWithTarget:coordinate zoom:13];
     [self.view insertSubview:self.mapView atIndex:0];
+    [self.view insertSubview:self.coordinateLabel aboveSubview:self.mapView];
+    
+    
+    
+    CGPoint superCenter = CGPointMake(CGRectGetMidX(self.view.bounds), self.view.frame.size.height - 160);
+    self.jobDescription = [[UILabel alloc] initWithFrame:CGRectMake(20, 75, 280, 80)];
+    [self.jobDescription setCenter:superCenter];
+    self.jobDescription.backgroundColor = [UIColor colorWithRed:255 green:253 blue:208 alpha:0.8];
+    self.jobDescription.numberOfLines = 0;
+    self.jobDescription.text = self.jobDescriptionString;
+    [self.view insertSubview:self.jobDescription aboveSubview:self.mapView];
     
     
     _shimmeringView = [[FBShimmeringView alloc] init];
@@ -62,7 +77,7 @@
     _logoLabel.font = [UIFont fontWithName:@"HelveticaNeue-UltraLight" size:32.0];
     _logoLabel.textColor = [UIColor whiteColor];
     _logoLabel.textAlignment = NSTextAlignmentCenter;
-    _logoLabel.backgroundColor = [UIColor clearColor];
+    _logoLabel.backgroundColor = [UIColor blackColor];
     _shimmeringView.contentView = _logoLabel;
     
     
@@ -88,6 +103,14 @@
     self.summaryBox.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:.99];
     self.summaryBox.layer.borderWidth = 5;
     self.summaryBox.layer.cornerRadius = 10;
+    
+    Firebase *clientInfo = [[Firebase alloc] initWithUrl:[NSString stringWithFormat:@"https://fiery-torch-962.firebaseio.com/users/%@",self.clientID]];
+    [clientInfo observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+        self.sessionSummaryBoxImageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:snapshot.value[@"photoID"]]]];
+        self.studentImageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:snapshot.value[@"photoID"]]]];
+        self.studentPhone = snapshot.value[@"phone"];
+        
+    }];
     
     [self setUpRatingView];
     
@@ -283,10 +306,7 @@
     _starRating.tintColor = self.colors[0];
     [self starsSelectionChanged:_starRating rating:0];
     
-    Firebase *clientInfo = [[Firebase alloc] initWithUrl:[NSString stringWithFormat:@"https://fiery-torch-962.firebaseio.com/users/%@/photoID",self.clientID]];
-    [clientInfo observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
-        self.sessionSummaryBoxImageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:snapshot.value]]];
-    }];
+
 
 }
 -(void)starsSelectionChanged:(EDStarRating *)control rating:(float)rating
@@ -303,4 +323,8 @@
 }
 
 
+- (IBAction)phoneButtonPressed:(id)sender {
+    NSURL *url = [NSURL URLWithString: [NSString stringWithFormat:@"telprompt://%@",self.studentPhone]];
+    [[UIApplication  sharedApplication] openURL:url];
+}
 @end

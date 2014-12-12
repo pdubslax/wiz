@@ -18,10 +18,18 @@
 
 @property (strong, nonatomic) PulsingHaloLayer *halo;
 @property (strong, nonatomic) NSString *clientID;
+@property (strong, nonatomic) NSString *jobDescriptionString;
 @property (strong, nonatomic) GMSMapView *mapView;
 @property (nonatomic, strong) UILabel *coordinateLabel;
 @property (assign) double jobLatitude;
 @property (assign) double jobLongitude;
+@property (strong, nonatomic) IBOutlet UIView *jobAlert;
+@property (weak, nonatomic) IBOutlet UIImageView *studentImageView;
+@property (weak, nonatomic) IBOutlet UILabel *studentName;
+@property (weak, nonatomic) IBOutlet UITextView *studentJobDescription;
+
+- (IBAction)jobAccepted:(id)sender;
+- (IBAction)jobRejected:(id)sender;
 
 
 
