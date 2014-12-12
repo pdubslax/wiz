@@ -28,33 +28,13 @@
     [super viewDidLoad];
     
     // Set the controller view to be the MapView.
+
     
-    
-    //Remove googles stupid gesture blocker
-    self.mapView.delegate = self;
-    [self.mapView clear];
     [WIZWaitingViewController removeGMSBlockingGestureRecognizerFromMapView:self.mapView];
-    
-    [self.view insertSubview:self.mapView atIndex:0];
-    
-    self.coordinateLabel.hidden = NO;
-    self.coordinateLabel.text = @"waiting for incoming requests";
-    [self.view insertSubview:self.coordinateLabel aboveSubview:self.mapView];
-    
-//    CGRect frameRect = self.view.frame;
-//    UIView *radarView = [[UIView alloc] initWithFrame:frameRect];
-//    [self.view insertSubview:radarView aboveSubview:self.mapView];
-    
-   
-    
     self.halo = [PulsingHaloLayer layer];
     [self.mapView.layer addSublayer:self.halo];
-    [self wizOnline];
     
 
-
-    
-    
     
     WIZUserDataSharedManager *sharedManager = [WIZUserDataSharedManager sharedManager];
     NSString *urlString = [NSString stringWithFormat:@"https://fiery-torch-962.firebaseio.com/wizzes/%@/jobID",sharedManager.uid];
@@ -63,19 +43,30 @@
         //recived Job request
         //self.JobLabel.text = @"You are Online";
         if (![snapshot.value isEqual:@"-1"]){
-            NSString *urlString2 = [NSString stringWithFormat:@"https://fiery-torch-962.firebaseio.com/jobs/%@/description",snapshot.value];
-            NSString *urlString3 = [NSString stringWithFormat:@"https://fiery-torch-962.firebaseio.com/jobs/%@/requesterID",snapshot.value];
+            
+            NSString *jobURL = [NSString stringWithFormat:@"https://fiery-torch-962.firebaseio.com/jobs/%@",snapshot.value];
+            
+            Firebase *job = [[Firebase alloc] initWithUrl:jobURL];
+
             self.jobID = snapshot.value;
-            Firebase *jobInfo = [[Firebase alloc] initWithUrl:urlString2];
-            Firebase *client = [[Firebase alloc] initWithUrl:urlString3];
-            [jobInfo observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot2) {
-                [client observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot3) {
-                    self.clientID = snapshot3.value;
-                    UIAlertView *newJobAlert = [[UIAlertView alloc] initWithTitle:@"New Job Alert" message:snapshot2.value delegate:self cancelButtonTitle:@"Reject" otherButtonTitles:@"Accept", nil];
-                    self.coordinateLabel.hidden = YES;
-                    [newJobAlert show];
-                }];
+            
+            [job observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot2) {
+                self.clientID = snapshot2.value[@"requesterID"];
+                UIAlertView *newJobAlert = [[UIAlertView alloc] initWithTitle:@"New Job Alert" message:snapshot2.value[@"description"] delegate:self cancelButtonTitle:@"Reject" otherButtonTitles:@"Accept", nil];
+                self.coordinateLabel.hidden = YES;
                 
+                
+                NSString *latitudeString = snapshot2.value[@"latitude"];
+                NSString *longitudeString = snapshot2.value[@"longitude"];
+                
+                self.jobLatitude = [latitudeString doubleValue];
+                self.jobLongitude = [longitudeString doubleValue];
+                
+                self.mapView.camera = [GMSCameraPosition cameraWithTarget:self.mapView.camera.target zoom:13];
+                [self createMarkerWithLatitude:self.jobLatitude withLongitude:self.jobLongitude withTitle:@"new job"];
+                
+                
+                [newJobAlert show];
                 
             }];
         }
@@ -86,6 +77,33 @@
         
     }];
     // Do any additional setup after loading the view.
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    //Remove googles stupid gesture blocker
+    self.mapView.delegate = self;
+    [self.mapView clear];
+
+    
+    [self.view insertSubview:self.mapView atIndex:0];
+    
+    self.coordinateLabel.hidden = NO;
+    self.coordinateLabel.text = @"waiting for incoming requests";
+    [self.view insertSubview:self.coordinateLabel aboveSubview:self.mapView];
+    
+
+    [self wizOnline];
+    
+    
+    
+}
+
+-(void)createMarkerWithLatitude: (double)latitude withLongitude: (double)longitude withTitle: (NSString *)title{
+    CLLocationCoordinate2D position = CLLocationCoordinate2DMake(latitude, longitude);
+    GMSMarker *marker = [GMSMarker markerWithPosition:position];
+    marker.title = title;
+    marker.map = self.mapView;
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -190,6 +208,7 @@
     vc.username = [self username];
     vc.jobID = jobID;
     vc.clientID = self.clientID;
+    vc.mapView = self.mapView;
     [self presentViewController:vc animated:NO completion:^{
         //
     }];

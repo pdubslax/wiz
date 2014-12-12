@@ -241,13 +241,12 @@
                         change:(NSDictionary *)change
                        context:(void *)context {
     if (!firstLocationUpdate_) {
-        NSLog(@"not first location update");
         // If the first location update has not yet been recieved, then jump to that
         // location.
         firstLocationUpdate_ = YES;
         CLLocation *location = [change objectForKey:NSKeyValueChangeNewKey];
 
-        NSLog(@"New Location: %f, %f", location.coordinate.latitude, location.coordinate.longitude);
+        //NSLog(@"New Location: %f, %f", location.coordinate.latitude, location.coordinate.longitude);
         
         mapView_.camera = [GMSCameraPosition cameraWithTarget:location.coordinate
                                                          zoom:16];
@@ -313,6 +312,10 @@
     CGPoint point = mapView.center;
     CLLocationCoordinate2D coor = [mapView.projection coordinateForPoint:point];
     NSLog(@"Latitude: %f , Longitude: %f", coor.latitude, coor.longitude);
+    
+    self.latitude = coor.latitude;
+    self.longitude = coor.longitude;
+    
     
     
     [[GMSGeocoder geocoder] reverseGeocodeCoordinate:CLLocationCoordinate2DMake(coor.latitude,coor.longitude) completionHandler:^(GMSReverseGeocodeResponse *response, NSError *error)
@@ -404,6 +407,11 @@
     vc.meetingString = [NSString stringWithString:self.addressString];
     NSLog(@"addressString: %@", self.addressString);
     vc.username = [self username];
+    vc.mapView = mapView_;
+    vc.coordinateLabel = self.coordinateLabel;
+ 
+    vc.jobLatitude = self.latitude;
+    vc.jobLongitude = self.longitude;
     self.userInput.text = nil;
     [self presentViewController:vc animated:NO completion:^{
         //

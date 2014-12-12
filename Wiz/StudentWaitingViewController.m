@@ -21,14 +21,35 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    
     self.progressView.progress = 0.0;
     [self performSelectorOnMainThread:@selector(makeMyProgressBarMoving) withObject:nil waitUntilDone:NO];
     
-    NSString *descriptionString = [NSString stringWithFormat:@"Description: %@", self.problemDescription];
-    [self.descriptionLabel setText:descriptionString];
+    [self.view insertSubview:self.mapView atIndex:0];
     
-//    NSString *locationString = [NSString stringWithFormat:@"Location: %@", self.meetingString];
-    [self.locationLabel setText:self.meetingString];
+    
+    
+    
+    [self.view insertSubview:self.coordinateLabel aboveSubview:self.mapView];
+    
+    NSString *descriptionString = [NSString stringWithFormat:@"%@", self.problemDescription];
+    
+    CGPoint superCenter = CGPointMake(CGRectGetMidX(self.view.bounds), CGRectGetMidY(self.view.bounds));
+    self.descriptionLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 375, 280, 120)];
+    [self.descriptionLabel setCenter:superCenter];
+    self.descriptionLabel.backgroundColor = [UIColor colorWithRed:255 green:253 blue:208 alpha:1];
+    self.descriptionLabel.textAlignment = UITextAlignmentCenter;
+    [self.descriptionLabel setText:descriptionString];
+    self.descriptionLabel.layer.borderWidth = 5;
+    self.descriptionLabel.layer.borderColor = [UIColor blackColor].CGColor;
+    self.descriptionLabel.layer.cornerRadius = 10;
+    self.descriptionLabel.clipsToBounds = YES;
+
+    
+    
+    [self.view insertSubview:self.descriptionLabel aboveSubview:self.mapView];
+    
     
     [self makeRequest];
     
@@ -45,8 +66,12 @@
     Firebase *myRootRef = [[Firebase alloc] initWithUrl:urlString];
     WIZUserDataSharedManager *sharedManager = [WIZUserDataSharedManager sharedManager];
     Firebase *newJob = [myRootRef childByAutoId];
-    [newJob setValue:[NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:sharedManager.uid,@"-1",@"0",self.problemDescription, nil]
-                                          forKeys:[NSArray arrayWithObjects:@"requesterID",@"wizID",@"statusFlag",@"description", nil]]];
+    
+    NSString *latitudeString = [NSString stringWithFormat:@"%f", self.jobLatitude];
+    NSString *longitudeString = [NSString stringWithFormat:@"%f", self.jobLongitude];
+    
+    [newJob setValue:[NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:sharedManager.uid,@"-1",@"0",self.problemDescription,latitudeString, longitudeString, nil] forKeys:[NSArray arrayWithObjects:@"requesterID",@"wizID",@"statusFlag",@"description", @"latitude", @"longitude", nil]]];
+    
     sharedManager.currentJob = newJob.name;
     
     

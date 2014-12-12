@@ -7,17 +7,24 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <GoogleMaps/GoogleMaps.h>
 
 @interface StudentWaitingViewController : UIViewController
 @property (nonatomic, strong) NSString *problemDescription;
 
-@property (strong, nonatomic) IBOutlet UILabel *descriptionLabel;
-@property (weak, nonatomic) IBOutlet UILabel *locationLabel;
+@property (strong, nonatomic) UILabel *descriptionLabel;
 
 @property (strong, nonatomic) NSString *username;
 - (IBAction)cancelRequest:(id)sender;
-- (IBAction)requestAccepted:(id)sender;
 @property (weak, nonatomic) IBOutlet UIProgressView *progressView;
 
 @property (weak, nonatomic) NSString *meetingString;
+
+@property (strong, nonatomic) GMSMapView *mapView;
+@property (nonatomic, strong) UILabel *coordinateLabel;
+@property (assign) double jobLatitude;
+@property (assign) double jobLongitude;
+
+
+
 @end
