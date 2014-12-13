@@ -54,6 +54,12 @@
     [self.view insertSubview:self.mapView atIndex:0];
     [self.view insertSubview:self.coordinateLabel aboveSubview:self.mapView];
     
+    self.phoneBackground.layer.cornerRadius = self.phoneBackground.bounds.size.width/2 + 2;
+    self.phoneBackground.clipsToBounds = YES;
+    self.phoneBackground.layer.borderWidth = 0;
+    self.phoneBackground.layer.borderColor = [UIColor blueColor].CGColor;
+    //[self.view insertSubview:self.phoneBackground aboveSubview:self.mapView];
+    
     
     
     CGPoint superCenter = CGPointMake(CGRectGetMidX(self.view.bounds), self.view.frame.size.height - 160);
@@ -108,6 +114,9 @@
     [clientInfo observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
         self.sessionSummaryBoxImageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:snapshot.value[@"photoID"]]]];
         self.studentImageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:snapshot.value[@"photoID"]]]];
+        self.studentImageView.layer.borderWidth = 1;
+        self.studentImageView.layer.cornerRadius = 5;
+        self.studentImageView.clipsToBounds = YES;
         self.studentPhone = snapshot.value[@"phone"];
         
     }];
