@@ -41,6 +41,7 @@
     [self.descriptionLabel setCenter:superCenter];
     self.descriptionLabel.backgroundColor = [UIColor colorWithRed:255 green:253 blue:208 alpha:1];
     self.descriptionLabel.textAlignment = UITextAlignmentCenter;
+    self.descriptionLabel.numberOfLines = 0;
     [self.descriptionLabel setText:descriptionString];
     self.descriptionLabel.layer.borderWidth = 5;
     self.descriptionLabel.layer.borderColor = [UIColor blackColor].CGColor;

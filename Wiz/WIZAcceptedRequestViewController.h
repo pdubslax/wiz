@@ -45,6 +45,7 @@ bool running;
 @property (weak, nonatomic) NSString *jobDescriptionString;
 @property (strong, nonatomic) UILabel *jobDescription;
 
+@property (weak, nonatomic) IBOutlet UILabel *phoneBackground;
 
 
 @property (strong,nonatomic) GMSMapView *mapView;
