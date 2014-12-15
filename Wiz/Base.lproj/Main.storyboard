@@ -606,8 +606,7 @@
                                         <exclude reference="tbD-Gx-8sk"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="252" y="202" width="42" height="2"/>
+                                <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="constraints">
                                         <include reference="GZ7-aL-WlG"/>
                                         <include reference="tbD-Gx-8sk"/>
@@ -705,17 +704,17 @@
                                 <exclude reference="mao-kc-KTy"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="9qv-VG-Zzs"/>
-                                <exclude reference="M6Q-yN-9Xc"/>
-                                <exclude reference="bNp-y2-VEg"/>
-                                <exclude reference="e4K-jm-0PA"/>
-                                <exclude reference="ypF-Nz-LVw"/>
                                 <exclude reference="0fa-Nn-dke"/>
                                 <exclude reference="5H4-Yg-2xS"/>
                                 <exclude reference="HVn-hD-zyG"/>
                                 <exclude reference="PYG-bA-Qhp"/>
                                 <exclude reference="33f-Uk-gDS"/>
                                 <exclude reference="ttQ-rE-6R2"/>
+                                <exclude reference="9qv-VG-Zzs"/>
+                                <exclude reference="M6Q-yN-9Xc"/>
+                                <exclude reference="bNp-y2-VEg"/>
+                                <exclude reference="e4K-jm-0PA"/>
+                                <exclude reference="ypF-Nz-LVw"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -727,21 +726,22 @@
                                 <include reference="mao-kc-KTy"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="9qv-VG-Zzs"/>
-                                <include reference="M6Q-yN-9Xc"/>
-                                <include reference="bNp-y2-VEg"/>
-                                <include reference="e4K-jm-0PA"/>
-                                <include reference="ypF-Nz-LVw"/>
                                 <include reference="0fa-Nn-dke"/>
                                 <include reference="5H4-Yg-2xS"/>
                                 <include reference="HVn-hD-zyG"/>
                                 <include reference="PYG-bA-Qhp"/>
                                 <include reference="33f-Uk-gDS"/>
                                 <include reference="ttQ-rE-6R2"/>
+                                <include reference="9qv-VG-Zzs"/>
+                                <include reference="M6Q-yN-9Xc"/>
+                                <include reference="bNp-y2-VEg"/>
+                                <include reference="e4K-jm-0PA"/>
+                                <include reference="ypF-Nz-LVw"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="littleLine" destination="179-fW-Ohb" id="EHW-lZ-zej"/>
                         <outlet property="phoneBackground" destination="NOV-OL-gKo" id="Rsj-bD-004"/>
                         <outlet property="studentImageView" destination="uJf-VQ-33p" id="xOu-lj-RNO"/>
                     </connections>

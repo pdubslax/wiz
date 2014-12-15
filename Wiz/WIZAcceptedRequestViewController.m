@@ -267,6 +267,13 @@
                     self.summaryDurationLabel.text = [NSString stringWithFormat:@"Duration: %@", self.sessionLengthString];
                     
                     [self.view addSubview:self.summaryBox];
+                    [_shimmeringView setHidden:YES];
+                    [self.phoneBackground setHidden:YES];
+                    [self.jobDescription setHidden:YES];
+                    [self.studentImageView setHidden:YES];
+                    [self.littleLine setHidden:YES];
+                    
+                    
                     
                 }];
                 

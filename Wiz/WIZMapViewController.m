@@ -272,6 +272,7 @@
 //When button is pressed to Select Meeting Location
 - (void)locationIsSet:(UIButton *)button {
     NSLog(@"Location button was pressed");
+    [button setHidden:YES];
     
     [self.view insertSubview:self.descriptionBox aboveSubview:_setLocationButton];
     self.characterCount.text = [NSString stringWithFormat:@"140"];
@@ -433,6 +434,7 @@
 
 - (IBAction)cancelPressed:(id)sender {
     self.userInput.text = nil;
+    [self.setLocationButton setHidden:NO];
     [self.descriptionBox removeFromSuperview];
 }
 

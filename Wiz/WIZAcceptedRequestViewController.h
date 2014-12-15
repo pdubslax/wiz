@@ -19,6 +19,7 @@ NSTimer *stopTimer;
 NSDate *startDate;
 bool running;
 }
+@property (strong, nonatomic) IBOutlet UILabel *littleLine;
 
 @property (nonatomic, strong) NSString *clientID;
 @property (nonatomic, strong) NSString *username;
